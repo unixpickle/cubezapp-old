@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3389" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ANPuzzle" representedClassName="ANPuzzle" syncable="YES">
+        <attribute name="hidden" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="iconColor" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inspectionTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scramble" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="scrambleLength" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="sessionLength" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="showSrcamble" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="showStats" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="account" maxCount="1" deletionRule="Cascade" destinationEntity="LocalAccount" inverseName="puzzles" inverseEntity="LocalAccount" syncable="YES"/>
+        <relationship name="ocAddition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OCPuzzleAddition" inverseName="puzzle" inverseEntity="OCPuzzleAddition" syncable="YES"/>
+        <relationship name="ocSettings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OCPuzzleSetting" inverseName="puzzle" inverseEntity="OCPuzzleSetting" syncable="YES"/>
+        <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ANSession" inverseName="puzzle" inverseEntity="ANSession" syncable="YES"/>
+    </entity>
+    <entity name="ANSession" representedClassName="ANSession" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="ocAddition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OCSessionAddition" inverseName="session" inverseEntity="OCSessionAddition" syncable="YES"/>
+        <relationship name="puzzle" maxCount="1" deletionRule="Cascade" destinationEntity="ANPuzzle" inverseName="sessions" inverseEntity="ANPuzzle" syncable="YES"/>
+        <relationship name="solves" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ANSolve" inverseName="session" inverseEntity="ANSolve" syncable="YES"/>
+    </entity>
+    <entity name="ANSolve" representedClassName="ANSolve" syncable="YES">
+        <attribute name="scramble" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="session" maxCount="1" deletionRule="Cascade" destinationEntity="ANSession" inverseName="solves" inverseEntity="ANSession" syncable="YES"/>
+    </entity>
+    <entity name="LocalAccount" representedClassName="LocalAccount" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="passwordmd5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="changes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OfflineChanges" inverseName="localAccount" inverseEntity="OfflineChanges" syncable="YES"/>
+        <relationship name="puzzles" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ANPuzzle" inverseName="account" inverseEntity="ANPuzzle" syncable="YES"/>
+    </entity>
+    <entity name="OCPuzzleAddition" representedClassName="OCPuzzleAddition" syncable="YES">
+        <relationship name="changes" maxCount="1" deletionRule="Cascade" destinationEntity="OfflineChanges" inverseName="puzzleAdditions" inverseEntity="OfflineChanges" syncable="YES"/>
+        <relationship name="puzzle" maxCount="1" deletionRule="Cascade" destinationEntity="ANPuzzle" inverseName="ocAddition" inverseEntity="ANPuzzle" syncable="YES"/>
+    </entity>
+    <entity name="OCPuzzleDeletion" representedClassName="OCPuzzleDeletion" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="changes" maxCount="1" deletionRule="Cascade" destinationEntity="OfflineChanges" inverseName="puzzleDeletions" inverseEntity="OfflineChanges" syncable="YES"/>
+    </entity>
+    <entity name="OCPuzzleSetting" representedClassName="OCPuzzleSetting" syncable="YES">
+        <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attributeValue" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="changes" maxCount="1" deletionRule="Cascade" destinationEntity="OfflineChanges" inverseName="puzzleSettings" inverseEntity="OfflineChanges" syncable="YES"/>
+        <relationship name="puzzle" maxCount="1" deletionRule="Cascade" destinationEntity="ANPuzzle" inverseName="ocSettings" inverseEntity="ANPuzzle" syncable="YES"/>
+    </entity>
+    <entity name="OCSessionAddition" representedClassName="OCSessionAddition" syncable="YES">
+        <relationship name="changes" maxCount="1" deletionRule="Cascade" destinationEntity="OfflineChanges" inverseName="sessionAdditions" inverseEntity="OfflineChanges" syncable="YES"/>
+        <relationship name="session" maxCount="1" deletionRule="Cascade" destinationEntity="ANSession" inverseName="ocAddition" inverseEntity="ANSession" syncable="YES"/>
+    </entity>
+    <entity name="OCSessionDeletion" representedClassName="OCSessionDeletion" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="changes" maxCount="1" deletionRule="Cascade" destinationEntity="OfflineChanges" inverseName="sessionDeletions" inverseEntity="OfflineChanges" syncable="YES"/>
+    </entity>
+    <entity name="OfflineChanges" representedClassName="OfflineChanges" syncable="YES">
+        <relationship name="localAccount" maxCount="1" deletionRule="Cascade" destinationEntity="LocalAccount" inverseName="changes" inverseEntity="LocalAccount" syncable="YES"/>
+        <relationship name="puzzleAdditions" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="OCPuzzleAddition" inverseName="changes" inverseEntity="OCPuzzleAddition" syncable="YES"/>
+        <relationship name="puzzleDeletions" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="OCPuzzleDeletion" inverseName="changes" inverseEntity="OCPuzzleDeletion" syncable="YES"/>
+        <relationship name="puzzleSettings" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="OCPuzzleSetting" inverseName="changes" inverseEntity="OCPuzzleSetting" syncable="YES"/>
+        <relationship name="sessionAdditions" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="OCSessionAddition" inverseName="changes" inverseEntity="OCSessionAddition" syncable="YES"/>
+        <relationship name="sessionDeletions" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="OCSessionDeletion" inverseName="changes" inverseEntity="OCSessionDeletion" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ANPuzzle" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="ANSession" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="ANSolve" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="LocalAccount" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="OCPuzzleAddition" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="OCPuzzleDeletion" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="OCPuzzleSetting" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="OCSessionAddition" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="OCSessionDeletion" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="OfflineChanges" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ANMove" representedClassName="ANMove" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="sequence" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ANMoveSequence" inverseName="moves" inverseEntity="ANMoveSequence" syncable="YES"/>
+    </entity>
+    <entity name="ANMoveSequence" representedClassName="ANMoveSequence" syncable="YES">
+        <relationship name="moves" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ANMove" inverseName="sequence" inverseEntity="ANMove" syncable="YES"/>
+        <relationship name="solve" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ANSolveRecord" inverseName="scramble" inverseEntity="ANSolveRecord" syncable="YES"/>
+    </entity>
+    <entity name="ANPuzzle" representedClassName="ANPuzzle" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="puzzleType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="scrambles" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ANSessionRecord" inverseName="puzzle" inverseEntity="ANSessionRecord" syncable="YES"/>
+    </entity>
+    <entity name="ANSessionRecord" representedClassName="ANSessionRecord" syncable="YES">
+        <relationship name="puzzle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ANPuzzle" inverseName="sessions" inverseEntity="ANPuzzle" syncable="YES"/>
+        <relationship name="solves" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ANSolveRecord" inverseName="session" inverseEntity="ANSolveRecord" syncable="YES"/>
+    </entity>
+    <entity name="ANSolveRecord" representedClassName="ANSolveRecord" syncable="YES">
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="scramble" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ANMoveSequence" inverseName="solve" inverseEntity="ANMoveSequence" syncable="YES"/>
+        <relationship name="session" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ANSessionRecord" inverseName="solves" inverseEntity="ANSessionRecord" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ANMoveSequence" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="ANSolveRecord" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="ANSessionRecord" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="ANPuzzle" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="ANMove" positionX="160" positionY="192" width="128" height="75"/>
+    </elements>
+</model>

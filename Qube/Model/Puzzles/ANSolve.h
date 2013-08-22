@@ -2,7 +2,7 @@
 //  ANSolve.h
 //  Qube
 //
-//  Created by Alex Nichol on 8/15/13.
+//  Created by Alex Nichol on 8/20/13.
 //  Copyright (c) 2013 Alex Nichol. All rights reserved.
 //
 
@@ -17,6 +17,7 @@
 @property (nonatomic) NSTimeInterval startDate;
 @property (nonatomic) int16_t status;
 @property (nonatomic) double time;
+@property (nonatomic) double inspectionTime;
 @property (nonatomic, retain) ANSession *session;
 
 @end

@@ -14,38 +14,20 @@
 - (void)beginPuzzleSyncers;
 - (void)runNextPuzzleSyncer;
 
+- (void)beginSessionSyncers;
+- (void)runNextSessionSyncer;
+
 @end
 
 @implementation ANSyncSession
 
 - (void)startSync {
-    // compose immediate delete requests
-    LocalAccount * account = [ANDataManager sharedDataManager].activeAccount;
-    OfflineChanges * changes = account.changes;
-    NSMutableArray * deleteIds = [NSMutableArray array];
-    for (OCPuzzleDeletion * deletion in changes.puzzleDeletions) {
-        [deleteIds addObject:[deletion identifier]];
-    }
-    apiCall = [[ANAPIDeleteRequest alloc] initWithPuzzleIds:deleteIds];
-    [apiCall fetchResponse:^(NSError * error, NSDictionary * obj) {
-        apiCall = nil;
-        if (error) {
-            [self handleError:error];
-        } else {
-            ANAPIDeleteResponse * response = [[ANAPIDeleteResponse alloc] initWithDictionary:obj];
-            for (OCPuzzleDeletion * deletion in response.requests) {
-                [[ANDataManager sharedDataManager].context deleteObject:deletion];
-            }
-            [self beginPuzzleSyncers];
-        }
-    }];
+    [self beginPuzzleSyncers];
 }
 
 - (void)cancelSync {
-    [activePuzzleSyncer cancel];
-    [apiCall cancel];
-    activePuzzleSyncer = nil;
-    apiCall = nil;
+    [activeSyncer cancel];
+    activeSyncer = nil;
 }
 
 #pragma mark - Private -
@@ -56,8 +38,9 @@
 }
 
 - (void)beginPuzzleSyncers {
-    puzzleSyncers = [@[[ANPuzzleAdder class], [ANPuzzleRenamer class],
-                       [ANPuzzleSetter class], [ANPuzzleGetter class]] mutableCopy];
+    puzzleSyncers = [@[[ANPuzzleDeleter class], [ANPuzzleAdder class],
+                       [ANPuzzleRenamer class], [ANPuzzleSetter class],
+                       [ANPuzzleGetter class], [ANPuzzleOrderer class]] mutableCopy];
     [self runNextPuzzleSyncer];
 }
 
@@ -65,24 +48,46 @@
     if ([puzzleSyncers count] > 0) {
         Class syncerClass = [puzzleSyncers objectAtIndex:0];
         [puzzleSyncers removeObjectAtIndex:0];
-        activePuzzleSyncer = [[syncerClass alloc] initWithDataManager:[ANDataManager sharedDataManager]
-                                                             delegate:self];
+        activeSyncer = [[syncerClass alloc] initWithDataManager:[ANDataManager sharedDataManager]
+                                                       delegate:self];
     } else {
-        // TODO: run session syncers here
+        activeSyncer = nil;
+        [self beginSessionSyncers];
     }
 }
 
-#pragma mark - Puzzle Syncers -
+- (void)beginSessionSyncers {
+    sessionSyncers = [@[[ANSessionDeleter class], [ANSessionAdder class],
+                        [ANSessionGetter class]] mutableCopy];
+    [self runNextSessionSyncer];
+}
+
+- (void)runNextSessionSyncer {
+    if ([sessionSyncers count] > 0) {
+        Class syncerClass = [sessionSyncers objectAtIndex:0];
+        [sessionSyncers removeObjectAtIndex:0];
+        activeSyncer = [[syncerClass alloc] initWithDataManager:[ANDataManager sharedDataManager]
+                                                       delegate:self];
+    } else {
+        [self.delegate syncSessionCompleted:self];
+    }
+}
+
+#pragma mark - Syncer Delegate -
 
 - (void)generalSyncerCompleted:(id)syncer {
     if ([syncer isKindOfClass:[ANPuzzleSyncer class]]) {
         [self runNextPuzzleSyncer];
+    } else if ([syncer isKindOfClass:[ANSessionSyncer class]]) {
+        [self runNextSessionSyncer];
     }
 }
 
 - (void)generalSyncer:(id)syncer failedWithError:(NSError *)error {
     [self handleError:error];
 }
+
+#pragma mark Puzzle Syncer
 
 - (void)puzzleSyncer:(id)syncer updatedPuzzle:(ANPuzzle *)puzzle {
     [self.delegate syncSession:self updatedPuzzle:puzzle];
@@ -94,6 +99,16 @@
 
 - (void)puzzleSyncer:(id)syncer deletedPuzzle:(ANPuzzle *)puzzle {
     [self.delegate syncSession:self deletedPuzzle:puzzle];
+}
+
+#pragma mark Session Syncer
+
+- (void)sessionSyncer:(ANSessionSyncer *)syncer addedSession:(ANSession *)session {
+    [self.delegate syncSession:self puzzleGraphChanged:session.puzzle];
+}
+
+- (void)sessionSyncer:(ANSessionSyncer *)syncer deletedSession:(ANSession *)session {
+    [self.delegate syncSession:self puzzleGraphChanged:session.puzzle];
 }
 
 @end

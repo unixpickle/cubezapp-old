@@ -7,10 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ANPuzzleDeleter.h"
 #import "ANPuzzleAdder.h"
 #import "ANPuzzleRenamer.h"
 #import "ANPuzzleSetter.h"
 #import "ANPuzzleGetter.h"
+#import "ANPuzzleOrderer.h"
+
+#import "ANSessionDeleter.h"
+#import "ANSessionAdder.h"
+#import "ANSessionGetter.h"
 
 #import "ANAPIDeleteResponse.h"
 
@@ -27,10 +33,10 @@
 
 @end
 
-@interface ANSyncSession : NSObject <ANPuzzleSyncerDelegate> {
-    ANAPICall * apiCall;
+@interface ANSyncSession : NSObject <ANPuzzleSyncerDelegate, ANSessionSyncerDelegate> {
     NSMutableArray * puzzleSyncers;
-    ANPuzzleSyncer * activePuzzleSyncer;
+    NSMutableArray * sessionSyncers;
+    ANGeneralSyncer * activeSyncer;
 }
 
 @property (nonatomic, weak) id<ANSyncSessionDelegate> delegate;

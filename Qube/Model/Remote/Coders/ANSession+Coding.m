@@ -17,7 +17,8 @@
         NSDictionary * solveDict = @{@"scramble": solve.scramble,
                                      @"date": [NSNumber numberWithDouble:solve.startDate],
                                      @"status": [NSNumber numberWithShort:solve.status],
-                                     @"time": [NSNumber numberWithDouble:solve.time]};
+                                     @"time": [NSNumber numberWithDouble:solve.time],
+                                     @"inspectionTime": [NSNumber numberWithDouble:solve.inspectionTime]};
         [solves addObject:solveDict];
     }
     
@@ -34,6 +35,7 @@
         solve.status = [[solveObj objectForKey:@"status"] shortValue];
         solve.startDate = [[solveObj objectForKey:@"date"] doubleValue];
         solve.scramble = [solveObj objectForKey:@"scramble"];
+        solve.inspectionTime = [[solveObj objectForKey:@"inspectionTime"] doubleValue];
     }
     self.identifier = [dict objectForKey:@"id"];
 }

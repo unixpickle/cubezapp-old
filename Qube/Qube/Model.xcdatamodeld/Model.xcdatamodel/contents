@@ -25,6 +25,7 @@
         <relationship name="solves" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ANSolve" inverseName="session" inverseEntity="ANSolve" syncable="YES"/>
     </entity>
     <entity name="ANSolve" representedClassName="ANSolve" syncable="YES">
+        <attribute name="inspectionTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="scramble" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>

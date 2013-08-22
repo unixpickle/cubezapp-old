@@ -111,7 +111,7 @@
 - (void)decodePuzzle:(NSDictionary *)dict withId:(BOOL)idFlag {
     NSDictionary * attributes = [dict objectForKey:@"attributes"];
     if (idFlag) self.identifier = [dict objectForKey:@"id"];
-    for (NSString * attr in [attributes allKeys]) {
+    for (NSString * attr in attributes) {
         [self setValue:[attributes objectForKey:attr] forPuzzleAttribute:attr];
     }
 }

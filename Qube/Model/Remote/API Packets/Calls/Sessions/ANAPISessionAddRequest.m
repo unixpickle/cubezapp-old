@@ -16,7 +16,7 @@
         NSDictionary * dict = [addition.session encodeSession];
         [sessionObjs addObject:dict];
     }
-    self = [super initWithAPI:@"session.add" params:@{@"sessions": sessionObjs}];
+    self = [super initWithAPI:@"sessions.add" params:@{@"sessions": sessionObjs}];
     return self;
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "ANDataManager.h"
+#import "NSData+MD5.h"
 
 @class ANSessionsHasher;
 
@@ -21,17 +22,25 @@
     NSThread * backgroundThread;
     NSManagedObjectContext * context;
     __weak id<ANSessionsHasherDelegate> delegate;
-    NSInteger prefixLen;
+    
+    NSInteger prefixLen; // the number of identifier bytes to consider
+    NSData * requiredPrefix; // the identifier bytes to look at (may be empty)
     
     NSMutableDictionary * hashes;
+    NSMutableDictionary * sessionsForPrefix;
 }
 
 @property (weak) id<ANSessionsHasherDelegate> delegate;
-@property (readonly) NSMutableDictionary * hashes;
+@property (readonly) NSInteger prefixLen;
+@property (readonly) NSData * requiredPrefix;
+@property (readonly) NSDictionary * hashes;
+@property (readonly) NSDictionary * sessionsForPrefix;
 
 - (id)initWithPrefixLen:(NSInteger)len;
+- (id)initWithPrefixLen:(NSInteger)len prefix:(NSData *)required;
 
 - (void)start;
+- (BOOL)isRunning;
 - (void)cancel;
 
 @end

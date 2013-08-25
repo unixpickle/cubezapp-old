@@ -69,25 +69,25 @@
         <relationship name="changes" maxCount="1" deletionRule="Nullify" destinationEntity="OfflineChanges" inverseName="sessionDeletions" inverseEntity="OfflineChanges" syncable="YES"/>
     </entity>
     <entity name="OfflineChanges" representedClassName="OfflineChanges" syncable="YES">
-        <relationship name="accountChanges" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OCAccountChange" inverseName="changes" inverseEntity="OCAccountChange" syncable="YES"/>
+        <relationship name="accountChanges" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OCAccountChange" inverseName="changes" inverseEntity="OCAccountChange" syncable="YES"/>
         <relationship name="localAccount" maxCount="1" deletionRule="Nullify" destinationEntity="LocalAccount" inverseName="changes" inverseEntity="LocalAccount" syncable="YES"/>
-        <relationship name="puzzleAdditions" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="OCPuzzleAddition" inverseName="changes" inverseEntity="OCPuzzleAddition" syncable="YES"/>
-        <relationship name="puzzleDeletions" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="OCPuzzleDeletion" inverseName="changes" inverseEntity="OCPuzzleDeletion" syncable="YES"/>
-        <relationship name="puzzleSettings" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="OCPuzzleSetting" inverseName="changes" inverseEntity="OCPuzzleSetting" syncable="YES"/>
-        <relationship name="sessionAdditions" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="OCSessionAddition" inverseName="changes" inverseEntity="OCSessionAddition" syncable="YES"/>
-        <relationship name="sessionDeletions" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="OCSessionDeletion" inverseName="changes" inverseEntity="OCSessionDeletion" syncable="YES"/>
+        <relationship name="puzzleAdditions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OCPuzzleAddition" inverseName="changes" inverseEntity="OCPuzzleAddition" syncable="YES"/>
+        <relationship name="puzzleDeletions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OCPuzzleDeletion" inverseName="changes" inverseEntity="OCPuzzleDeletion" syncable="YES"/>
+        <relationship name="puzzleSettings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OCPuzzleSetting" inverseName="changes" inverseEntity="OCPuzzleSetting" syncable="YES"/>
+        <relationship name="sessionAdditions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OCSessionAddition" inverseName="changes" inverseEntity="OCSessionAddition" syncable="YES"/>
+        <relationship name="sessionDeletions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OCSessionDeletion" inverseName="changes" inverseEntity="OCSessionDeletion" syncable="YES"/>
     </entity>
     <elements>
         <element name="ANPuzzle" positionX="0" positionY="0" width="0" height="0"/>
         <element name="ANSession" positionX="0" positionY="0" width="0" height="0"/>
         <element name="ANSolve" positionX="0" positionY="0" width="0" height="0"/>
         <element name="LocalAccount" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="OCAccountChange" positionX="0" positionY="0" width="0" height="0"/>
         <element name="OCPuzzleAddition" positionX="0" positionY="0" width="0" height="0"/>
         <element name="OCPuzzleDeletion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="OCPuzzleSetting" positionX="0" positionY="0" width="0" height="0"/>
         <element name="OCSessionAddition" positionX="0" positionY="0" width="0" height="0"/>
         <element name="OCSessionDeletion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="OfflineChanges" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="OCAccountChange" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

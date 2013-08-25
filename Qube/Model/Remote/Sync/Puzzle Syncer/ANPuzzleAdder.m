@@ -28,7 +28,7 @@
 - (id)initWithDelegate:(id<ANPuzzleSyncerDelegate>)aDel {
     if ((self = [super initWithDelegate:aDel])) {
         ANDataManager * manager = [ANDataManager sharedDataManager];
-        NSArray * added = [manager.activeAccount.changes.puzzleAdditions array];
+        NSArray * added = [manager.activeAccount.changes.puzzleAdditions allObjects];
         ANAPICallPuzzleAdd * addReq = [[ANAPICallPuzzleAdd alloc] initWithPuzzleAdditions:added];
         [self sendAPICall:addReq returnSelector:@selector(addRequestResponse:)];
     }

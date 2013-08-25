@@ -13,7 +13,7 @@
 #import "ANAPICallPuzzleAdd.h"
 #import "ANAPICallPuzzleReplace.h"
 #import "ANAPICallPuzzleRenameAdd.h"
-#import "ANAPIDeleteResponse.h"
+#import "ANAPIPuzzleDeleteResponse.h"
 
 
 @interface ANPuzzleAdder : ANPuzzleSyncer

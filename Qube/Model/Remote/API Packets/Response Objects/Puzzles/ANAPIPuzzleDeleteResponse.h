@@ -8,7 +8,7 @@
 
 #import "ANDataManager+Search.h"
 
-@interface ANAPIDeleteResponse : NSObject {
+@interface ANAPIPuzzleDeleteResponse : NSObject {
     NSArray * requests;
 }
 

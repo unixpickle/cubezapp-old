@@ -10,8 +10,6 @@
 
 @interface ANAccountManager (Private)
 
-- (void)observerNotifyError:(NSError *)error;
-- (void)observerLoggedIn;
 - (void)handleLoginResponse:(NSDictionary *)dict;
 
 @end
@@ -25,21 +23,6 @@
         manager = [[ANAccountManager alloc] init];
     });
     return manager;
-}
-
-- (id)init {
-    if ((self = [super init])) {
-        observers = [[NSMutableArray alloc] init];
-    }
-    return self;
-}
-
-- (void)addObserver:(id<ANAccountManagerObserver>)observer {
-    [observers addObject:observer];
-}
-
-- (void)removeObserver:(id<ANAccountManagerObserver>)observer {
-    [observers removeObject:observer];
 }
 
 - (void)generateDefaultAccount {
@@ -74,13 +57,13 @@
                                                      @"hash": hash}];
     [loginCall fetchResponse:^(NSError * error, NSDictionary * obj) {
         if (error) {
-            [self observerNotifyError:error];
+            [self.delegate accountManager:self loginFailed:error];
         } else {
             if (![[obj objectForKey:@"status"] boolValue]) {
                 NSError * error = [NSError errorWithDomain:@"ANAccountManager"
                                                       code:1
                                                   userInfo:@{NSLocalizedDescriptionKey: @"Login incorrect"}];
-                [self observerNotifyError:error];
+                [self.delegate accountManager:self loginFailed:error];
             } else {
                 if (!offlineData) {
                     [self generateDefaultAccount];
@@ -96,24 +79,12 @@
 
 #pragma mark - Private -
 
-- (void)observerNotifyError:(NSError *)error {
-    for (id<ANAccountManagerObserver> observer in observers) {
-        [observer accountManager:self loginFailed:error];
-    }
-}
-
-- (void)observerLoggedIn {
-    for (id<ANAccountManagerObserver> observer in observers) {
-        [observer accountManagerLoggedIn:self];
-    }
-}
-
 - (void)handleLoginResponse:(NSDictionary *)dict {
     LocalAccount * account = [ANDataManager sharedDataManager].activeAccount;
     account.cubeScheme = [dict objectForKey:@"cubeScheme"];
     account.name = [dict objectForKey:@"name"];
     account.email = [dict objectForKey:@"email"];
-    [self observerLoggedIn];
+    [self.delegate accountManagerLoggedIn:self];
     
     [[ANSyncManager sharedSyncManager] startSyncing];
 }

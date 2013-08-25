@@ -19,7 +19,7 @@
 - (id)initWithDelegate:(id<ANPuzzleSyncerDelegate>)aDel {
     if ((self = [super initWithDelegate:aDel])) {
         ANDataManager * manager = [ANDataManager sharedDataManager];
-        NSArray * reqs = [manager.activeAccount.changes.sessionDeletions array];
+        NSArray * reqs = [manager.activeAccount.changes.sessionDeletions allObjects];
         ANAPICallSessionDeleteRequest * req = [[ANAPICallSessionDeleteRequest alloc] initWithDeleteRequests:reqs];
         [self sendAPICall:req returnSelector:@selector(handleResponse:)];
         

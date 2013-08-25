@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Alex Nichol. All rights reserved.
 //
 
-#import "ANAPIDeleteResponse.h"
+#import "ANAPIPuzzleDeleteResponse.h"
 
-@implementation ANAPIDeleteResponse
+@implementation ANAPIPuzzleDeleteResponse
 
 @synthesize requests;
 

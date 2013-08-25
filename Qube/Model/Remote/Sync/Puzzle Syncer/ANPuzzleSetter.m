@@ -19,7 +19,7 @@
 - (id)initWithDelegate:(id<ANPuzzleSyncerDelegate>)aDel {
     if ((self = [super initWithDelegate:aDel])) {
         ANDataManager * manager = [ANDataManager sharedDataManager];
-        NSArray * settings = [manager.activeAccount.changes.puzzleSettings array];
+        NSArray * settings = [manager.activeAccount.changes.puzzleSettings allObjects];
         ANAPICallPuzzleSet * request = [[ANAPICallPuzzleSet alloc] initWithSettings:settings];
         [self sendAPICall:request returnSelector:@selector(handleSetResponse:)];
     }

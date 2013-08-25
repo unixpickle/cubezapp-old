@@ -20,13 +20,12 @@
 @end
 
 @interface ANSyncManager : NSObject {
-    NSMutableArray * delegates;
     ANSyncSession * session;
 }
 
+@property (nonatomic, weak) id<ANSyncManagerDelegate> delegate;
+
 + (ANSyncManager *)sharedSyncManager;
-- (void)addDelegate:(id<ANSyncManagerDelegate>)delegate;
-- (void)removeDelegate:(id<ANSyncManagerDelegate>)delegate;
 
 - (BOOL)isSyncing;
 - (void)startSyncing;

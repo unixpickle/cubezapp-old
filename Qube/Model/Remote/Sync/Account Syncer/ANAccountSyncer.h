@@ -7,6 +7,9 @@
 //
 
 #import "ANGeneralSyncer.h"
+#import "LocalAccount+Coding.h"
+#import "ANAPICallAccountSet.h"
+#import "ANAPIAccountSetResponse.h"
 
 @class ANAccountSyncer;
 

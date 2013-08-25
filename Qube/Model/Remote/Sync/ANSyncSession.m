@@ -22,7 +22,7 @@
 @implementation ANSyncSession
 
 - (void)startSync {
-    [self beginPuzzleSyncers];
+    activeSyncer = [[ANAccountSyncer alloc] initWithDelegate:self];
 }
 
 - (void)cancelSync {
@@ -78,11 +78,19 @@
         [self runNextPuzzleSyncer];
     } else if ([syncer isKindOfClass:[ANSessionSyncer class]]) {
         [self runNextSessionSyncer];
+    } else if ([syncer isKindOfClass:[ANAccountSyncer class]]) {
+        [self beginPuzzleSyncers];
     }
 }
 
 - (void)generalSyncer:(id)syncer failedWithError:(NSError *)error {
     [self handleError:error];
+}
+
+#pragma mark Account Syncer
+
+- (void)accountSyncer:(ANAccountSyncer *)syncer updatedAccount:(LocalAccount *)account {
+    [self.delegate syncSession:self updatedAccount:account];
 }
 
 #pragma mark Puzzle Syncer

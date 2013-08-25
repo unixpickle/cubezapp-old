@@ -14,7 +14,7 @@
 
 @class ANAccountManager;
 
-@protocol ANAccountManagerObserver <NSObject>
+@protocol ANAccountManagerDelegate <NSObject>
 
 - (void)accountManagerLoggedIn:(ANAccountManager *)manager;
 - (void)accountManager:(ANAccountManager *)manager loginFailed:(NSError *)error;
@@ -23,13 +23,11 @@
 
 @interface ANAccountManager : NSObject {
     ANAPIBaseCall * loginCall;
-    NSMutableArray * observers;
 }
 
-+ (ANAccountManager *)sharedAccountManager;
+@property (nonatomic, weak) id<ANAccountManagerDelegate> delegate;
 
-- (void)addObserver:(id<ANAccountManagerObserver>)observer;
-- (void)removeObserver:(id<ANAccountManagerObserver>)observer;
++ (ANAccountManager *)sharedAccountManager;
 
 - (void)generateDefaultAccount;
 - (void)logout;

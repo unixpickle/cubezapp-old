@@ -19,7 +19,7 @@
 - (id)initWithDelegate:(id<ANSessionSyncerDelegate>)aDel {
     if ((self = [super initWithDelegate:aDel])) {
         ANDataManager * manager = [ANDataManager sharedDataManager];
-        NSArray * adds = [manager.activeAccount.changes.sessionAdditions array];
+        NSArray * adds = [manager.activeAccount.changes.sessionAdditions allObjects];
         ANAPICallSessionAdd * req = [[ANAPICallSessionAdd alloc] initWithAddRequests:adds];
         [self sendAPICall:req returnSelector:nil];
     }

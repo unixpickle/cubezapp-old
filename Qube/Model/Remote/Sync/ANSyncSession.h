@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ANAccountSyncer.h"
+
 #import "ANPuzzleDeleter.h"
 #import "ANPuzzleAdder.h"
 #import "ANPuzzleRenamer.h"
@@ -18,7 +20,7 @@
 #import "ANSessionAdder.h"
 #import "ANSessionGetter.h"
 
-#import "ANAPIDeleteResponse.h"
+#import "ANAPIPuzzleDeleteResponse.h"
 
 @class ANSyncSession;
 
@@ -34,7 +36,7 @@
 
 @end
 
-@interface ANSyncSession : NSObject <ANPuzzleSyncerDelegate, ANSessionSyncerDelegate> {
+@interface ANSyncSession : NSObject <ANPuzzleSyncerDelegate, ANSessionSyncerDelegate, ANAccountSyncerDelegate> {
     NSMutableArray * puzzleSyncers;
     NSMutableArray * sessionSyncers;
     ANGeneralSyncer * activeSyncer;

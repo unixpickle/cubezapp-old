@@ -6,15 +6,8 @@
 //  Copyright (c) 2013 Alex Nichol. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "ANAPIBaseCall.h"
+#import "ANDataManager.h"
 
-@interface ANAPICall : NSObject {
-    NSString * api;
-    NSDictionary * parameters;
-}
-
-- (id)initWithAPI:(NSString *)theApi params:(NSDictionary *)params;
-- (void)fetchResponse:(void (^)(NSError * error, NSDictionary * obj))callback;
-- (void)cancel;
-
+@interface ANAPICall : ANAPIBaseCall
 @end

@@ -44,4 +44,8 @@
     return [self findManagedObject:@"ANSession" withIdentifier:identifier];
 }
 
+- (OCSessionDeletion *)findSessionDeletionForId:(NSData *)identifier {
+    return [self findManagedObject:@"OCSessionDeletion" withIdentifier:identifier];
+}
+
 @end

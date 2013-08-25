@@ -19,5 +19,6 @@
 - (OCPuzzleDeletion *)findPuzzleDeletionForId:(NSData *)identifier;
 
 - (ANSession *)findSessionForId:(NSData *)identifier;
+- (OCSessionDeletion *)findSessionDeletionForId:(NSData *)identifier;
 
 @end

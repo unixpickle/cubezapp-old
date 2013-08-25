@@ -2,7 +2,7 @@
 //  OfflineChanges.h
 //  Qube
 //
-//  Created by Alex Nichol on 8/15/13.
+//  Created by Alex Nichol on 8/23/13.
 //  Copyright (c) 2013 Alex Nichol. All rights reserved.
 //
 
@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSOrderedSet *puzzleSettings;
 @property (nonatomic, retain) NSOrderedSet *sessionAdditions;
 @property (nonatomic, retain) NSOrderedSet *sessionDeletions;
+@property (nonatomic, retain) NSManagedObject *accountChanges;
 @end
 
 @interface OfflineChanges (CoreDataGeneratedAccessors)

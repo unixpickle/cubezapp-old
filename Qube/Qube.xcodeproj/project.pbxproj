@@ -7,17 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA011DB117C45A7700E02076 /* ANSolve.m in Sources */ = {isa = PBXBuildFile; fileRef = FA011DB017C45A7700E02076 /* ANSolve.m */; };
-		FA22185617BDBA8100D71F71 /* LocalAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22185517BDBA8100D71F71 /* LocalAccount.m */; };
 		FA22186017BDE93000D71F71 /* ANAPICall.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22185F17BDE93000D71F71 /* ANAPICall.m */; };
-		FA22186317BDECB800D71F71 /* ANSyncSession.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22186217BDECB800D71F71 /* ANSyncSession.m */; };
 		FA22186A17BDEF7E00D71F71 /* ANConflict.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22186917BDEF7E00D71F71 /* ANConflict.m */; };
 		FA22187017BDF0A300D71F71 /* ANNameCollisionConflict.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22186F17BDF0A300D71F71 /* ANNameCollisionConflict.m */; };
 		FA22187717BDF2DB00D71F71 /* ANConflictResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22187617BDF2DB00D71F71 /* ANConflictResolver.m */; };
 		FA2B335317C478B000F40616 /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2B335217C478B000F40616 /* NSData+MD5.m */; };
-		FA2B335517C52FA400F40616 /* libcommonCrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2B335417C52FA400F40616 /* libcommonCrypto.dylib */; };
-		FA2B335B17C530DF00F40616 /* ANSessionGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2B335817C530DF00F40616 /* ANSessionGetter.m */; };
-		FA2B335C17C530DF00F40616 /* ANSessionsHasher.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2B335A17C530DF00F40616 /* ANSessionsHasher.m */; };
 		FA2B335F17C55F2300F40616 /* ANAPISessionDiffList.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2B335E17C55F2300F40616 /* ANAPISessionDiffList.m */; };
 		FA2B336517C5623300F40616 /* ANAPISessionHashes.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2B336417C5623300F40616 /* ANAPISessionHashes.m */; };
 		FA2C288617BCC42C00F667F6 /* clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2C288417BCC42C00F667F6 /* clock@2x.png */; };
@@ -45,58 +39,65 @@
 		FA4299C417BCBEB6006746B7 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA4299C317BCBEB6006746B7 /* Icon@2x.png */; };
 		FA4299CB17BCBF9A006746B7 /* ANTimerHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4299CA17BCBF9A006746B7 /* ANTimerHomeVC.m */; };
 		FA4299CF17BCC02E006746B7 /* ANStatHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4299CE17BCC02E006746B7 /* ANStatHomeVC.m */; };
-		FA7B18A117BDFA8400D6F7D2 /* OCPuzzleAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B18A017BDFA8400D6F7D2 /* OCPuzzleAddition.m */; };
-		FA7B18A417BDFA8500D6F7D2 /* OCPuzzleDeletion.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B18A317BDFA8500D6F7D2 /* OCPuzzleDeletion.m */; };
-		FA7B18A717BDFA8500D6F7D2 /* OCSessionAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B18A617BDFA8500D6F7D2 /* OCSessionAddition.m */; };
-		FA7B18AA17BDFA8500D6F7D2 /* OfflineChanges.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B18A917BDFA8500D6F7D2 /* OfflineChanges.m */; };
-		FA7B18B017BDFA8500D6F7D2 /* OCSessionDeletion.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B18AF17BDFA8500D6F7D2 /* OCSessionDeletion.m */; };
-		FA7B18C117BDFAF300D6F7D2 /* ANPuzzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B18BC17BDFAF300D6F7D2 /* ANPuzzle.m */; };
-		FA7B18C217BDFAF300D6F7D2 /* ANSession.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B18BE17BDFAF300D6F7D2 /* ANSession.m */; };
 		FA7B18CA17BE030C00D6F7D2 /* ANPuzzle+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B18C917BE030C00D6F7D2 /* ANPuzzle+Coding.m */; };
-		FA9F536C17C6ADE80024923B /* ANPuzzleOrderer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F536B17C6ADE80024923B /* ANPuzzleOrderer.m */; };
-		FA9F536F17C6B0CF0024923B /* ANSessionDeleter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F536E17C6B0CF0024923B /* ANSessionDeleter.m */; };
-		FA9F538617C6B1A20024923B /* ANAPIAddRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537217C6B1A20024923B /* ANAPIAddRequest.m */; };
-		FA9F538717C6B1A20024923B /* ANAPIDeleteRename.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537417C6B1A20024923B /* ANAPIDeleteRename.m */; };
-		FA9F538817C6B1A20024923B /* ANAPIDeleteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537617C6B1A20024923B /* ANAPIDeleteRequest.m */; };
-		FA9F538917C6B1A20024923B /* ANAPIRenameAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537817C6B1A20024923B /* ANAPIRenameAdd.m */; };
-		FA9F538A17C6B1A20024923B /* ANAPIRenameRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537A17C6B1A20024923B /* ANAPIRenameRequest.m */; };
-		FA9F538B17C6B1A20024923B /* ANAPIReplaceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537C17C6B1A20024923B /* ANAPIReplaceRequest.m */; };
-		FA9F538C17C6B1A20024923B /* ANAPISetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537E17C6B1A20024923B /* ANAPISetRequest.m */; };
-		FA9F538D17C6B1A20024923B /* ANAPISessionAddRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F538117C6B1A20024923B /* ANAPISessionAddRequest.m */; };
-		FA9F538E17C6B1A20024923B /* ANAPISessionGetDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F538317C6B1A20024923B /* ANAPISessionGetDiff.m */; };
-		FA9F538F17C6B1A20024923B /* ANAPISessionGetHashes.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F538517C6B1A20024923B /* ANAPISessionGetHashes.m */; };
-		FA9F539217C6B1B60024923B /* ANAPISessionDeleteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F539117C6B1B60024923B /* ANAPISessionDeleteRequest.m */; };
-		FA9F539517C6BA180024923B /* ANPuzzleDeleter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F539417C6BA180024923B /* ANPuzzleDeleter.m */; };
-		FAB9000D17C0B998002DB676 /* ANPuzzleAdder.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9000617C0B998002DB676 /* ANPuzzleAdder.m */; };
-		FAB9000E17C0B998002DB676 /* ANPuzzleRenamer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9000817C0B998002DB676 /* ANPuzzleRenamer.m */; };
-		FAB9000F17C0B998002DB676 /* ANPuzzleSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9000A17C0B998002DB676 /* ANPuzzleSetter.m */; };
-		FAB9001017C0B998002DB676 /* ANPuzzleSyncer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9000C17C0B998002DB676 /* ANPuzzleSyncer.m */; };
-		FAB9001317C0B9C4002DB676 /* ANPuzzleGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9001217C0B9C4002DB676 /* ANPuzzleGetter.m */; };
-		FAB9001617C1F588002DB676 /* ANAPIDeleteResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9001517C1F588002DB676 /* ANAPIDeleteResponse.m */; };
-		FAB9001A17C2AC71002DB676 /* ANSessionSyncer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9001917C2AC71002DB676 /* ANSessionSyncer.m */; };
-		FAB9001D17C2AD0B002DB676 /* ANGeneralSyncer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9001C17C2AD0B002DB676 /* ANGeneralSyncer.m */; };
-		FAB9002017C2AFF7002DB676 /* ANSessionAdder.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9001F17C2AFF7002DB676 /* ANSessionAdder.m */; };
-		FAB9002317C2B0F8002DB676 /* ANAPISetResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9002217C2B0F8002DB676 /* ANAPISetResponse.m */; };
+		FA9F538617C6B1A20024923B /* ANAPICallPuzzleAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537217C6B1A20024923B /* ANAPICallPuzzleAdd.m */; };
+		FA9F538717C6B1A20024923B /* ANAPICallPuzzleDeleteRename.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537417C6B1A20024923B /* ANAPICallPuzzleDeleteRename.m */; };
+		FA9F538817C6B1A20024923B /* ANAPICallPuzzleDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537617C6B1A20024923B /* ANAPICallPuzzleDelete.m */; };
+		FA9F538917C6B1A20024923B /* ANAPICallPuzzleRenameAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537817C6B1A20024923B /* ANAPICallPuzzleRenameAdd.m */; };
+		FA9F538A17C6B1A20024923B /* ANAPICallPuzzleRename.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537A17C6B1A20024923B /* ANAPICallPuzzleRename.m */; };
+		FA9F538B17C6B1A20024923B /* ANAPICallPuzzleReplace.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537C17C6B1A20024923B /* ANAPICallPuzzleReplace.m */; };
+		FA9F538C17C6B1A20024923B /* ANAPICallPuzzleSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537E17C6B1A20024923B /* ANAPICallPuzzleSet.m */; };
+		FA9F538D17C6B1A20024923B /* ANAPICallSessionAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F538117C6B1A20024923B /* ANAPICallSessionAdd.m */; };
+		FA9F538E17C6B1A20024923B /* ANAPICallSessionGetDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F538317C6B1A20024923B /* ANAPICallSessionGetDiff.m */; };
+		FA9F538F17C6B1A20024923B /* ANAPICallSessionGetHashes.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F538517C6B1A20024923B /* ANAPICallSessionGetHashes.m */; };
+		FA9F539217C6B1B60024923B /* ANAPICallSessionDeleteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F539117C6B1B60024923B /* ANAPICallSessionDeleteRequest.m */; };
+		FA9F539817C6C0310024923B /* ANAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F539717C6C0310024923B /* ANAccountManager.m */; };
+		FA9F539B17C6C2030024923B /* ANAPIBaseCall.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F539A17C6C2030024923B /* ANAPIBaseCall.m */; };
+		FA9F539D17C6C7AA0024923B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9F539C17C6C7AA0024923B /* Security.framework */; };
+		FA9F53E917C7F0290024923B /* OCSessionAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F53E817C7F0290024923B /* OCSessionAddition.m */; };
+		FA9F53EC17C7F0290024923B /* OCSessionDeletion.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F53EB17C7F0290024923B /* OCSessionDeletion.m */; };
+		FA9F53EF17C7F0290024923B /* OCPuzzleAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F53EE17C7F0290024923B /* OCPuzzleAddition.m */; };
+		FA9F53F517C7F02A0024923B /* OCPuzzleSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F53F417C7F02A0024923B /* OCPuzzleSetting.m */; };
+		FA9F53F817C7F02A0024923B /* OCPuzzleDeletion.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F53F717C7F02A0024923B /* OCPuzzleDeletion.m */; };
+		FA9F53FB17C7F04D0024923B /* LocalAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F53FA17C7F04D0024923B /* LocalAccount.m */; };
+		FA9F53FE17C7F04E0024923B /* ANSolve.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F53FD17C7F04E0024923B /* ANSolve.m */; };
+		FA9F540117C7F04E0024923B /* ANSession.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F540017C7F04E0024923B /* ANSession.m */; };
+		FA9F540417C7F04E0024923B /* ANPuzzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F540317C7F04E0024923B /* ANPuzzle.m */; };
+		FA9F540717C807D30024923B /* ANSyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F540617C807D30024923B /* ANSyncManager.m */; };
+		FA9F542E17C8236A0024923B /* ANGeneralSyncer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F541017C8236A0024923B /* ANGeneralSyncer.m */; };
+		FA9F542F17C8236A0024923B /* ANSyncSession.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F541217C8236A0024923B /* ANSyncSession.m */; };
+		FA9F543017C8236A0024923B /* ANPuzzleAdder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F541517C8236A0024923B /* ANPuzzleAdder.m */; };
+		FA9F543117C8236A0024923B /* ANPuzzleDeleter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F541717C8236A0024923B /* ANPuzzleDeleter.m */; };
+		FA9F543217C8236A0024923B /* ANPuzzleGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F541917C8236A0024923B /* ANPuzzleGetter.m */; };
+		FA9F543317C8236A0024923B /* ANPuzzleOrderer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F541B17C8236A0024923B /* ANPuzzleOrderer.m */; };
+		FA9F543417C8236A0024923B /* ANPuzzleRenamer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F541D17C8236A0024923B /* ANPuzzleRenamer.m */; };
+		FA9F543517C8236A0024923B /* ANPuzzleSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F541F17C8236A0024923B /* ANPuzzleSetter.m */; };
+		FA9F543617C8236A0024923B /* ANPuzzleSyncer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F542117C8236A0024923B /* ANPuzzleSyncer.m */; };
+		FA9F543717C8236A0024923B /* ANSessionAdder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F542417C8236A0024923B /* ANSessionAdder.m */; };
+		FA9F543817C8236A0024923B /* ANSessionDeleter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F542617C8236A0024923B /* ANSessionDeleter.m */; };
+		FA9F543917C8236A0024923B /* ANSessionSyncer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F542817C8236A0024923B /* ANSessionSyncer.m */; };
+		FA9F543A17C8236A0024923B /* ANSessionGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F542B17C8236A0024923B /* ANSessionGetter.m */; };
+		FA9F543B17C8236A0024923B /* ANSessionsHasher.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F542D17C8236A0024923B /* ANSessionsHasher.m */; };
+		FA9F544417C824CB0024923B /* OCAccountChange.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F544117C824CB0024923B /* OCAccountChange.m */; };
+		FA9F544517C824CB0024923B /* OfflineChanges.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F544317C824CB0024923B /* OfflineChanges.m */; };
+		FA9F544817C8256D0024923B /* LocalAccount+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F544717C8256D0024923B /* LocalAccount+Coding.m */; };
+		FAA38A4717C9A476009361A8 /* ANAccountSyncer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA38A4617C9A476009361A8 /* ANAccountSyncer.m */; };
+		FAA38A5317C9A558009361A8 /* ANAPIAddRenameResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA38A4A17C9A558009361A8 /* ANAPIAddRenameResponse.m */; };
+		FAA38A5417C9A558009361A8 /* ANAPIConflict.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA38A4C17C9A558009361A8 /* ANAPIConflict.m */; };
+		FAA38A5517C9A558009361A8 /* ANAPIDeleteResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA38A4E17C9A558009361A8 /* ANAPIDeleteResponse.m */; };
+		FAA38A5617C9A558009361A8 /* ANAPIPuzzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA38A5017C9A558009361A8 /* ANAPIPuzzle.m */; };
+		FAA38A5717C9A558009361A8 /* ANAPIPuzzleSetResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA38A5217C9A558009361A8 /* ANAPIPuzzleSetResponse.m */; };
+		FAA38A5A17C9A97A009361A8 /* ANAPICallAccountSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA38A5917C9A97A009361A8 /* ANAPICallAccountSet.m */; };
 		FAB9002917C3FEA8002DB676 /* ANSession+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9002817C3FEA8002DB676 /* ANSession+Coding.m */; };
 		FAB9002C17C405A3002DB676 /* ANAPISessionAddResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9002B17C405A3002DB676 /* ANAPISessionAddResponse.m */; };
-		FAC7EDFD17BF59A200DE49EE /* ANAPIConflict.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7EDF717BF59A200DE49EE /* ANAPIConflict.m */; };
-		FAC7EDFE17BF59A200DE49EE /* ANAPIPuzzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7EDF917BF59A200DE49EE /* ANAPIPuzzle.m */; };
-		FAC7EE0117BF59EB00DE49EE /* ANAPIAddRenameResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7EE0017BF59EB00DE49EE /* ANAPIAddRenameResponse.m */; };
 		FAC7EE0717C0481B00DE49EE /* ANRenameCollisionConflict.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7EE0617C0481B00DE49EE /* ANRenameCollisionConflict.m */; };
-		FAC7EE0D17C04AAF00DE49EE /* OCPuzzleSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7EE0C17C04AAF00DE49EE /* OCPuzzleSetting.m */; };
 		FAC7EE2C17C0B50000DE49EE /* ANDataManager+Search.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7EE2B17C0B50000DE49EE /* ANDataManager+Search.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA011DAF17C45A7700E02076 /* ANSolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANSolve.h; path = Model/Puzzles/ANSolve.h; sourceTree = SOURCE_ROOT; };
-		FA011DB017C45A7700E02076 /* ANSolve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANSolve.m; path = Model/Puzzles/ANSolve.m; sourceTree = SOURCE_ROOT; };
 		FA2217FC17BCCE4100D71F71 /* ANConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANConstants.h; sourceTree = "<group>"; };
-		FA22185417BDBA8100D71F71 /* LocalAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalAccount.h; path = Model/LocalAccount.h; sourceTree = SOURCE_ROOT; };
-		FA22185517BDBA8100D71F71 /* LocalAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalAccount.m; path = Model/LocalAccount.m; sourceTree = SOURCE_ROOT; };
 		FA22185E17BDE93000D71F71 /* ANAPICall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICall.h; sourceTree = "<group>"; };
 		FA22185F17BDE93000D71F71 /* ANAPICall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICall.m; sourceTree = "<group>"; };
-		FA22186117BDECB800D71F71 /* ANSyncSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSyncSession.h; sourceTree = "<group>"; };
-		FA22186217BDECB800D71F71 /* ANSyncSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSyncSession.m; sourceTree = "<group>"; };
 		FA22186817BDEF7E00D71F71 /* ANConflict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANConflict.h; sourceTree = "<group>"; };
 		FA22186917BDEF7E00D71F71 /* ANConflict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANConflict.m; sourceTree = "<group>"; };
 		FA22186E17BDF0A300D71F71 /* ANNameCollisionConflict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNameCollisionConflict.h; sourceTree = "<group>"; };
@@ -106,10 +107,6 @@
 		FA2B335117C478B000F40616 /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
 		FA2B335217C478B000F40616 /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5.m"; sourceTree = "<group>"; };
 		FA2B335417C52FA400F40616 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
-		FA2B335717C530DF00F40616 /* ANSessionGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSessionGetter.h; sourceTree = "<group>"; };
-		FA2B335817C530DF00F40616 /* ANSessionGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSessionGetter.m; sourceTree = "<group>"; };
-		FA2B335917C530DF00F40616 /* ANSessionsHasher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSessionsHasher.h; sourceTree = "<group>"; };
-		FA2B335A17C530DF00F40616 /* ANSessionsHasher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSessionsHasher.m; sourceTree = "<group>"; };
 		FA2B335D17C55F2300F40616 /* ANAPISessionDiffList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPISessionDiffList.h; sourceTree = "<group>"; };
 		FA2B335E17C55F2300F40616 /* ANAPISessionDiffList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPISessionDiffList.m; sourceTree = "<group>"; };
 		FA2B336317C5623300F40616 /* ANAPISessionHashes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPISessionHashes.h; sourceTree = "<group>"; };
@@ -149,84 +146,109 @@
 		FA4299CA17BCBF9A006746B7 /* ANTimerHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTimerHomeVC.m; sourceTree = "<group>"; };
 		FA4299CD17BCC02E006746B7 /* ANStatHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANStatHomeVC.h; sourceTree = "<group>"; };
 		FA4299CE17BCC02E006746B7 /* ANStatHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANStatHomeVC.m; sourceTree = "<group>"; };
-		FA7B189F17BDFA8400D6F7D2 /* OCPuzzleAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCPuzzleAddition.h; sourceTree = "<group>"; };
-		FA7B18A017BDFA8400D6F7D2 /* OCPuzzleAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCPuzzleAddition.m; sourceTree = "<group>"; };
-		FA7B18A217BDFA8500D6F7D2 /* OCPuzzleDeletion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCPuzzleDeletion.h; sourceTree = "<group>"; };
-		FA7B18A317BDFA8500D6F7D2 /* OCPuzzleDeletion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCPuzzleDeletion.m; sourceTree = "<group>"; };
-		FA7B18A517BDFA8500D6F7D2 /* OCSessionAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSessionAddition.h; sourceTree = "<group>"; };
-		FA7B18A617BDFA8500D6F7D2 /* OCSessionAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSessionAddition.m; sourceTree = "<group>"; };
-		FA7B18A817BDFA8500D6F7D2 /* OfflineChanges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflineChanges.h; sourceTree = "<group>"; };
-		FA7B18A917BDFA8500D6F7D2 /* OfflineChanges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfflineChanges.m; sourceTree = "<group>"; };
-		FA7B18AE17BDFA8500D6F7D2 /* OCSessionDeletion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSessionDeletion.h; sourceTree = "<group>"; };
-		FA7B18AF17BDFA8500D6F7D2 /* OCSessionDeletion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSessionDeletion.m; sourceTree = "<group>"; };
-		FA7B18BB17BDFAF300D6F7D2 /* ANPuzzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzle.h; sourceTree = "<group>"; };
-		FA7B18BC17BDFAF300D6F7D2 /* ANPuzzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzle.m; sourceTree = "<group>"; };
-		FA7B18BD17BDFAF300D6F7D2 /* ANSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSession.h; sourceTree = "<group>"; };
-		FA7B18BE17BDFAF300D6F7D2 /* ANSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSession.m; sourceTree = "<group>"; };
 		FA7B18C817BE030C00D6F7D2 /* ANPuzzle+Coding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ANPuzzle+Coding.h"; sourceTree = "<group>"; };
 		FA7B18C917BE030C00D6F7D2 /* ANPuzzle+Coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ANPuzzle+Coding.m"; sourceTree = "<group>"; };
-		FA9F536A17C6ADE80024923B /* ANPuzzleOrderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzleOrderer.h; sourceTree = "<group>"; };
-		FA9F536B17C6ADE80024923B /* ANPuzzleOrderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzleOrderer.m; sourceTree = "<group>"; };
-		FA9F536D17C6B0CF0024923B /* ANSessionDeleter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSessionDeleter.h; sourceTree = "<group>"; };
-		FA9F536E17C6B0CF0024923B /* ANSessionDeleter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSessionDeleter.m; sourceTree = "<group>"; };
-		FA9F537117C6B1A20024923B /* ANAPIAddRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPIAddRequest.h; sourceTree = "<group>"; };
-		FA9F537217C6B1A20024923B /* ANAPIAddRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIAddRequest.m; sourceTree = "<group>"; };
-		FA9F537317C6B1A20024923B /* ANAPIDeleteRename.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPIDeleteRename.h; sourceTree = "<group>"; };
-		FA9F537417C6B1A20024923B /* ANAPIDeleteRename.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIDeleteRename.m; sourceTree = "<group>"; };
-		FA9F537517C6B1A20024923B /* ANAPIDeleteRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPIDeleteRequest.h; sourceTree = "<group>"; };
-		FA9F537617C6B1A20024923B /* ANAPIDeleteRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIDeleteRequest.m; sourceTree = "<group>"; };
-		FA9F537717C6B1A20024923B /* ANAPIRenameAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPIRenameAdd.h; sourceTree = "<group>"; };
-		FA9F537817C6B1A20024923B /* ANAPIRenameAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIRenameAdd.m; sourceTree = "<group>"; };
-		FA9F537917C6B1A20024923B /* ANAPIRenameRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPIRenameRequest.h; sourceTree = "<group>"; };
-		FA9F537A17C6B1A20024923B /* ANAPIRenameRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIRenameRequest.m; sourceTree = "<group>"; };
-		FA9F537B17C6B1A20024923B /* ANAPIReplaceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPIReplaceRequest.h; sourceTree = "<group>"; };
-		FA9F537C17C6B1A20024923B /* ANAPIReplaceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIReplaceRequest.m; sourceTree = "<group>"; };
-		FA9F537D17C6B1A20024923B /* ANAPISetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPISetRequest.h; sourceTree = "<group>"; };
-		FA9F537E17C6B1A20024923B /* ANAPISetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPISetRequest.m; sourceTree = "<group>"; };
-		FA9F538017C6B1A20024923B /* ANAPISessionAddRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPISessionAddRequest.h; sourceTree = "<group>"; };
-		FA9F538117C6B1A20024923B /* ANAPISessionAddRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPISessionAddRequest.m; sourceTree = "<group>"; };
-		FA9F538217C6B1A20024923B /* ANAPISessionGetDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPISessionGetDiff.h; sourceTree = "<group>"; };
-		FA9F538317C6B1A20024923B /* ANAPISessionGetDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPISessionGetDiff.m; sourceTree = "<group>"; };
-		FA9F538417C6B1A20024923B /* ANAPISessionGetHashes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPISessionGetHashes.h; sourceTree = "<group>"; };
-		FA9F538517C6B1A20024923B /* ANAPISessionGetHashes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPISessionGetHashes.m; sourceTree = "<group>"; };
-		FA9F539017C6B1B60024923B /* ANAPISessionDeleteRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPISessionDeleteRequest.h; sourceTree = "<group>"; };
-		FA9F539117C6B1B60024923B /* ANAPISessionDeleteRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPISessionDeleteRequest.m; sourceTree = "<group>"; };
-		FA9F539317C6BA180024923B /* ANPuzzleDeleter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzleDeleter.h; sourceTree = "<group>"; };
-		FA9F539417C6BA180024923B /* ANPuzzleDeleter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzleDeleter.m; sourceTree = "<group>"; };
-		FAB9000517C0B998002DB676 /* ANPuzzleAdder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzleAdder.h; sourceTree = "<group>"; };
-		FAB9000617C0B998002DB676 /* ANPuzzleAdder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzleAdder.m; sourceTree = "<group>"; };
-		FAB9000717C0B998002DB676 /* ANPuzzleRenamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzleRenamer.h; sourceTree = "<group>"; };
-		FAB9000817C0B998002DB676 /* ANPuzzleRenamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzleRenamer.m; sourceTree = "<group>"; };
-		FAB9000917C0B998002DB676 /* ANPuzzleSetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzleSetter.h; sourceTree = "<group>"; };
-		FAB9000A17C0B998002DB676 /* ANPuzzleSetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzleSetter.m; sourceTree = "<group>"; };
-		FAB9000B17C0B998002DB676 /* ANPuzzleSyncer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzleSyncer.h; sourceTree = "<group>"; };
-		FAB9000C17C0B998002DB676 /* ANPuzzleSyncer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzleSyncer.m; sourceTree = "<group>"; };
-		FAB9001117C0B9C4002DB676 /* ANPuzzleGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzleGetter.h; sourceTree = "<group>"; };
-		FAB9001217C0B9C4002DB676 /* ANPuzzleGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzleGetter.m; sourceTree = "<group>"; };
-		FAB9001417C1F588002DB676 /* ANAPIDeleteResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPIDeleteResponse.h; sourceTree = "<group>"; };
-		FAB9001517C1F588002DB676 /* ANAPIDeleteResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIDeleteResponse.m; sourceTree = "<group>"; };
-		FAB9001817C2AC71002DB676 /* ANSessionSyncer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSessionSyncer.h; sourceTree = "<group>"; };
-		FAB9001917C2AC71002DB676 /* ANSessionSyncer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSessionSyncer.m; sourceTree = "<group>"; };
-		FAB9001B17C2AD0B002DB676 /* ANGeneralSyncer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANGeneralSyncer.h; sourceTree = "<group>"; };
-		FAB9001C17C2AD0B002DB676 /* ANGeneralSyncer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANGeneralSyncer.m; sourceTree = "<group>"; };
-		FAB9001E17C2AFF7002DB676 /* ANSessionAdder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSessionAdder.h; sourceTree = "<group>"; };
-		FAB9001F17C2AFF7002DB676 /* ANSessionAdder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSessionAdder.m; sourceTree = "<group>"; };
-		FAB9002117C2B0F8002DB676 /* ANAPISetResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPISetResponse.h; sourceTree = "<group>"; };
-		FAB9002217C2B0F8002DB676 /* ANAPISetResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPISetResponse.m; sourceTree = "<group>"; };
+		FA9F537117C6B1A20024923B /* ANAPICallPuzzleAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallPuzzleAdd.h; sourceTree = "<group>"; };
+		FA9F537217C6B1A20024923B /* ANAPICallPuzzleAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICallPuzzleAdd.m; sourceTree = "<group>"; };
+		FA9F537317C6B1A20024923B /* ANAPICallPuzzleDeleteRename.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallPuzzleDeleteRename.h; sourceTree = "<group>"; };
+		FA9F537417C6B1A20024923B /* ANAPICallPuzzleDeleteRename.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICallPuzzleDeleteRename.m; sourceTree = "<group>"; };
+		FA9F537517C6B1A20024923B /* ANAPICallPuzzleDelete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallPuzzleDelete.h; sourceTree = "<group>"; };
+		FA9F537617C6B1A20024923B /* ANAPICallPuzzleDelete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICallPuzzleDelete.m; sourceTree = "<group>"; };
+		FA9F537717C6B1A20024923B /* ANAPICallPuzzleRenameAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallPuzzleRenameAdd.h; sourceTree = "<group>"; };
+		FA9F537817C6B1A20024923B /* ANAPICallPuzzleRenameAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICallPuzzleRenameAdd.m; sourceTree = "<group>"; };
+		FA9F537917C6B1A20024923B /* ANAPICallPuzzleRename.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallPuzzleRename.h; sourceTree = "<group>"; };
+		FA9F537A17C6B1A20024923B /* ANAPICallPuzzleRename.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICallPuzzleRename.m; sourceTree = "<group>"; };
+		FA9F537B17C6B1A20024923B /* ANAPICallPuzzleReplace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallPuzzleReplace.h; sourceTree = "<group>"; };
+		FA9F537C17C6B1A20024923B /* ANAPICallPuzzleReplace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICallPuzzleReplace.m; sourceTree = "<group>"; };
+		FA9F537D17C6B1A20024923B /* ANAPICallPuzzleSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallPuzzleSet.h; sourceTree = "<group>"; };
+		FA9F537E17C6B1A20024923B /* ANAPICallPuzzleSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICallPuzzleSet.m; sourceTree = "<group>"; };
+		FA9F538017C6B1A20024923B /* ANAPICallSessionAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallSessionAdd.h; sourceTree = "<group>"; };
+		FA9F538117C6B1A20024923B /* ANAPICallSessionAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICallSessionAdd.m; sourceTree = "<group>"; };
+		FA9F538217C6B1A20024923B /* ANAPICallSessionGetDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallSessionGetDiff.h; sourceTree = "<group>"; };
+		FA9F538317C6B1A20024923B /* ANAPICallSessionGetDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICallSessionGetDiff.m; sourceTree = "<group>"; };
+		FA9F538417C6B1A20024923B /* ANAPICallSessionGetHashes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallSessionGetHashes.h; sourceTree = "<group>"; };
+		FA9F538517C6B1A20024923B /* ANAPICallSessionGetHashes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICallSessionGetHashes.m; sourceTree = "<group>"; };
+		FA9F539017C6B1B60024923B /* ANAPICallSessionDeleteRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallSessionDeleteRequest.h; sourceTree = "<group>"; };
+		FA9F539117C6B1B60024923B /* ANAPICallSessionDeleteRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICallSessionDeleteRequest.m; sourceTree = "<group>"; };
+		FA9F539617C6C0310024923B /* ANAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAccountManager.h; sourceTree = "<group>"; };
+		FA9F539717C6C0310024923B /* ANAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAccountManager.m; sourceTree = "<group>"; };
+		FA9F539917C6C2030024923B /* ANAPIBaseCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPIBaseCall.h; sourceTree = "<group>"; };
+		FA9F539A17C6C2030024923B /* ANAPIBaseCall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIBaseCall.m; sourceTree = "<group>"; };
+		FA9F539C17C6C7AA0024923B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FA9F53E717C7F0290024923B /* OCSessionAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSessionAddition.h; sourceTree = "<group>"; };
+		FA9F53E817C7F0290024923B /* OCSessionAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSessionAddition.m; sourceTree = "<group>"; };
+		FA9F53EA17C7F0290024923B /* OCSessionDeletion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSessionDeletion.h; sourceTree = "<group>"; };
+		FA9F53EB17C7F0290024923B /* OCSessionDeletion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSessionDeletion.m; sourceTree = "<group>"; };
+		FA9F53ED17C7F0290024923B /* OCPuzzleAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCPuzzleAddition.h; sourceTree = "<group>"; };
+		FA9F53EE17C7F0290024923B /* OCPuzzleAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCPuzzleAddition.m; sourceTree = "<group>"; };
+		FA9F53F317C7F02A0024923B /* OCPuzzleSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCPuzzleSetting.h; sourceTree = "<group>"; };
+		FA9F53F417C7F02A0024923B /* OCPuzzleSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCPuzzleSetting.m; sourceTree = "<group>"; };
+		FA9F53F617C7F02A0024923B /* OCPuzzleDeletion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCPuzzleDeletion.h; sourceTree = "<group>"; };
+		FA9F53F717C7F02A0024923B /* OCPuzzleDeletion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCPuzzleDeletion.m; sourceTree = "<group>"; };
+		FA9F53F917C7F04D0024923B /* LocalAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalAccount.h; path = Model/Puzzles/LocalAccount.h; sourceTree = SOURCE_ROOT; };
+		FA9F53FA17C7F04D0024923B /* LocalAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalAccount.m; path = Model/Puzzles/LocalAccount.m; sourceTree = SOURCE_ROOT; };
+		FA9F53FC17C7F04E0024923B /* ANSolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANSolve.h; path = Model/Puzzles/ANSolve.h; sourceTree = SOURCE_ROOT; };
+		FA9F53FD17C7F04E0024923B /* ANSolve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANSolve.m; path = Model/Puzzles/ANSolve.m; sourceTree = SOURCE_ROOT; };
+		FA9F53FF17C7F04E0024923B /* ANSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANSession.h; path = Model/Puzzles/ANSession.h; sourceTree = SOURCE_ROOT; };
+		FA9F540017C7F04E0024923B /* ANSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANSession.m; path = Model/Puzzles/ANSession.m; sourceTree = SOURCE_ROOT; };
+		FA9F540217C7F04E0024923B /* ANPuzzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANPuzzle.h; path = Model/Puzzles/ANPuzzle.h; sourceTree = SOURCE_ROOT; };
+		FA9F540317C7F04E0024923B /* ANPuzzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANPuzzle.m; path = Model/Puzzles/ANPuzzle.m; sourceTree = SOURCE_ROOT; };
+		FA9F540517C807D30024923B /* ANSyncManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSyncManager.h; sourceTree = "<group>"; };
+		FA9F540617C807D30024923B /* ANSyncManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSyncManager.m; sourceTree = "<group>"; };
+		FA9F540F17C8236A0024923B /* ANGeneralSyncer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANGeneralSyncer.h; sourceTree = "<group>"; };
+		FA9F541017C8236A0024923B /* ANGeneralSyncer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANGeneralSyncer.m; sourceTree = "<group>"; };
+		FA9F541117C8236A0024923B /* ANSyncSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSyncSession.h; sourceTree = "<group>"; };
+		FA9F541217C8236A0024923B /* ANSyncSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSyncSession.m; sourceTree = "<group>"; };
+		FA9F541417C8236A0024923B /* ANPuzzleAdder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzleAdder.h; sourceTree = "<group>"; };
+		FA9F541517C8236A0024923B /* ANPuzzleAdder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzleAdder.m; sourceTree = "<group>"; };
+		FA9F541617C8236A0024923B /* ANPuzzleDeleter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzleDeleter.h; sourceTree = "<group>"; };
+		FA9F541717C8236A0024923B /* ANPuzzleDeleter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzleDeleter.m; sourceTree = "<group>"; };
+		FA9F541817C8236A0024923B /* ANPuzzleGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzleGetter.h; sourceTree = "<group>"; };
+		FA9F541917C8236A0024923B /* ANPuzzleGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzleGetter.m; sourceTree = "<group>"; };
+		FA9F541A17C8236A0024923B /* ANPuzzleOrderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzleOrderer.h; sourceTree = "<group>"; };
+		FA9F541B17C8236A0024923B /* ANPuzzleOrderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzleOrderer.m; sourceTree = "<group>"; };
+		FA9F541C17C8236A0024923B /* ANPuzzleRenamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzleRenamer.h; sourceTree = "<group>"; };
+		FA9F541D17C8236A0024923B /* ANPuzzleRenamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzleRenamer.m; sourceTree = "<group>"; };
+		FA9F541E17C8236A0024923B /* ANPuzzleSetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzleSetter.h; sourceTree = "<group>"; };
+		FA9F541F17C8236A0024923B /* ANPuzzleSetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzleSetter.m; sourceTree = "<group>"; };
+		FA9F542017C8236A0024923B /* ANPuzzleSyncer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzleSyncer.h; sourceTree = "<group>"; };
+		FA9F542117C8236A0024923B /* ANPuzzleSyncer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzleSyncer.m; sourceTree = "<group>"; };
+		FA9F542317C8236A0024923B /* ANSessionAdder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSessionAdder.h; sourceTree = "<group>"; };
+		FA9F542417C8236A0024923B /* ANSessionAdder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSessionAdder.m; sourceTree = "<group>"; };
+		FA9F542517C8236A0024923B /* ANSessionDeleter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSessionDeleter.h; sourceTree = "<group>"; };
+		FA9F542617C8236A0024923B /* ANSessionDeleter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSessionDeleter.m; sourceTree = "<group>"; };
+		FA9F542717C8236A0024923B /* ANSessionSyncer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSessionSyncer.h; sourceTree = "<group>"; };
+		FA9F542817C8236A0024923B /* ANSessionSyncer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSessionSyncer.m; sourceTree = "<group>"; };
+		FA9F542A17C8236A0024923B /* ANSessionGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSessionGetter.h; sourceTree = "<group>"; };
+		FA9F542B17C8236A0024923B /* ANSessionGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSessionGetter.m; sourceTree = "<group>"; };
+		FA9F542C17C8236A0024923B /* ANSessionsHasher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSessionsHasher.h; sourceTree = "<group>"; };
+		FA9F542D17C8236A0024923B /* ANSessionsHasher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSessionsHasher.m; sourceTree = "<group>"; };
+		FA9F544017C824CB0024923B /* OCAccountChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCAccountChange.h; sourceTree = "<group>"; };
+		FA9F544117C824CB0024923B /* OCAccountChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCAccountChange.m; sourceTree = "<group>"; };
+		FA9F544217C824CB0024923B /* OfflineChanges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflineChanges.h; sourceTree = "<group>"; };
+		FA9F544317C824CB0024923B /* OfflineChanges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfflineChanges.m; sourceTree = "<group>"; };
+		FA9F544617C8256D0024923B /* LocalAccount+Coding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LocalAccount+Coding.h"; sourceTree = "<group>"; };
+		FA9F544717C8256D0024923B /* LocalAccount+Coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LocalAccount+Coding.m"; sourceTree = "<group>"; };
+		FAA38A4517C9A476009361A8 /* ANAccountSyncer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAccountSyncer.h; sourceTree = "<group>"; };
+		FAA38A4617C9A476009361A8 /* ANAccountSyncer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAccountSyncer.m; sourceTree = "<group>"; };
+		FAA38A4917C9A558009361A8 /* ANAPIAddRenameResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPIAddRenameResponse.h; sourceTree = "<group>"; };
+		FAA38A4A17C9A558009361A8 /* ANAPIAddRenameResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIAddRenameResponse.m; sourceTree = "<group>"; };
+		FAA38A4B17C9A558009361A8 /* ANAPIConflict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPIConflict.h; sourceTree = "<group>"; };
+		FAA38A4C17C9A558009361A8 /* ANAPIConflict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIConflict.m; sourceTree = "<group>"; };
+		FAA38A4D17C9A558009361A8 /* ANAPIDeleteResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPIDeleteResponse.h; sourceTree = "<group>"; };
+		FAA38A4E17C9A558009361A8 /* ANAPIDeleteResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIDeleteResponse.m; sourceTree = "<group>"; };
+		FAA38A4F17C9A558009361A8 /* ANAPIPuzzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPIPuzzle.h; sourceTree = "<group>"; };
+		FAA38A5017C9A558009361A8 /* ANAPIPuzzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIPuzzle.m; sourceTree = "<group>"; };
+		FAA38A5117C9A558009361A8 /* ANAPIPuzzleSetResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPIPuzzleSetResponse.h; sourceTree = "<group>"; };
+		FAA38A5217C9A558009361A8 /* ANAPIPuzzleSetResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIPuzzleSetResponse.m; sourceTree = "<group>"; };
+		FAA38A5817C9A97A009361A8 /* ANAPICallAccountSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallAccountSet.h; sourceTree = "<group>"; };
+		FAA38A5917C9A97A009361A8 /* ANAPICallAccountSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICallAccountSet.m; sourceTree = "<group>"; };
 		FAB9002717C3FEA8002DB676 /* ANSession+Coding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ANSession+Coding.h"; sourceTree = "<group>"; };
 		FAB9002817C3FEA8002DB676 /* ANSession+Coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ANSession+Coding.m"; sourceTree = "<group>"; };
 		FAB9002A17C405A3002DB676 /* ANAPISessionAddResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPISessionAddResponse.h; sourceTree = "<group>"; };
 		FAB9002B17C405A3002DB676 /* ANAPISessionAddResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPISessionAddResponse.m; sourceTree = "<group>"; };
-		FAC7EDF617BF59A200DE49EE /* ANAPIConflict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPIConflict.h; sourceTree = "<group>"; };
-		FAC7EDF717BF59A200DE49EE /* ANAPIConflict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIConflict.m; sourceTree = "<group>"; };
-		FAC7EDF817BF59A200DE49EE /* ANAPIPuzzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPIPuzzle.h; sourceTree = "<group>"; };
-		FAC7EDF917BF59A200DE49EE /* ANAPIPuzzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIPuzzle.m; sourceTree = "<group>"; };
-		FAC7EDFF17BF59EB00DE49EE /* ANAPIAddRenameResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPIAddRenameResponse.h; sourceTree = "<group>"; };
-		FAC7EE0017BF59EB00DE49EE /* ANAPIAddRenameResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIAddRenameResponse.m; sourceTree = "<group>"; };
 		FAC7EE0517C0481B00DE49EE /* ANRenameCollisionConflict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANRenameCollisionConflict.h; sourceTree = "<group>"; };
 		FAC7EE0617C0481B00DE49EE /* ANRenameCollisionConflict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRenameCollisionConflict.m; sourceTree = "<group>"; };
-		FAC7EE0B17C04AAF00DE49EE /* OCPuzzleSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCPuzzleSetting.h; sourceTree = "<group>"; };
-		FAC7EE0C17C04AAF00DE49EE /* OCPuzzleSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCPuzzleSetting.m; sourceTree = "<group>"; };
 		FAC7EE2A17C0B50000DE49EE /* ANDataManager+Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ANDataManager+Search.h"; sourceTree = "<group>"; };
 		FAC7EE2B17C0B50000DE49EE /* ANDataManager+Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ANDataManager+Search.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -236,7 +258,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA2B335517C52FA400F40616 /* libcommonCrypto.dylib in Frameworks */,
+				FA9F539D17C6C7AA0024923B /* Security.framework in Frameworks */,
 				FA4299BA17BCBB1C006746B7 /* CoreData.framework in Frameworks */,
 				FA42997317BCB4E5006746B7 /* UIKit.framework in Frameworks */,
 				FA42997517BCB4E5006746B7 /* Foundation.framework in Frameworks */,
@@ -250,18 +272,20 @@
 		FA22183717BDB85700D71F71 /* Offline Changes */ = {
 			isa = PBXGroup;
 			children = (
-				FAC7EE0B17C04AAF00DE49EE /* OCPuzzleSetting.h */,
-				FAC7EE0C17C04AAF00DE49EE /* OCPuzzleSetting.m */,
-				FA7B18AE17BDFA8500D6F7D2 /* OCSessionDeletion.h */,
-				FA7B18AF17BDFA8500D6F7D2 /* OCSessionDeletion.m */,
-				FA7B18A817BDFA8500D6F7D2 /* OfflineChanges.h */,
-				FA7B18A917BDFA8500D6F7D2 /* OfflineChanges.m */,
-				FA7B18A517BDFA8500D6F7D2 /* OCSessionAddition.h */,
-				FA7B18A617BDFA8500D6F7D2 /* OCSessionAddition.m */,
-				FA7B18A217BDFA8500D6F7D2 /* OCPuzzleDeletion.h */,
-				FA7B18A317BDFA8500D6F7D2 /* OCPuzzleDeletion.m */,
-				FA7B189F17BDFA8400D6F7D2 /* OCPuzzleAddition.h */,
-				FA7B18A017BDFA8400D6F7D2 /* OCPuzzleAddition.m */,
+				FA9F544017C824CB0024923B /* OCAccountChange.h */,
+				FA9F544117C824CB0024923B /* OCAccountChange.m */,
+				FA9F544217C824CB0024923B /* OfflineChanges.h */,
+				FA9F544317C824CB0024923B /* OfflineChanges.m */,
+				FA9F53F617C7F02A0024923B /* OCPuzzleDeletion.h */,
+				FA9F53F717C7F02A0024923B /* OCPuzzleDeletion.m */,
+				FA9F53F317C7F02A0024923B /* OCPuzzleSetting.h */,
+				FA9F53F417C7F02A0024923B /* OCPuzzleSetting.m */,
+				FA9F53ED17C7F0290024923B /* OCPuzzleAddition.h */,
+				FA9F53EE17C7F0290024923B /* OCPuzzleAddition.m */,
+				FA9F53EA17C7F0290024923B /* OCSessionDeletion.h */,
+				FA9F53EB17C7F0290024923B /* OCSessionDeletion.m */,
+				FA9F53E717C7F0290024923B /* OCSessionAddition.h */,
+				FA9F53E817C7F0290024923B /* OCSessionAddition.m */,
 			);
 			path = "Offline Changes";
 			sourceTree = "<group>";
@@ -269,14 +293,15 @@
 		FA22185D17BDE92400D71F71 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				FA9F539917C6C2030024923B /* ANAPIBaseCall.h */,
+				FA9F539A17C6C2030024923B /* ANAPIBaseCall.m */,
 				FA22185E17BDE93000D71F71 /* ANAPICall.h */,
 				FA22185F17BDE93000D71F71 /* ANAPICall.m */,
-				FA22186117BDECB800D71F71 /* ANSyncSession.h */,
-				FA22186217BDECB800D71F71 /* ANSyncSession.m */,
-				FAB9001B17C2AD0B002DB676 /* ANGeneralSyncer.h */,
-				FAB9001C17C2AD0B002DB676 /* ANGeneralSyncer.m */,
-				FAB9001717C2AC69002DB676 /* Session Syncer */,
-				FAB9000417C0B998002DB676 /* Puzzle Syncer */,
+				FA9F539617C6C0310024923B /* ANAccountManager.h */,
+				FA9F539717C6C0310024923B /* ANAccountManager.m */,
+				FA9F540517C807D30024923B /* ANSyncManager.h */,
+				FA9F540617C807D30024923B /* ANSyncManager.m */,
+				FA9F540E17C8236A0024923B /* Sync */,
 				FAC7EDDE17BF46D100DE49EE /* API Packets */,
 				FA7B18C717BE030C00D6F7D2 /* Coders */,
 				FA22186717BDEF7400D71F71 /* Conflicts */,
@@ -315,17 +340,6 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		FA2B335617C530DF00F40616 /* Session Getter */ = {
-			isa = PBXGroup;
-			children = (
-				FA2B335717C530DF00F40616 /* ANSessionGetter.h */,
-				FA2B335817C530DF00F40616 /* ANSessionGetter.m */,
-				FA2B335917C530DF00F40616 /* ANSessionsHasher.h */,
-				FA2B335A17C530DF00F40616 /* ANSessionsHasher.m */,
-			);
-			path = "Session Getter";
-			sourceTree = "<group>";
-		};
 		FA2C289517BCC75C00F667F6 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +371,7 @@
 		FA42997117BCB4E5006746B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA9F539C17C6C7AA0024923B /* Security.framework */,
 				FA2B335417C52FA400F40616 /* libcommonCrypto.dylib */,
 				FA4299B917BCBB1B006746B7 /* CoreData.framework */,
 				FA42997217BCB4E5006746B7 /* UIKit.framework */,
@@ -417,8 +432,6 @@
 				FA4299BC17BCBC1A006746B7 /* ANDataManager.m */,
 				FAC7EE2A17C0B50000DE49EE /* ANDataManager+Search.h */,
 				FAC7EE2B17C0B50000DE49EE /* ANDataManager+Search.m */,
-				FA22185417BDBA8100D71F71 /* LocalAccount.h */,
-				FA22185517BDBA8100D71F71 /* LocalAccount.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -444,12 +457,14 @@
 		FA7B18BA17BDFAF300D6F7D2 /* Puzzles */ = {
 			isa = PBXGroup;
 			children = (
-				FA7B18BB17BDFAF300D6F7D2 /* ANPuzzle.h */,
-				FA7B18BC17BDFAF300D6F7D2 /* ANPuzzle.m */,
-				FA7B18BD17BDFAF300D6F7D2 /* ANSession.h */,
-				FA7B18BE17BDFAF300D6F7D2 /* ANSession.m */,
-				FA011DAF17C45A7700E02076 /* ANSolve.h */,
-				FA011DB017C45A7700E02076 /* ANSolve.m */,
+				FA9F53F917C7F04D0024923B /* LocalAccount.h */,
+				FA9F53FA17C7F04D0024923B /* LocalAccount.m */,
+				FA9F540217C7F04E0024923B /* ANPuzzle.h */,
+				FA9F540317C7F04E0024923B /* ANPuzzle.m */,
+				FA9F53FF17C7F04E0024923B /* ANSession.h */,
+				FA9F540017C7F04E0024923B /* ANSession.m */,
+				FA9F53FC17C7F04E0024923B /* ANSolve.h */,
+				FA9F53FD17C7F04E0024923B /* ANSolve.m */,
 			);
 			path = Puzzles;
 			sourceTree = "<group>";
@@ -461,6 +476,8 @@
 				FA7B18C917BE030C00D6F7D2 /* ANPuzzle+Coding.m */,
 				FAB9002717C3FEA8002DB676 /* ANSession+Coding.h */,
 				FAB9002817C3FEA8002DB676 /* ANSession+Coding.m */,
+				FA9F544617C8256D0024923B /* LocalAccount+Coding.h */,
+				FA9F544717C8256D0024923B /* LocalAccount+Coding.m */,
 			);
 			path = Coders;
 			sourceTree = "<group>";
@@ -468,20 +485,20 @@
 		FA9F537017C6B1A20024923B /* Puzzles */ = {
 			isa = PBXGroup;
 			children = (
-				FA9F537117C6B1A20024923B /* ANAPIAddRequest.h */,
-				FA9F537217C6B1A20024923B /* ANAPIAddRequest.m */,
-				FA9F537317C6B1A20024923B /* ANAPIDeleteRename.h */,
-				FA9F537417C6B1A20024923B /* ANAPIDeleteRename.m */,
-				FA9F537517C6B1A20024923B /* ANAPIDeleteRequest.h */,
-				FA9F537617C6B1A20024923B /* ANAPIDeleteRequest.m */,
-				FA9F537717C6B1A20024923B /* ANAPIRenameAdd.h */,
-				FA9F537817C6B1A20024923B /* ANAPIRenameAdd.m */,
-				FA9F537917C6B1A20024923B /* ANAPIRenameRequest.h */,
-				FA9F537A17C6B1A20024923B /* ANAPIRenameRequest.m */,
-				FA9F537B17C6B1A20024923B /* ANAPIReplaceRequest.h */,
-				FA9F537C17C6B1A20024923B /* ANAPIReplaceRequest.m */,
-				FA9F537D17C6B1A20024923B /* ANAPISetRequest.h */,
-				FA9F537E17C6B1A20024923B /* ANAPISetRequest.m */,
+				FA9F537117C6B1A20024923B /* ANAPICallPuzzleAdd.h */,
+				FA9F537217C6B1A20024923B /* ANAPICallPuzzleAdd.m */,
+				FA9F537317C6B1A20024923B /* ANAPICallPuzzleDeleteRename.h */,
+				FA9F537417C6B1A20024923B /* ANAPICallPuzzleDeleteRename.m */,
+				FA9F537517C6B1A20024923B /* ANAPICallPuzzleDelete.h */,
+				FA9F537617C6B1A20024923B /* ANAPICallPuzzleDelete.m */,
+				FA9F537717C6B1A20024923B /* ANAPICallPuzzleRenameAdd.h */,
+				FA9F537817C6B1A20024923B /* ANAPICallPuzzleRenameAdd.m */,
+				FA9F537917C6B1A20024923B /* ANAPICallPuzzleRename.h */,
+				FA9F537A17C6B1A20024923B /* ANAPICallPuzzleRename.m */,
+				FA9F537B17C6B1A20024923B /* ANAPICallPuzzleReplace.h */,
+				FA9F537C17C6B1A20024923B /* ANAPICallPuzzleReplace.m */,
+				FA9F537D17C6B1A20024923B /* ANAPICallPuzzleSet.h */,
+				FA9F537E17C6B1A20024923B /* ANAPICallPuzzleSet.m */,
 			);
 			path = Puzzles;
 			sourceTree = "<group>";
@@ -489,51 +506,111 @@
 		FA9F537F17C6B1A20024923B /* Sessions */ = {
 			isa = PBXGroup;
 			children = (
-				FA9F538017C6B1A20024923B /* ANAPISessionAddRequest.h */,
-				FA9F538117C6B1A20024923B /* ANAPISessionAddRequest.m */,
-				FA9F538217C6B1A20024923B /* ANAPISessionGetDiff.h */,
-				FA9F538317C6B1A20024923B /* ANAPISessionGetDiff.m */,
-				FA9F538417C6B1A20024923B /* ANAPISessionGetHashes.h */,
-				FA9F538517C6B1A20024923B /* ANAPISessionGetHashes.m */,
-				FA9F539017C6B1B60024923B /* ANAPISessionDeleteRequest.h */,
-				FA9F539117C6B1B60024923B /* ANAPISessionDeleteRequest.m */,
+				FA9F538017C6B1A20024923B /* ANAPICallSessionAdd.h */,
+				FA9F538117C6B1A20024923B /* ANAPICallSessionAdd.m */,
+				FA9F538217C6B1A20024923B /* ANAPICallSessionGetDiff.h */,
+				FA9F538317C6B1A20024923B /* ANAPICallSessionGetDiff.m */,
+				FA9F538417C6B1A20024923B /* ANAPICallSessionGetHashes.h */,
+				FA9F538517C6B1A20024923B /* ANAPICallSessionGetHashes.m */,
+				FA9F539017C6B1B60024923B /* ANAPICallSessionDeleteRequest.h */,
+				FA9F539117C6B1B60024923B /* ANAPICallSessionDeleteRequest.m */,
 			);
 			path = Sessions;
 			sourceTree = "<group>";
 		};
-		FAB9000417C0B998002DB676 /* Puzzle Syncer */ = {
+		FA9F540E17C8236A0024923B /* Sync */ = {
 			isa = PBXGroup;
 			children = (
-				FAB9000B17C0B998002DB676 /* ANPuzzleSyncer.h */,
-				FAB9000C17C0B998002DB676 /* ANPuzzleSyncer.m */,
-				FA9F539317C6BA180024923B /* ANPuzzleDeleter.h */,
-				FA9F539417C6BA180024923B /* ANPuzzleDeleter.m */,
-				FAB9000517C0B998002DB676 /* ANPuzzleAdder.h */,
-				FAB9000617C0B998002DB676 /* ANPuzzleAdder.m */,
-				FAB9000717C0B998002DB676 /* ANPuzzleRenamer.h */,
-				FAB9000817C0B998002DB676 /* ANPuzzleRenamer.m */,
-				FAB9000917C0B998002DB676 /* ANPuzzleSetter.h */,
-				FAB9000A17C0B998002DB676 /* ANPuzzleSetter.m */,
-				FAB9001117C0B9C4002DB676 /* ANPuzzleGetter.h */,
-				FAB9001217C0B9C4002DB676 /* ANPuzzleGetter.m */,
-				FA9F536A17C6ADE80024923B /* ANPuzzleOrderer.h */,
-				FA9F536B17C6ADE80024923B /* ANPuzzleOrderer.m */,
+				FA9F541117C8236A0024923B /* ANSyncSession.h */,
+				FA9F541217C8236A0024923B /* ANSyncSession.m */,
+				FA9F540F17C8236A0024923B /* ANGeneralSyncer.h */,
+				FA9F541017C8236A0024923B /* ANGeneralSyncer.m */,
+				FAA38A4417C9A476009361A8 /* Account Syncer */,
+				FA9F541317C8236A0024923B /* Puzzle Syncer */,
+				FA9F542217C8236A0024923B /* Session Syncer */,
+			);
+			path = Sync;
+			sourceTree = "<group>";
+		};
+		FA9F541317C8236A0024923B /* Puzzle Syncer */ = {
+			isa = PBXGroup;
+			children = (
+				FA9F541417C8236A0024923B /* ANPuzzleAdder.h */,
+				FA9F541517C8236A0024923B /* ANPuzzleAdder.m */,
+				FA9F541617C8236A0024923B /* ANPuzzleDeleter.h */,
+				FA9F541717C8236A0024923B /* ANPuzzleDeleter.m */,
+				FA9F541817C8236A0024923B /* ANPuzzleGetter.h */,
+				FA9F541917C8236A0024923B /* ANPuzzleGetter.m */,
+				FA9F541A17C8236A0024923B /* ANPuzzleOrderer.h */,
+				FA9F541B17C8236A0024923B /* ANPuzzleOrderer.m */,
+				FA9F541C17C8236A0024923B /* ANPuzzleRenamer.h */,
+				FA9F541D17C8236A0024923B /* ANPuzzleRenamer.m */,
+				FA9F541E17C8236A0024923B /* ANPuzzleSetter.h */,
+				FA9F541F17C8236A0024923B /* ANPuzzleSetter.m */,
+				FA9F542017C8236A0024923B /* ANPuzzleSyncer.h */,
+				FA9F542117C8236A0024923B /* ANPuzzleSyncer.m */,
 			);
 			path = "Puzzle Syncer";
 			sourceTree = "<group>";
 		};
-		FAB9001717C2AC69002DB676 /* Session Syncer */ = {
+		FA9F542217C8236A0024923B /* Session Syncer */ = {
 			isa = PBXGroup;
 			children = (
-				FA2B335617C530DF00F40616 /* Session Getter */,
-				FAB9001817C2AC71002DB676 /* ANSessionSyncer.h */,
-				FAB9001917C2AC71002DB676 /* ANSessionSyncer.m */,
-				FA9F536D17C6B0CF0024923B /* ANSessionDeleter.h */,
-				FA9F536E17C6B0CF0024923B /* ANSessionDeleter.m */,
-				FAB9001E17C2AFF7002DB676 /* ANSessionAdder.h */,
-				FAB9001F17C2AFF7002DB676 /* ANSessionAdder.m */,
+				FA9F542717C8236A0024923B /* ANSessionSyncer.h */,
+				FA9F542817C8236A0024923B /* ANSessionSyncer.m */,
+				FA9F542317C8236A0024923B /* ANSessionAdder.h */,
+				FA9F542417C8236A0024923B /* ANSessionAdder.m */,
+				FA9F542517C8236A0024923B /* ANSessionDeleter.h */,
+				FA9F542617C8236A0024923B /* ANSessionDeleter.m */,
+				FA9F542917C8236A0024923B /* Session Getter */,
 			);
 			path = "Session Syncer";
+			sourceTree = "<group>";
+		};
+		FA9F542917C8236A0024923B /* Session Getter */ = {
+			isa = PBXGroup;
+			children = (
+				FA9F542A17C8236A0024923B /* ANSessionGetter.h */,
+				FA9F542B17C8236A0024923B /* ANSessionGetter.m */,
+				FA9F542C17C8236A0024923B /* ANSessionsHasher.h */,
+				FA9F542D17C8236A0024923B /* ANSessionsHasher.m */,
+			);
+			path = "Session Getter";
+			sourceTree = "<group>";
+		};
+		FA9F543F17C824AA0024923B /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				FAA38A5817C9A97A009361A8 /* ANAPICallAccountSet.h */,
+				FAA38A5917C9A97A009361A8 /* ANAPICallAccountSet.m */,
+			);
+			path = Accounts;
+			sourceTree = "<group>";
+		};
+		FAA38A4417C9A476009361A8 /* Account Syncer */ = {
+			isa = PBXGroup;
+			children = (
+				FAA38A4517C9A476009361A8 /* ANAccountSyncer.h */,
+				FAA38A4617C9A476009361A8 /* ANAccountSyncer.m */,
+			);
+			path = "Account Syncer";
+			sourceTree = "<group>";
+		};
+		FAA38A4817C9A558009361A8 /* Puzzles */ = {
+			isa = PBXGroup;
+			children = (
+				FAA38A4917C9A558009361A8 /* ANAPIAddRenameResponse.h */,
+				FAA38A4A17C9A558009361A8 /* ANAPIAddRenameResponse.m */,
+				FAA38A4B17C9A558009361A8 /* ANAPIConflict.h */,
+				FAA38A4C17C9A558009361A8 /* ANAPIConflict.m */,
+				FAA38A4D17C9A558009361A8 /* ANAPIDeleteResponse.h */,
+				FAA38A4E17C9A558009361A8 /* ANAPIDeleteResponse.m */,
+				FAA38A4F17C9A558009361A8 /* ANAPIPuzzle.h */,
+				FAA38A5017C9A558009361A8 /* ANAPIPuzzle.m */,
+				FAA38A5117C9A558009361A8 /* ANAPIPuzzleSetResponse.h */,
+				FAA38A5217C9A558009361A8 /* ANAPIPuzzleSetResponse.m */,
+			);
+			path = Puzzles;
 			sourceTree = "<group>";
 		};
 		FAC7EDDE17BF46D100DE49EE /* API Packets */ = {
@@ -548,6 +625,7 @@
 		FAC7EDEE17BF59A200DE49EE /* Calls */ = {
 			isa = PBXGroup;
 			children = (
+				FA9F543F17C824AA0024923B /* Accounts */,
 				FA9F537017C6B1A20024923B /* Puzzles */,
 				FA9F537F17C6B1A20024923B /* Sessions */,
 			);
@@ -557,16 +635,7 @@
 		FAC7EDF517BF59A200DE49EE /* Response Objects */ = {
 			isa = PBXGroup;
 			children = (
-				FAC7EDF617BF59A200DE49EE /* ANAPIConflict.h */,
-				FAC7EDF717BF59A200DE49EE /* ANAPIConflict.m */,
-				FAC7EDF817BF59A200DE49EE /* ANAPIPuzzle.h */,
-				FAC7EDF917BF59A200DE49EE /* ANAPIPuzzle.m */,
-				FAC7EDFF17BF59EB00DE49EE /* ANAPIAddRenameResponse.h */,
-				FAC7EE0017BF59EB00DE49EE /* ANAPIAddRenameResponse.m */,
-				FAB9001417C1F588002DB676 /* ANAPIDeleteResponse.h */,
-				FAB9001517C1F588002DB676 /* ANAPIDeleteResponse.m */,
-				FAB9002117C2B0F8002DB676 /* ANAPISetResponse.h */,
-				FAB9002217C2B0F8002DB676 /* ANAPISetResponse.m */,
+				FAA38A4817C9A558009361A8 /* Puzzles */,
 				FAB9002A17C405A3002DB676 /* ANAPISessionAddResponse.h */,
 				FAB9002B17C405A3002DB676 /* ANAPISessionAddResponse.m */,
 				FA2B335D17C55F2300F40616 /* ANAPISessionDiffList.h */,
@@ -653,65 +722,72 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA42997F17BCB4E5006746B7 /* main.m in Sources */,
+				FA9F543517C8236A0024923B /* ANPuzzleSetter.m in Sources */,
 				FAC7EE2C17C0B50000DE49EE /* ANDataManager+Search.m in Sources */,
-				FA9F538C17C6B1A20024923B /* ANAPISetRequest.m in Sources */,
-				FAB9002017C2AFF7002DB676 /* ANSessionAdder.m in Sources */,
+				FA9F538C17C6B1A20024923B /* ANAPICallPuzzleSet.m in Sources */,
+				FA9F53F517C7F02A0024923B /* OCPuzzleSetting.m in Sources */,
+				FA9F543617C8236A0024923B /* ANPuzzleSyncer.m in Sources */,
+				FAA38A5A17C9A97A009361A8 /* ANAPICallAccountSet.m in Sources */,
 				FA2B335F17C55F2300F40616 /* ANAPISessionDiffList.m in Sources */,
 				FA42998317BCB4E5006746B7 /* ANAppDelegate.m in Sources */,
-				FA9F536C17C6ADE80024923B /* ANPuzzleOrderer.m in Sources */,
-				FA9F538817C6B1A20024923B /* ANAPIDeleteRequest.m in Sources */,
+				FA9F53F817C7F02A0024923B /* OCPuzzleDeletion.m in Sources */,
+				FA9F538817C6B1A20024923B /* ANAPICallPuzzleDelete.m in Sources */,
+				FAA38A5417C9A558009361A8 /* ANAPIConflict.m in Sources */,
+				FA9F543717C8236A0024923B /* ANSessionAdder.m in Sources */,
+				FA9F53EC17C7F0290024923B /* OCSessionDeletion.m in Sources */,
+				FA9F542F17C8236A0024923B /* ANSyncSession.m in Sources */,
 				FA42998C17BCB4E5006746B7 /* ANViewController.m in Sources */,
-				FAC7EDFD17BF59A200DE49EE /* ANAPIConflict.m in Sources */,
-				FA9F538917C6B1A20024923B /* ANAPIRenameAdd.m in Sources */,
-				FAC7EDFE17BF59A200DE49EE /* ANAPIPuzzle.m in Sources */,
+				FA9F543917C8236A0024923B /* ANSessionSyncer.m in Sources */,
+				FA9F53FB17C7F04D0024923B /* LocalAccount.m in Sources */,
+				FAA38A5717C9A558009361A8 /* ANAPIPuzzleSetResponse.m in Sources */,
+				FA9F544417C824CB0024923B /* OCAccountChange.m in Sources */,
+				FA9F538917C6B1A20024923B /* ANAPICallPuzzleRenameAdd.m in Sources */,
+				FA9F543017C8236A0024923B /* ANPuzzleAdder.m in Sources */,
+				FA9F544817C8256D0024923B /* LocalAccount+Coding.m in Sources */,
 				FA4299A117BCB772006746B7 /* Model.xcdatamodeld in Sources */,
-				FA9F539217C6B1B60024923B /* ANAPISessionDeleteRequest.m in Sources */,
-				FA22185617BDBA8100D71F71 /* LocalAccount.m in Sources */,
-				FA22186317BDECB800D71F71 /* ANSyncSession.m in Sources */,
-				FA7B18C217BDFAF300D6F7D2 /* ANSession.m in Sources */,
-				FA9F538E17C6B1A20024923B /* ANAPISessionGetDiff.m in Sources */,
+				FA9F539217C6B1B60024923B /* ANAPICallSessionDeleteRequest.m in Sources */,
+				FA9F538E17C6B1A20024923B /* ANAPICallSessionGetDiff.m in Sources */,
+				FA9F539B17C6C2030024923B /* ANAPIBaseCall.m in Sources */,
 				FA22186A17BDEF7E00D71F71 /* ANConflict.m in Sources */,
-				FAB9000D17C0B998002DB676 /* ANPuzzleAdder.m in Sources */,
-				FA9F538D17C6B1A20024923B /* ANAPISessionAddRequest.m in Sources */,
+				FA9F543817C8236A0024923B /* ANSessionDeleter.m in Sources */,
+				FAA38A5317C9A558009361A8 /* ANAPIAddRenameResponse.m in Sources */,
+				FA9F544517C824CB0024923B /* OfflineChanges.m in Sources */,
+				FA9F540717C807D30024923B /* ANSyncManager.m in Sources */,
+				FA9F543317C8236A0024923B /* ANPuzzleOrderer.m in Sources */,
+				FA9F53FE17C7F04E0024923B /* ANSolve.m in Sources */,
+				FAA38A5617C9A558009361A8 /* ANAPIPuzzle.m in Sources */,
+				FA9F538D17C6B1A20024923B /* ANAPICallSessionAdd.m in Sources */,
 				FA4299BD17BCBC1A006746B7 /* ANDataManager.m in Sources */,
-				FA9F539517C6BA180024923B /* ANPuzzleDeleter.m in Sources */,
-				FAB9001017C0B998002DB676 /* ANPuzzleSyncer.m in Sources */,
 				FAC7EE0717C0481B00DE49EE /* ANRenameCollisionConflict.m in Sources */,
+				FA9F543A17C8236A0024923B /* ANSessionGetter.m in Sources */,
+				FAA38A4717C9A476009361A8 /* ANAccountSyncer.m in Sources */,
+				FA9F543117C8236A0024923B /* ANPuzzleDeleter.m in Sources */,
+				FA9F540417C7F04E0024923B /* ANPuzzle.m in Sources */,
 				FA4299CB17BCBF9A006746B7 /* ANTimerHomeVC.m in Sources */,
-				FAB9002317C2B0F8002DB676 /* ANAPISetResponse.m in Sources */,
-				FA9F538717C6B1A20024923B /* ANAPIDeleteRename.m in Sources */,
-				FAB9000E17C0B998002DB676 /* ANPuzzleRenamer.m in Sources */,
-				FA9F538B17C6B1A20024923B /* ANAPIReplaceRequest.m in Sources */,
-				FA7B18A117BDFA8400D6F7D2 /* OCPuzzleAddition.m in Sources */,
-				FA9F536F17C6B0CF0024923B /* ANSessionDeleter.m in Sources */,
+				FA9F538717C6B1A20024923B /* ANAPICallPuzzleDeleteRename.m in Sources */,
+				FA9F538B17C6B1A20024923B /* ANAPICallPuzzleReplace.m in Sources */,
+				FA9F53EF17C7F0290024923B /* OCPuzzleAddition.m in Sources */,
 				FAB9002C17C405A3002DB676 /* ANAPISessionAddResponse.m in Sources */,
-				FA7B18AA17BDFA8500D6F7D2 /* OfflineChanges.m in Sources */,
 				FA4299CF17BCC02E006746B7 /* ANStatHomeVC.m in Sources */,
-				FA7B18B017BDFA8500D6F7D2 /* OCSessionDeletion.m in Sources */,
-				FA7B18A417BDFA8500D6F7D2 /* OCPuzzleDeletion.m in Sources */,
 				FA2B335317C478B000F40616 /* NSData+MD5.m in Sources */,
+				FA9F540117C7F04E0024923B /* ANSession.m in Sources */,
+				FA9F543B17C8236A0024923B /* ANSessionsHasher.m in Sources */,
+				FA9F543217C8236A0024923B /* ANPuzzleGetter.m in Sources */,
 				FA2C289817BCC76700F667F6 /* ANSettingsHomeVC.m in Sources */,
 				FA7B18CA17BE030C00D6F7D2 /* ANPuzzle+Coding.m in Sources */,
-				FA2B335C17C530DF00F40616 /* ANSessionsHasher.m in Sources */,
 				FA22187717BDF2DB00D71F71 /* ANConflictResolver.m in Sources */,
-				FA7B18A717BDFA8500D6F7D2 /* OCSessionAddition.m in Sources */,
-				FAC7EE0D17C04AAF00DE49EE /* OCPuzzleSetting.m in Sources */,
 				FAB9002917C3FEA8002DB676 /* ANSession+Coding.m in Sources */,
-				FAB9001617C1F588002DB676 /* ANAPIDeleteResponse.m in Sources */,
+				FA9F542E17C8236A0024923B /* ANGeneralSyncer.m in Sources */,
 				FA2B336517C5623300F40616 /* ANAPISessionHashes.m in Sources */,
-				FA2B335B17C530DF00F40616 /* ANSessionGetter.m in Sources */,
-				FAB9001D17C2AD0B002DB676 /* ANGeneralSyncer.m in Sources */,
-				FA9F538F17C6B1A20024923B /* ANAPISessionGetHashes.m in Sources */,
+				FA9F538F17C6B1A20024923B /* ANAPICallSessionGetHashes.m in Sources */,
+				FA9F539817C6C0310024923B /* ANAccountManager.m in Sources */,
+				FA9F543417C8236A0024923B /* ANPuzzleRenamer.m in Sources */,
 				FA22187017BDF0A300D71F71 /* ANNameCollisionConflict.m in Sources */,
-				FAC7EE0117BF59EB00DE49EE /* ANAPIAddRenameResponse.m in Sources */,
-				FA9F538617C6B1A20024923B /* ANAPIAddRequest.m in Sources */,
-				FA011DB117C45A7700E02076 /* ANSolve.m in Sources */,
-				FA9F538A17C6B1A20024923B /* ANAPIRenameRequest.m in Sources */,
-				FAB9000F17C0B998002DB676 /* ANPuzzleSetter.m in Sources */,
-				FAB9001317C0B9C4002DB676 /* ANPuzzleGetter.m in Sources */,
-				FAB9001A17C2AC71002DB676 /* ANSessionSyncer.m in Sources */,
+				FAA38A5517C9A558009361A8 /* ANAPIDeleteResponse.m in Sources */,
+				FA9F538617C6B1A20024923B /* ANAPICallPuzzleAdd.m in Sources */,
+				FA9F538A17C6B1A20024923B /* ANAPICallPuzzleRename.m in Sources */,
+				FA9F53E917C7F0290024923B /* OCSessionAddition.m in Sources */,
 				FA22186017BDE93000D71F71 /* ANAPICall.m in Sources */,
-				FA7B18C117BDFAF300D6F7D2 /* ANPuzzle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,19 +11,13 @@
 @implementation ANAPICall
 
 - (id)initWithAPI:(NSString *)theApi params:(NSDictionary *)params {
-    if ((self = [super init])) {
-        api = theApi;
-        parameters = params;
-    }
+    NSMutableDictionary * paramsDict = [params mutableCopy];
+    [paramsDict setObject:[ANDataManager sharedDataManager].activeAccount.username
+                   forKey:@"username"];
+    [paramsDict setObject:[ANDataManager sharedDataManager].activeAccount.passwordmd5
+                   forKey:@"hash"];
+    self = [super initWithAPI:theApi params:paramsDict];
     return self;
-}
-
-- (void)fetchResponse:(void (^)(NSError * error, NSDictionary * obj))callback {
-    callback([NSError errorWithDomain:@"NYI" code:0 userInfo:nil], nil);
-}
-
-- (void)cancel {
-    
 }
 
 @end

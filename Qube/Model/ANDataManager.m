@@ -72,44 +72,12 @@
     if (activeAccount) return activeAccount;
     NSFetchRequest * request = [[NSFetchRequest alloc] init];
     [request setEntity:[[model entitiesByName] objectForKey:@"LocalAccount"]];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"active == YES"]];
     NSArray * accountList = [context executeFetchRequest:request error:nil];
     NSAssert([accountList count] < 2, @"Too many active accounts in the data store.");
-    if ([accountList count] == 0) {
-        activeAccount = [NSEntityDescription insertNewObjectForEntityForName:@"LocalAccount"
-                                                      inManagedObjectContext:context];
-        [self generateDefaultAccount:activeAccount];
-        [context save:nil];
-    } else {
+    if ([accountList count] == 1) {
         activeAccount = [accountList lastObject];
     }
     return activeAccount;
-}
-
-- (void)switchToAccount:(LocalAccount *)anAccount {
-    [self activeAccount].active = NO;
-    anAccount.active = YES;
-    [context save:nil];
-    activeAccount = anAccount;
-}
-
-- (LocalAccount *)localAccountForUsername:(NSString *)username {
-    NSFetchRequest * request = [[NSFetchRequest alloc] init];
-    [request setEntity:[[model entitiesByName] objectForKey:@"LocalAccount"]];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"username == %@", username]];
-    NSArray * accountList = [context executeFetchRequest:request error:nil];
-    LocalAccount * account = [accountList firstObject];
-    if (!account) {
-        account = [NSEntityDescription insertNewObjectForEntityForName:@"LocalAccount"
-                                                inManagedObjectContext:context];
-        account.username = username;
-        [context save:nil];
-    }
-    return account;
-}
-
-- (void)generateDefaultAccount:(LocalAccount *)account {
-    
 }
 
 #pragma mark - Puzzles -

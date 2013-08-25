@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ANSettingsHomeVC : UIViewController
+@interface ANSettingsHomeVC : UIViewController {
+    
+}
 
 @end

@@ -19,6 +19,7 @@
 #import "OCPuzzleSetting.h"
 #import "OCSessionAddition.h"
 #import "OCSessionDeletion.h"
+#import "OCAccountChange.h"
 #import "OfflineChanges.h"
 
 @interface ANDataManager : NSObject {
@@ -32,10 +33,6 @@
 + (ANDataManager *)sharedDataManager;
 
 - (LocalAccount *)activeAccount;
-- (void)switchToAccount:(LocalAccount *)anAccount;
-- (LocalAccount *)localAccountForUsername:(NSString *)username;
-
-- (void)generateDefaultAccount:(LocalAccount *)account;
 
 - (ANPuzzle *)createPuzzleObject;
 - (ANSession *)createSessionObject;

@@ -21,7 +21,7 @@
 - (id)initWithPuzzleAdditions:(NSArray *)additions {
     NSMutableArray * puzzleList = [NSMutableArray array];
     for (OCPuzzleAddition * addition in additions) {
-        [puzzleList addObject:puzzleList];
+        [puzzleList addObject:addition.puzzle];
     }
     if ((self = [super initWithAPI:@"puzzles.add"
                             params:[self.class encodeWithPuzzles:puzzleList]])) {

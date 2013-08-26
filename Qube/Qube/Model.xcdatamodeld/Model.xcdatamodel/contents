@@ -4,7 +4,7 @@
         <attribute name="hidden" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="iconColor" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="Binary" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="inspectionTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="scramble" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -78,7 +78,6 @@
         <relationship name="sessionDeletions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OCSessionDeletion" inverseName="changes" inverseEntity="OCSessionDeletion" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ANPuzzle" positionX="0" positionY="0" width="0" height="0"/>
         <element name="ANSession" positionX="0" positionY="0" width="0" height="0"/>
         <element name="ANSolve" positionX="0" positionY="0" width="0" height="0"/>
         <element name="LocalAccount" positionX="0" positionY="0" width="0" height="0"/>
@@ -89,5 +88,6 @@
         <element name="OCSessionAddition" positionX="0" positionY="0" width="0" height="0"/>
         <element name="OCSessionDeletion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="OfflineChanges" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="ANPuzzle" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

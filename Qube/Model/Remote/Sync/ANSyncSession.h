@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ANAccountSyncer.h"
+#import "ANImageDownloader.h"
+#import "ANImageUploader.h"
 
 #import "ANPuzzleDeleter.h"
 #import "ANPuzzleAdder.h"
@@ -29,16 +31,16 @@
 - (void)syncSession:(ANSyncSession *)session addedPuzzle:(ANPuzzle *)puzzle;
 - (void)syncSession:(ANSyncSession *)session deletedPuzzle:(ANPuzzle *)puzzle;
 - (void)syncSession:(ANSyncSession *)session updatedPuzzle:(ANPuzzle *)puzzle;
-- (void)syncSession:(ANSyncSession *)session puzzleGraphChanged:(ANPuzzle *)puzzle;
+- (void)syncSession:(ANSyncSession *)session addedSession:(ANSession *)puzzle;
+- (void)syncSession:(ANSyncSession *)session deletedSession:(ANSession *)session;
 - (void)syncSession:(ANSyncSession *)session updatedAccount:(LocalAccount *)account;
 - (void)syncSession:(ANSyncSession *)session failedWithError:(NSError *)error;
 - (void)syncSessionCompleted:(ANSyncSession *)session;
 
 @end
 
-@interface ANSyncSession : NSObject <ANPuzzleSyncerDelegate, ANSessionSyncerDelegate, ANAccountSyncerDelegate> {
-    NSMutableArray * puzzleSyncers;
-    NSMutableArray * sessionSyncers;
+@interface ANSyncSession : NSObject <ANPuzzleSyncerDelegate, ANSessionSyncerDelegate, ANAccountSyncerDelegate, ANImageDownloaderDelegate> {
+    NSMutableArray * syncerClasses;
     ANGeneralSyncer * activeSyncer;
 }
 

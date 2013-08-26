@@ -48,4 +48,11 @@
     return [self findManagedObject:@"OCSessionDeletion" withIdentifier:identifier];
 }
 
+- (NSArray *)findPuzzlesWithImageHash:(NSData *)hash {
+    NSFetchRequest * request = [[NSFetchRequest alloc] init];
+    [request setEntity:[[model entitiesByName] objectForKey:@"ANPuzzle"]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"image == %@", hash]];
+    return [context executeFetchRequest:request error:nil];
+}
+
 @end

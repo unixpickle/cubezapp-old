@@ -21,4 +21,6 @@
 - (ANSession *)findSessionForId:(NSData *)identifier;
 - (OCSessionDeletion *)findSessionDeletionForId:(NSData *)identifier;
 
+- (NSArray *)findPuzzlesWithImageHash:(NSData *)hash;
+
 @end

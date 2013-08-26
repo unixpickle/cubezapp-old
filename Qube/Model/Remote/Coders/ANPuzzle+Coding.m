@@ -31,7 +31,7 @@
     } else if ([attr isEqualToString:kANPuzzleAttributeIconColor]) {
         return self.iconColor;
     } else if ([attr isEqualToString:kANPuzzleAttributeImageHash]) {
-        return [self.image dataUsingEncoding:NSASCIIStringEncoding];
+        return self.image;
     } else if ([attr isEqualToString:kANPuzzleAttributeInspectionTime]) {
         NSString * timeStr = [NSString stringWithFormat:@"%lf", self.inspectionTime];
         return [timeStr dataUsingEncoding:NSASCIIStringEncoding];
@@ -66,8 +66,7 @@
     } else if ([attr isEqualToString:kANPuzzleAttributeIconColor]) {
         self.iconColor = data;
     } else if ([attr isEqualToString:kANPuzzleAttributeImageHash]) {
-        self.image = [[NSString alloc] initWithData:data
-                                             encoding:NSASCIIStringEncoding];
+        self.image = data;
     } else if ([attr isEqualToString:kANPuzzleAttributeInspectionTime]) {
         NSString * timeStr = [[NSString alloc] initWithData:data
                                                    encoding:NSASCIIStringEncoding];

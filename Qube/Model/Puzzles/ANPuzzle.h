@@ -16,7 +16,7 @@
 @property (nonatomic) BOOL hidden;
 @property (nonatomic, retain) NSData * iconColor;
 @property (nonatomic, retain) NSData * identifier;
-@property (nonatomic, retain) NSString * image;
+@property (nonatomic, retain) NSData * image;
 @property (nonatomic) double inspectionTime;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic) BOOL scramble;

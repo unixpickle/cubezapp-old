@@ -9,7 +9,6 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="scramble" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="scrambleLength" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="sessionLength" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="showSrcamble" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="showStats" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -78,6 +77,7 @@
         <relationship name="sessionDeletions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OCSessionDeletion" inverseName="changes" inverseEntity="OCSessionDeletion" syncable="YES"/>
     </entity>
     <elements>
+        <element name="ANPuzzle" positionX="0" positionY="0" width="0" height="0"/>
         <element name="ANSession" positionX="0" positionY="0" width="0" height="0"/>
         <element name="ANSolve" positionX="0" positionY="0" width="0" height="0"/>
         <element name="LocalAccount" positionX="0" positionY="0" width="0" height="0"/>
@@ -88,6 +88,5 @@
         <element name="OCSessionAddition" positionX="0" positionY="0" width="0" height="0"/>
         <element name="OCSessionDeletion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="OfflineChanges" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="ANPuzzle" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

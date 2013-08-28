@@ -43,9 +43,6 @@
     } else if ([attr isEqualToString:kANPuzzleAttributeScrambleLen]) {
         NSString * lenStr = [NSString stringWithFormat:@"%d", self.scrambleLength];
         return [lenStr dataUsingEncoding:NSASCIIStringEncoding];
-    } else if ([attr isEqualToString:kANPuzzleAttributeSessionLen]) {
-        NSString * lenStr = [NSString stringWithFormat:@"%d", self.sessionLength];
-        return [lenStr dataUsingEncoding:NSASCIIStringEncoding];
     } else if ([attr isEqualToString:kANPuzzleAttributeShowScramble]) {
         UInt8 byte = self.showSrcamble;
         return [NSData dataWithBytes:&byte length:1];
@@ -81,10 +78,6 @@
         NSString * lenStr = [[NSString alloc] initWithData:data
                                                   encoding:NSASCIIStringEncoding];
         self.scrambleLength = (int16_t)[lenStr intValue];
-    } else if ([attr isEqualToString:kANPuzzleAttributeSessionLen]) {
-        NSString * lenStr = [[NSString alloc] initWithData:data
-                                                  encoding:NSASCIIStringEncoding];
-        self.sessionLength = (int16_t)[lenStr intValue];
     } else if ([attr isEqualToString:kANPuzzleAttributeShowScramble]) {
         UInt8 byte = *((const UInt8 *)[data bytes]);
         self.showSrcamble = byte;

@@ -21,7 +21,6 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic) BOOL scramble;
 @property (nonatomic) int16_t scrambleLength;
-@property (nonatomic) int16_t sessionLength;
 @property (nonatomic) BOOL showSrcamble;
 @property (nonatomic) BOOL showStats;
 @property (nonatomic) int16_t type;

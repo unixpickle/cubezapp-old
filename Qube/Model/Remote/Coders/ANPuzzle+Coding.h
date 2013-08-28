@@ -16,7 +16,6 @@
 #define kANPuzzleAttributeInspectionTime @"InspectionTime"
 #define kANPuzzleAttributeScramble @"Scramble"
 #define kANPuzzleAttributeScrambleLen @"ScrambleLen"
-#define kANPuzzleAttributeSessionLen @"SessionLen"
 #define kANPuzzleAttributeShowScramble @"ShowScramble"
 #define kANPuzzleAttributeShowStats @"ShowStats"
 #define kANPuzzleAttributeType @"Type"

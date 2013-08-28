@@ -452,13 +452,14 @@
 		FA42999517BCB542006746B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FA56E5BD17CBF1BA006FC1D1 /* Image Manager */,
 				FA22185D17BDE92400D71F71 /* Remote */,
 				FA22183717BDB85700D71F71 /* Offline Changes */,
 				FA7B18BA17BDFAF300D6F7D2 /* Puzzles */,
 				FA2217FC17BCCE4100D71F71 /* ANConstants.h */,
 				FA4299BB17BCBC1A006746B7 /* ANDataManager.h */,
 				FA4299BC17BCBC1A006746B7 /* ANDataManager.m */,
+				FA56E5BE17CBF268006FC1D1 /* ANImageManager.h */,
+				FA56E5BF17CBF268006FC1D1 /* ANImageManager.m */,
 				FAC7EE2A17C0B50000DE49EE /* ANDataManager+Search.h */,
 				FAC7EE2B17C0B50000DE49EE /* ANDataManager+Search.m */,
 			);
@@ -481,15 +482,6 @@
 				FA4299CE17BCC02E006746B7 /* ANStatHomeVC.m */,
 			);
 			path = Statistics;
-			sourceTree = "<group>";
-		};
-		FA56E5BD17CBF1BA006FC1D1 /* Image Manager */ = {
-			isa = PBXGroup;
-			children = (
-				FA56E5BE17CBF268006FC1D1 /* ANImageManager.h */,
-				FA56E5BF17CBF268006FC1D1 /* ANImageManager.m */,
-			);
-			name = "Image Manager";
 			sourceTree = "<group>";
 		};
 		FA56E5C717CC0AB8006FC1D1 /* Image Syncer */ = {

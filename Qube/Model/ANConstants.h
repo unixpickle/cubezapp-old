@@ -10,7 +10,7 @@
 #define Qube_ANConstants_h
 
 typedef enum {
-    ANPuzzleType2x2,
+    ANPuzzleType2x2 = 0,
     ANPuzzleType3x3,
     ANPuzzleType4x4,
     ANPuzzleType5x5,

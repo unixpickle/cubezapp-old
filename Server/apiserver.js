@@ -1,10 +1,11 @@
 var http = require('http');
 var url = require('url');
+var handler = require('./apihandler.js');
 
 function handleAPICall(req, res) {
     var theBuff = new Buffer('');
     
-    var acceptedTypes = ['application/keyedbits', 'application/keyedbits-64'];
+    var acceptedTypes = ['application/keyedbits', 'application/keyedbits64'];
     if (acceptedTypes.indexOf(req.headers['content-type'])) {
         res.writeHead(400, {'Content-Type': 'text/plain'});
         res.end('Invalid content type. Must provide KeyedBits data.');
@@ -20,10 +21,11 @@ function handleAPICall(req, res) {
     });
     req.on('end', function () {
         // parse the data and hand it off
-        if (req.headers['content-type'] == 'application/keyedbits') {
-            // it is raw keyedbits data
-        } else {
-            // it is base64 encoded keyedbits data
+        var packet = handler.processPacket(theBuff, req.headers['content-type']);
+        if (!packet) {
+            res.writeHead(400, {'Content-Type': 'text/plain'});
+            res.end('Invalid content type. Must provide KeyedBits data.');
+            return;
         }
     });
 }

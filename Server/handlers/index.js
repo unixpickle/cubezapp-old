@@ -1,0 +1,1 @@
+exports.dispatch = require('./dispatch.js');

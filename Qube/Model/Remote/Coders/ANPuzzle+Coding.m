@@ -18,7 +18,6 @@
              kANPuzzleAttributeInspectionTime,
              kANPuzzleAttributeScramble,
              kANPuzzleAttributeScrambleLen,
-             kANPuzzleAttributeSessionLen,
              kANPuzzleAttributeShowScramble,
              kANPuzzleAttributeShowStats,
              kANPuzzleAttributeType];

@@ -23,7 +23,6 @@
 @dynamic name;
 @dynamic scramble;
 @dynamic scrambleLength;
-@dynamic sessionLength;
 @dynamic showSrcamble;
 @dynamic showStats;
 @dynamic type;

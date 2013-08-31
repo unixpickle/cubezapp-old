@@ -1,12 +1,13 @@
 var http = require('http');
 var url = require('url');
-var handler = require('./apihandler.js');
+var apiDispatch = require('./handlers').dispatch;
 
 function handleAPICall(req, res) {
     var theBuff = new Buffer('');
+    var contentType = req.headers['content-type'];
     
     var acceptedTypes = ['application/keyedbits', 'application/keyedbits64'];
-    if (acceptedTypes.indexOf(req.headers['content-type'])) {
+    if (acceptedTypes.indexOf(contentType)) {
         res.writeHead(400, {'Content-Type': 'text/plain'});
         res.end('Invalid content type. Must provide KeyedBits data.');
         return;
@@ -14,19 +15,14 @@ function handleAPICall(req, res) {
     
     req.on('data', function (data) {
         theBuff = Buffer.concat([theBuff, data]);
-        if (theBuff.length > 1000000) {
-            // a one megabyte API call? this is too big!
+        if (theBuff.length > 1000000) { // a one megabyte API call? this is too big!
             req.connection.destroy();
         }
     });
+    
     req.on('end', function () {
         // parse the data and hand it off
-        var packet = handler.processPacket(theBuff, req.headers['content-type']);
-        if (!packet) {
-            res.writeHead(400, {'Content-Type': 'text/plain'});
-            res.end('Invalid content type. Must provide KeyedBits data.');
-            return;
-        }
+        apiDispatch.dispatchHandler(theBuff, contentType, res);
     });
 }
 

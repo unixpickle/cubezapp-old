@@ -101,6 +101,11 @@
 		FAB9002917C3FEA8002DB676 /* ANSession+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9002817C3FEA8002DB676 /* ANSession+Coding.m */; };
 		FAC7EE0717C0481B00DE49EE /* ANRenameCollisionConflict.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7EE0617C0481B00DE49EE /* ANRenameCollisionConflict.m */; };
 		FAC7EE2C17C0B50000DE49EE /* ANDataManager+Search.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7EE2B17C0B50000DE49EE /* ANDataManager+Search.m */; };
+		FAFDDEDC17D190410057E12F /* KBContext.c in Sources */ = {isa = PBXBuildFile; fileRef = FAFDDED217D190410057E12F /* KBContext.c */; };
+		FAFDDEDD17D190410057E12F /* KBDecode.c in Sources */ = {isa = PBXBuildFile; fileRef = FAFDDED417D190410057E12F /* KBDecode.c */; };
+		FAFDDEDE17D190410057E12F /* KBDecodeObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFDDED717D190410057E12F /* KBDecodeObjC.m */; };
+		FAFDDEDF17D190410057E12F /* KBEncode.c in Sources */ = {isa = PBXBuildFile; fileRef = FAFDDED817D190410057E12F /* KBEncode.c */; };
+		FAFDDEE017D190410057E12F /* KBEncodeObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFDDEDB17D190410057E12F /* KBEncodeObjC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -278,6 +283,17 @@
 		FAC7EE0617C0481B00DE49EE /* ANRenameCollisionConflict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRenameCollisionConflict.m; sourceTree = "<group>"; };
 		FAC7EE2A17C0B50000DE49EE /* ANDataManager+Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ANDataManager+Search.h"; sourceTree = "<group>"; };
 		FAC7EE2B17C0B50000DE49EE /* ANDataManager+Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ANDataManager+Search.m"; sourceTree = "<group>"; };
+		FAFDDED117D190410057E12F /* KBConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBConst.h; sourceTree = "<group>"; };
+		FAFDDED217D190410057E12F /* KBContext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = KBContext.c; sourceTree = "<group>"; };
+		FAFDDED317D190410057E12F /* KBContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBContext.h; sourceTree = "<group>"; };
+		FAFDDED417D190410057E12F /* KBDecode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = KBDecode.c; sourceTree = "<group>"; };
+		FAFDDED517D190410057E12F /* KBDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBDecode.h; sourceTree = "<group>"; };
+		FAFDDED617D190410057E12F /* KBDecodeObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBDecodeObjC.h; sourceTree = "<group>"; };
+		FAFDDED717D190410057E12F /* KBDecodeObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBDecodeObjC.m; sourceTree = "<group>"; };
+		FAFDDED817D190410057E12F /* KBEncode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = KBEncode.c; sourceTree = "<group>"; };
+		FAFDDED917D190410057E12F /* KBEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBEncode.h; sourceTree = "<group>"; };
+		FAFDDEDA17D190410057E12F /* KBEncodeObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBEncodeObjC.h; sourceTree = "<group>"; };
+		FAFDDEDB17D190410057E12F /* KBEncodeObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBEncodeObjC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -379,6 +395,7 @@
 		FA42996617BCB4E5006746B7 = {
 			isa = PBXGroup;
 			children = (
+				FAFDDED017D190410057E12F /* KBCKit */,
 				FA2B335017C4780600F40616 /* Utilities */,
 				FA42999517BCB542006746B7 /* Model */,
 				FAA38A7217C9B34D009361A8 /* Controller */,
@@ -739,6 +756,24 @@
 			path = "Response Objects";
 			sourceTree = "<group>";
 		};
+		FAFDDED017D190410057E12F /* KBCKit */ = {
+			isa = PBXGroup;
+			children = (
+				FAFDDED117D190410057E12F /* KBConst.h */,
+				FAFDDED217D190410057E12F /* KBContext.c */,
+				FAFDDED317D190410057E12F /* KBContext.h */,
+				FAFDDED417D190410057E12F /* KBDecode.c */,
+				FAFDDED517D190410057E12F /* KBDecode.h */,
+				FAFDDED617D190410057E12F /* KBDecodeObjC.h */,
+				FAFDDED717D190410057E12F /* KBDecodeObjC.m */,
+				FAFDDED817D190410057E12F /* KBEncode.c */,
+				FAFDDED917D190410057E12F /* KBEncode.h */,
+				FAFDDEDA17D190410057E12F /* KBEncodeObjC.h */,
+				FAFDDEDB17D190410057E12F /* KBEncodeObjC.m */,
+			);
+			path = KBCKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -824,6 +859,7 @@
 				FAA38A7117C9AD9F009361A8 /* OfflineChanges.m in Sources */,
 				FA42998317BCB4E5006746B7 /* ANAppDelegate.m in Sources */,
 				FA9F53F817C7F02A0024923B /* OCPuzzleDeletion.m in Sources */,
+				FAFDDEDC17D190410057E12F /* KBContext.c in Sources */,
 				FA9F538817C6B1A20024923B /* ANAPICallPuzzleDelete.m in Sources */,
 				FAA38A5417C9A558009361A8 /* ANAPIConflict.m in Sources */,
 				FA56E5D117CC1073006FC1D1 /* ANAPICallImageUpload.m in Sources */,
@@ -859,6 +895,7 @@
 				FA9F543117C8236A0024923B /* ANPuzzleDeleter.m in Sources */,
 				FAA38A6317C9ABF3009361A8 /* ANAPISessionDiffList.m in Sources */,
 				FA9F540417C7F04E0024923B /* ANPuzzle.m in Sources */,
+				FAFDDEDD17D190410057E12F /* KBDecode.c in Sources */,
 				FA4299CB17BCBF9A006746B7 /* ANTimerHomeVC.m in Sources */,
 				FAA38A7717C9B34D009361A8 /* ANAccountManager.m in Sources */,
 				FA9F538717C6B1A20024923B /* ANAPICallPuzzleDeleteRename.m in Sources */,
@@ -874,13 +911,16 @@
 				FA2C289817BCC76700F667F6 /* ANSettingsHomeVC.m in Sources */,
 				FA7B18CA17BE030C00D6F7D2 /* ANPuzzle+Coding.m in Sources */,
 				FA56E5CA17CC0AC3006FC1D1 /* ANImageDownloader.m in Sources */,
+				FAFDDEE017D190410057E12F /* KBEncodeObjC.m in Sources */,
 				FA22187717BDF2DB00D71F71 /* ANConflictResolver.m in Sources */,
+				FAFDDEDE17D190410057E12F /* KBDecodeObjC.m in Sources */,
 				FAB9002917C3FEA8002DB676 /* ANSession+Coding.m in Sources */,
 				FAA38A6817C9AC0D009361A8 /* ANAPIAccountSetResponse.m in Sources */,
 				FA9F542E17C8236A0024923B /* ANGeneralSyncer.m in Sources */,
 				FA9F538F17C6B1A20024923B /* ANAPICallSessionGetHashes.m in Sources */,
 				FA9F543417C8236A0024923B /* ANPuzzleRenamer.m in Sources */,
 				FA56E5C017CBF268006FC1D1 /* ANImageManager.m in Sources */,
+				FAFDDEDF17D190410057E12F /* KBEncode.c in Sources */,
 				FA22187017BDF0A300D71F71 /* ANNameCollisionConflict.m in Sources */,
 				FAA38A5517C9A558009361A8 /* ANAPIPuzzleDeleteResponse.m in Sources */,
 				FA56E5CE17CC0FBB006FC1D1 /* ANAPICallImageDownload.m in Sources */,

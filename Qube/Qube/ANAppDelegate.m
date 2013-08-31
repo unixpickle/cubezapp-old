@@ -19,6 +19,14 @@
     self.viewController = [[ANViewController alloc] initWithNibName:@"ANViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    ANAPIBaseCall * call = [[ANAPIBaseCall alloc] initWithAPI:@"account.signin"
+                                                       params:@{@"username": @"alex",
+                                                                @"hash": [NSData data]}];
+    [call fetchResponse:^(NSError *error, NSDictionary *obj) {
+        NSLog(@"error %@, object %@", error, obj);
+    }];
+    
     return YES;
 }
 

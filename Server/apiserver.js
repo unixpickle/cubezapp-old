@@ -1,7 +1,14 @@
+// node.js modules
 var http = require('http');
 var url = require('url');
-var apiDispatch = require('./handlers').dispatch;
 
+// my modules
+var webapi = require('webapi');
+var db = require('accountdata').db;
+
+/**
+ * Called for all requests to /api
+ */
 function handleAPICall(req, res) {
     var theBuff = new Buffer('');
     var contentType = req.headers['content-type'];
@@ -22,17 +29,34 @@ function handleAPICall(req, res) {
     
     req.on('end', function () {
         // parse the data and hand it off
-        apiDispatch.dispatchHandler(theBuff, contentType, res);
+        webapi.respond(theBuff, contentType, res);
     });
 }
 
-http.createServer(function (req, res) {
-    var parsed = url.parse(req.url, false);
-    if (parsed.pathname == '/api') {
-        // we have an API call and we shall handle it
-        handleAPICall(req, res);
+/**
+ * Creates the HTTP server *
+ */
+function serve(port) {
+    http.createServer(function (req, res) {
+        var parsed = url.parse(req.url, false);
+        if (parsed.pathname == '/api') {
+            // we have an API call and we shall handle it
+            handleAPICall(req, res);
+        } else {
+            res.writeHead(200, {'Content-Type': 'text/html'});
+            res.end('You are a loser');
+        }
+    }).listen(port, '');
+    console.log('Created HTTP server on port ' + port);
+}
+
+db.conn.initializeDb(function (err) {
+    if (err) {
+        console.log('Failed to initialize database: ' + err.message);
+        process.exit();
     } else {
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.end('You are a loser');
+        console.log('Successfully initialized database');
+        serve(1234);
     }
-}).listen(1234, '127.0.0.1');
+});
+

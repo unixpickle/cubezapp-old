@@ -37,6 +37,7 @@
 		FA4299C417BCBEB6006746B7 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA4299C317BCBEB6006746B7 /* Icon@2x.png */; };
 		FA4299CB17BCBF9A006746B7 /* ANTimerHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4299CA17BCBF9A006746B7 /* ANTimerHomeVC.m */; };
 		FA4299CF17BCC02E006746B7 /* ANStatHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4299CE17BCC02E006746B7 /* ANStatHomeVC.m */; };
+		FA507C1717D2A94100F3600B /* ANAPICallSignup.m in Sources */ = {isa = PBXBuildFile; fileRef = FA507C1617D2A94100F3600B /* ANAPICallSignup.m */; };
 		FA56E5C017CBF268006FC1D1 /* ANImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA56E5BF17CBF268006FC1D1 /* ANImageManager.m */; };
 		FA56E5C317CBF79C006FC1D1 /* NSString+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = FA56E5C217CBF79C006FC1D1 /* NSString+Hex.m */; };
 		FA56E5C617CBF9E6006FC1D1 /* NSData+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = FA56E5C517CBF9E6006FC1D1 /* NSData+Hex.m */; };
@@ -101,6 +102,7 @@
 		FAB9002917C3FEA8002DB676 /* ANSession+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9002817C3FEA8002DB676 /* ANSession+Coding.m */; };
 		FAC7EE0717C0481B00DE49EE /* ANRenameCollisionConflict.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7EE0617C0481B00DE49EE /* ANRenameCollisionConflict.m */; };
 		FAC7EE2C17C0B50000DE49EE /* ANDataManager+Search.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7EE2B17C0B50000DE49EE /* ANDataManager+Search.m */; };
+		FADBADF517D2C74300BD3E85 /* ANCubeScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = FADBADF417D2C74300BD3E85 /* ANCubeScheme.m */; };
 		FAFDDEDC17D190410057E12F /* KBContext.c in Sources */ = {isa = PBXBuildFile; fileRef = FAFDDED217D190410057E12F /* KBContext.c */; };
 		FAFDDEDD17D190410057E12F /* KBDecode.c in Sources */ = {isa = PBXBuildFile; fileRef = FAFDDED417D190410057E12F /* KBDecode.c */; };
 		FAFDDEDE17D190410057E12F /* KBDecodeObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFDDED717D190410057E12F /* KBDecodeObjC.m */; };
@@ -156,6 +158,8 @@
 		FA4299CA17BCBF9A006746B7 /* ANTimerHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTimerHomeVC.m; sourceTree = "<group>"; };
 		FA4299CD17BCC02E006746B7 /* ANStatHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANStatHomeVC.h; sourceTree = "<group>"; };
 		FA4299CE17BCC02E006746B7 /* ANStatHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANStatHomeVC.m; sourceTree = "<group>"; };
+		FA507C1517D2A94100F3600B /* ANAPICallSignup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallSignup.h; sourceTree = "<group>"; };
+		FA507C1617D2A94100F3600B /* ANAPICallSignup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICallSignup.m; sourceTree = "<group>"; };
 		FA56E5BE17CBF268006FC1D1 /* ANImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANImageManager.h; sourceTree = "<group>"; };
 		FA56E5BF17CBF268006FC1D1 /* ANImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANImageManager.m; sourceTree = "<group>"; };
 		FA56E5C117CBF79C006FC1D1 /* NSString+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hex.h"; sourceTree = "<group>"; };
@@ -283,6 +287,8 @@
 		FAC7EE0617C0481B00DE49EE /* ANRenameCollisionConflict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRenameCollisionConflict.m; sourceTree = "<group>"; };
 		FAC7EE2A17C0B50000DE49EE /* ANDataManager+Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ANDataManager+Search.h"; sourceTree = "<group>"; };
 		FAC7EE2B17C0B50000DE49EE /* ANDataManager+Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ANDataManager+Search.m"; sourceTree = "<group>"; };
+		FADBADF317D2C74300BD3E85 /* ANCubeScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCubeScheme.h; sourceTree = "<group>"; };
+		FADBADF417D2C74300BD3E85 /* ANCubeScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCubeScheme.m; sourceTree = "<group>"; };
 		FAFDDED117D190410057E12F /* KBConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBConst.h; sourceTree = "<group>"; };
 		FAFDDED217D190410057E12F /* KBContext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = KBContext.c; sourceTree = "<group>"; };
 		FAFDDED317D190410057E12F /* KBContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBContext.h; sourceTree = "<group>"; };
@@ -469,6 +475,7 @@
 		FA42999517BCB542006746B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FADBADF217D2C70E00BD3E85 /* Local Objects */,
 				FA22185D17BDE92400D71F71 /* Remote */,
 				FA22183717BDB85700D71F71 /* Offline Changes */,
 				FA7B18BA17BDFAF300D6F7D2 /* Puzzles */,
@@ -662,6 +669,8 @@
 			children = (
 				FAA38A5817C9A97A009361A8 /* ANAPICallAccountSet.h */,
 				FAA38A5917C9A97A009361A8 /* ANAPICallAccountSet.m */,
+				FA507C1517D2A94100F3600B /* ANAPICallSignup.h */,
+				FA507C1617D2A94100F3600B /* ANAPICallSignup.m */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -754,6 +763,15 @@
 				FAA38A4817C9A558009361A8 /* Puzzles */,
 			);
 			path = "Response Objects";
+			sourceTree = "<group>";
+		};
+		FADBADF217D2C70E00BD3E85 /* Local Objects */ = {
+			isa = PBXGroup;
+			children = (
+				FADBADF317D2C74300BD3E85 /* ANCubeScheme.h */,
+				FADBADF417D2C74300BD3E85 /* ANCubeScheme.m */,
+			);
+			path = "Local Objects";
 			sourceTree = "<group>";
 		};
 		FAFDDED017D190410057E12F /* KBCKit */ = {
@@ -855,11 +873,13 @@
 				FA9F538C17C6B1A20024923B /* ANAPICallPuzzleSet.m in Sources */,
 				FA9F53F517C7F02A0024923B /* OCPuzzleSetting.m in Sources */,
 				FA9F543617C8236A0024923B /* ANPuzzleSyncer.m in Sources */,
+				FADBADF517D2C74300BD3E85 /* ANCubeScheme.m in Sources */,
 				FAA38A5A17C9A97A009361A8 /* ANAPICallAccountSet.m in Sources */,
 				FAA38A7117C9AD9F009361A8 /* OfflineChanges.m in Sources */,
 				FA42998317BCB4E5006746B7 /* ANAppDelegate.m in Sources */,
 				FA9F53F817C7F02A0024923B /* OCPuzzleDeletion.m in Sources */,
 				FAFDDEDC17D190410057E12F /* KBContext.c in Sources */,
+				FA507C1717D2A94100F3600B /* ANAPICallSignup.m in Sources */,
 				FA9F538817C6B1A20024923B /* ANAPICallPuzzleDelete.m in Sources */,
 				FAA38A5417C9A558009361A8 /* ANAPIConflict.m in Sources */,
 				FA56E5D117CC1073006FC1D1 /* ANAPICallImageUpload.m in Sources */,

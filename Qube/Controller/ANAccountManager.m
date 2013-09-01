@@ -11,6 +11,7 @@
 @interface ANAccountManager (Private)
 
 - (void)handleLoginResponse:(NSDictionary *)dict;
+- (void)generateOfflineChanges;
 
 @end
 
@@ -36,7 +37,11 @@
         for (ANPuzzle * puzzle in account.puzzles) {
             [context deleteObject:puzzle];
         }
+        // remove all changes
+        [context deleteObject:account.changes];
     }
+    account.changes = [NSEntityDescription insertNewObjectForEntityForName:@"OfflineChanges"
+                                                    inManagedObjectContext:context];
     account.username = nil;
     account.passwordmd5 = nil;
 }
@@ -45,6 +50,10 @@
     [[ANSyncManager sharedSyncManager] cancelSync];
     [loginCall cancel];
     [self generateDefaultAccount];
+}
+
+- (void)invalidateAuthentication {
+    [ANDataManager sharedDataManager].activeAccount.passwordmd5 = nil;
 }
 
 - (void)loginWithUsername:(NSString *)username
@@ -75,6 +84,19 @@
             }
         }
     }];
+}
+
+#pragma mark - Status -
+
+- (BOOL)isSignedOut {
+    return [ANDataManager sharedDataManager].activeAccount.passwordmd5 == nil;
+}
+
+- (BOOL)isInvalidatedAuthentication {
+    if ([self isSignedOut]) {
+        return [ANDataManager sharedDataManager].activeAccount.username != nil;
+    }
+    return NO;
 }
 
 #pragma mark - Private -

@@ -43,12 +43,11 @@
         [dict setObject:[self valueForAccountAttribute:attr]
                  forKey:attr];
     }
-    return @{@"email": self.email, @"username": self.username,
+    return @{@"email": self.email,
              @"attributes": dict};
 }
 
 - (void)decodeAccount:(NSDictionary *)dict {
-    self.username = [dict objectForKey:@"username"];
     self.email = [dict objectForKey:@"email"];
     for (NSString * attr in [self.class accountAttributes]) {
         NSData * remVal = [[dict objectForKey:@"attributes"] objectForKey:attr];

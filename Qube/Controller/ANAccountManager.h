@@ -31,8 +31,12 @@
 
 - (void)generateDefaultAccount;
 - (void)logout;
+- (void)invalidateAuthentication;
 - (void)loginWithUsername:(NSString *)username
                  password:(NSString *)password
               keepingData:(BOOL)offlineData;
+
+- (BOOL)isSignedOut;
+- (BOOL)isInvalidatedAuthentication;
 
 @end

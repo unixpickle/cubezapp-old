@@ -8,8 +8,8 @@
 
 #import "LocalAccount.h"
 
-#define kANAccountAttributeCubeScheme @"cubeScheme"
-#define kANAccountAttributeName @"name"
+#define kANAccountAttributeCubeScheme @"CubeScheme"
+#define kANAccountAttributeName @"Name"
 
 @interface LocalAccount (Coding)
 

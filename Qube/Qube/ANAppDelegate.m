@@ -20,9 +20,11 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
-    ANAPIBaseCall * call = [[ANAPIBaseCall alloc] initWithAPI:@"account.signin"
-                                                       params:@{@"username": @"alex",
-                                                                @"hash": [NSData data]}];
+    ANAPIBaseCall * call = [[ANAPICallSignup alloc] initWithUsername:@"alex"
+                                                                hash:[NSData data]
+                                                               email:@"alexnichol@comcast.net"
+                                                              scheme:[[ANCubeScheme alloc] init]
+                                                                name:@"Alex Nichol"];
     [call fetchResponse:^(NSError *error, NSDictionary *obj) {
         NSLog(@"error %@, object %@", error, obj);
     }];

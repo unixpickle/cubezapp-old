@@ -16,18 +16,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ANViewController alloc] initWithNibName:@"ANViewController" bundle:nil];
+    self.viewController = [[ANViewController alloc] init];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
-    
-    ANAPIBaseCall * call = [[ANAPICallSignup alloc] initWithUsername:@"alex"
-                                                                hash:[NSData data]
-                                                               email:@"alexnichol@comcast.net"
-                                                              scheme:[[ANCubeScheme alloc] init]
-                                                                name:@"Alex Nichol"];
-    [call fetchResponse:^(NSError *error, NSDictionary *obj) {
-        NSLog(@"error %@, object %@", error, obj);
-    }];
     
     return YES;
 }

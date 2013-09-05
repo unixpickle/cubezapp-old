@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ANAPICallSignup.h"
-
-@class ANViewController;
+#import "ANViewController.h"
 
 @interface ANAppDelegate : UIResponder <UIApplicationDelegate>
 

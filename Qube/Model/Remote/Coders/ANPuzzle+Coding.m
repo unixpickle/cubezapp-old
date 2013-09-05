@@ -35,7 +35,7 @@
         NSString * timeStr = [NSString stringWithFormat:@"%lf", self.inspectionTime];
         return [timeStr dataUsingEncoding:NSASCIIStringEncoding];
     } else if ([attr isEqualToString:kANPuzzleAttributeName]) {
-        return [self.name dataUsingEncoding:NSUTF8StringEncoding];
+        return [self.name dataUsingEncoding:NSUnicodeStringEncoding];
     } else if ([attr isEqualToString:kANPuzzleAttributeScramble]) {
         UInt8 byte = self.scramble;
         return [NSData dataWithBytes:&byte length:1];
@@ -69,7 +69,7 @@
         self.inspectionTime = [timeStr doubleValue];
     } else if ([attr isEqualToString:kANPuzzleAttributeName]) {
         self.name = [[NSString alloc] initWithData:data
-                                            encoding:NSUTF8StringEncoding];
+                                            encoding:NSUnicodeStringEncoding];
     } else if ([attr isEqualToString:kANPuzzleAttributeScramble]) {
         UInt8 byte = *((const UInt8 *)[data bytes]);
         self.scramble = byte;

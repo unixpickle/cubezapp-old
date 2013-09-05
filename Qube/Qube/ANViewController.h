@@ -7,10 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ANTimerHomeVC.h"
-#import "ANStatHomeVC.h"
-#import "ANSettingsHomeVC.h"
+#import "ANAccountManager.h"
+#import "ANSyncManager.h"
 
-@interface ANViewController : UITabBarController
+#import "ANAlgorithmsHomeVC.h"
+#import "ANTimerHomeVC.h"
+#import "ANDesignHomeVC.h"
+#import "ANAccountSettingsVC.h"
+
+@interface ANViewController : UITabBarController <ANAccountManagerDelegate, ANSyncManagerDelegate> {
+    ANAlgorithmsHomeVC * algorithms;
+    ANTimerHomeVC * timer;
+    ANDesignHomeVC * settings;
+    ANAccountSettingsVC * accountSettings;
+}
+
+- (void)flipToAccountsSettings;
 
 @end

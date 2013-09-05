@@ -1,26 +1,25 @@
 //
-//  ANStatHomeVC.m
+//  ANSettingsHomeVC.m
 //  Qube
 //
 //  Created by Alex Nichol on 8/15/13.
 //  Copyright (c) 2013 Alex Nichol. All rights reserved.
 //
 
-#import "ANStatHomeVC.h"
+#import "ANDesignHomeVC.h"
 
-@interface ANStatHomeVC ()
+@interface ANDesignHomeVC ()
 
 @end
 
-@implementation ANStatHomeVC
+@implementation ANDesignHomeVC
 
 - (id)init {
     if ((self = [super init])) {
-        self.title = @"Stat";
-        self.view.backgroundColor = [UIColor whiteColor];
+        self.title = @"Design";
+        self.view.backgroundColor = [UIColor blackColor];
         
-        self.tabBarItem.image = [UIImage imageNamed:@"calculator"];
-        self.tabBarItem.selectedImage = [UIImage imageNamed:@"calculator_highlighted"];
+        self.tabBarItem.image = [UIImage imageNamed:@"design"];
     }
     return self;
 }

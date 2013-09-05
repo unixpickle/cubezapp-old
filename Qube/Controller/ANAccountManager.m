@@ -80,7 +80,7 @@
                 LocalAccount * account = [ANDataManager sharedDataManager].activeAccount;
                 account.username = username;
                 account.passwordmd5 = hash;
-                [self handleLoginResponse:obj];
+                [self handleLoginResponse:[obj objectForKey:@"account"]];
             }
         }
     }];
@@ -99,13 +99,19 @@
     return NO;
 }
 
+- (BOOL)shouldAllowKeepingData:(NSString *)username {
+    if (![self isSignedOut]) return NO;
+    if ([self isInvalidatedAuthentication]) {
+        return [[ANDataManager sharedDataManager].activeAccount.username isEqualToString:username];
+    }
+    return [[ANDataManager sharedDataManager].activeAccount.puzzles count] != 0;
+}
+
 #pragma mark - Private -
 
 - (void)handleLoginResponse:(NSDictionary *)dict {
     LocalAccount * account = [ANDataManager sharedDataManager].activeAccount;
-    account.cubeScheme = [dict objectForKey:@"cubeScheme"];
-    account.name = [dict objectForKey:@"name"];
-    account.email = [dict objectForKey:@"email"];
+    [account decodeAccount:dict];
     [self.delegate accountManagerLoggedIn:self];
     
     [[ANSyncManager sharedSyncManager] startSyncing];

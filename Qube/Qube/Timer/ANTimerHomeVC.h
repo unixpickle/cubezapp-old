@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface ANTimerHomeVC : UIViewController {
-    UIBarButtonItem * editButton;
-    UIBarButtonItem * doneButton;
+    UIBarButtonItem * accountButton;
     UIBarButtonItem * addButton;
 }
 
-- (void)editPressed:(id)sender;
-- (void)donePressed:(id)sender;
+@property (readonly) UIBarButtonItem * accountButton;
+
+- (void)accountPressed:(id)sender;
 - (void)addPressed:(id)sender;
 
 @end

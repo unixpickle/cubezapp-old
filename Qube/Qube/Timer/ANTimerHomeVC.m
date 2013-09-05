@@ -7,6 +7,7 @@
 //
 
 #import "ANTimerHomeVC.h"
+#import "ANAppDelegate.h"
 
 @interface ANTimerHomeVC ()
 
@@ -14,31 +15,30 @@
 
 @implementation ANTimerHomeVC
 
+@synthesize accountButton;
+
 - (id)init {
     if ((self = [super init])) {
         self.title = @"Timer";
-        self.view.backgroundColor = [UIColor whiteColor];
+        self.view.backgroundColor = [UIColor blackColor];
         
         self.tabBarItem.image = [UIImage imageNamed:@"clock"];
         self.tabBarItem.selectedImage = [UIImage imageNamed:@"clock_highlighted"];
         
-        editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
-                                                                   target:self
-                                                                   action:@selector(editPressed:)];
         addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                   target:self
                                                                   action:@selector(addPressed:)];
-        doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                   target:self
-                                                                   action:@selector(donePressed:)];
-        self.navigationItem.rightBarButtonItem = editButton;
+        accountButton = [[UIBarButtonItem alloc] initWithTitle:@"Login"
+                                                         style:UIBarButtonItemStylePlain
+                                                        target:self
+                                                        action:@selector(accountPressed:)];
+        self.navigationItem.rightBarButtonItem = accountButton;
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,14 +48,9 @@
 
 #pragma mark - Actions -
 
-- (void)editPressed:(id)sender {
-    [self.navigationItem setRightBarButtonItem:doneButton animated:YES];
-    [self.navigationItem setLeftBarButtonItem:addButton animated:YES];
-}
-
-- (void)donePressed:(id)sender {
-    [self.navigationItem setRightBarButtonItem:editButton animated:YES];
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+- (void)accountPressed:(id)sender {
+    ANAppDelegate * delegate = [UIApplication sharedApplication].delegate;
+    [delegate.viewController flipToAccountsSettings];
 }
 
 - (void)addPressed:(id)sender {

@@ -38,5 +38,6 @@
 
 - (BOOL)isSignedOut;
 - (BOOL)isInvalidatedAuthentication;
+- (BOOL)shouldAllowKeepingData:(NSString *)username;
 
 @end

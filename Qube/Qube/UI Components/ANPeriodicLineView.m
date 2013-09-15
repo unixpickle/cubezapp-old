@@ -16,6 +16,8 @@
     if (self) {
         // Initialization code
         self.clipsToBounds = YES;
+        self.layer.cornerRadius = 5;
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }

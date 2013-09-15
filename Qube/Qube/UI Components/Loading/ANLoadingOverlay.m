@@ -33,6 +33,8 @@
 }
 
 - (void)displayOverlay {
+    if (isDisplayed) return;
+    isDisplayed = YES;
     [knob startLoading];
     UIWindow * window = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
     [window addSubview:self];
@@ -47,6 +49,9 @@
     [knob stopLoading];
     [UIView animateWithDuration:0.5 animations:^{
         self.alpha = 0;
+    } completion:^(BOOL finished) {
+        [self removeFromSuperview];
+        isDisplayed = NO;
     }];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
 }

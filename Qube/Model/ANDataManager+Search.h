@@ -14,6 +14,8 @@
 
 - (id)findManagedObject:(NSString *)name withIdentifier:(NSData *)identifier;
 
+- (OCAccountChange *)findAccountChangeForAttribute:(NSString *)attribute;
+
 - (ANPuzzle *)findPuzzleForId:(NSData *)identifier;
 - (ANPuzzle *)findPuzzleForName:(NSString *)name;
 - (OCPuzzleDeletion *)findPuzzleDeletionForId:(NSData *)identifier;

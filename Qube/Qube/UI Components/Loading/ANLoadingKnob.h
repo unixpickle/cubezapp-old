@@ -24,6 +24,8 @@
     NSDate * startDate;
 }
 
+- (void)setKnobImage:(UIImage *)image;
+
 - (void)startLoading;
 - (void)stopLoading;
 

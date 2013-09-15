@@ -38,8 +38,13 @@
     [self addSubview:refreshImage];
 }
 
+- (void)setKnobImage:(UIImage *)image {
+    refreshImage.image = image;
+}
+
 - (void)startLoading {
     if (isSpinning) return;
+    self.userInteractionEnabled = NO;
     isSlowing = NO;
     isSpinning = YES;
     angle = 0;
@@ -71,6 +76,7 @@
                                    forMode:NSRunLoopCommonModes];
             displayLink = nil;
             isSpinning = NO;
+            self.userInteractionEnabled = YES;
         } else {
             newAngle = (kLoadingKnobVelocity * delay) - (1.0/2.0 * acceleration * pow(delay, 2)) + slowAngleStart;
         }

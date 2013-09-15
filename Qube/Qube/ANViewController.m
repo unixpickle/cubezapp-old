@@ -13,8 +13,6 @@
 
 @end
 
-CGFloat PENISHEIGHT(UIView * view);
-
 @implementation ANViewController
 
 - (void)viewDidLoad {
@@ -45,7 +43,11 @@ CGFloat PENISHEIGHT(UIView * view);
     if ([ANDataManager sharedDataManager].activeAccount.username == nil) {
         timer.accountButton.title = @"Login";
     } else {
-        timer.accountButton.title = [ANDataManager sharedDataManager].activeAccount.username;
+        NSLog(@"name %@", [ANDataManager sharedDataManager].activeAccount.name);
+        NSLog(@"username %@", [ANDataManager sharedDataManager].activeAccount.username);
+        NSLog(@"email %@", [ANDataManager sharedDataManager].activeAccount.email);
+        
+        timer.accountButton.title = [ANDataManager sharedDataManager].activeAccount.name;
     }
     
     accountSettings = [[ANAccountSettingsVC alloc] init];
@@ -68,20 +70,31 @@ CGFloat PENISHEIGHT(UIView * view);
 
 - (void)accountManagerLoggedIn:(ANAccountManager *)manager {
     [accountSettings handleSignedIn];
+    if ([ANDataManager sharedDataManager].activeAccount.username == nil) {
+        timer.accountButton.title = @"Login";
+    } else {
+        timer.accountButton.title = [ANDataManager sharedDataManager].activeAccount.name;
+    }
 }
 
 - (void)accountManager:(ANAccountManager *)manager loginFailed:(NSError *)error {
     [accountSettings handleSigninFailed:error];
 }
 
+- (void)accountManagerUserLoggedOut:(ANAccountManager *)manager {
+    timer.accountButton.title = @"Login";
+}
+
 #pragma mark - Sync -
 
 - (void)syncManagerStarted:(ANSyncManager *)manager {
-    
+    [accountSettings.accountView.syncView.loadingKnob startLoading];
+    [accountSettings.accountView.syncView setStatus:@"Syncing"];
 }
 
 - (void)syncManagerCancelled:(ANSyncManager *)manager {
-    
+    [accountSettings.accountView.syncView.loadingKnob stopLoading];
+    [accountSettings.accountView.syncView setStatus:@"Not currently syncing"];
 }
 
 #pragma mark Sync Session
@@ -111,11 +124,13 @@ CGFloat PENISHEIGHT(UIView * view);
 }
 
 - (void)syncSession:(ANSyncSession *)session failedWithError:(NSError *)error {
-    
+    [accountSettings.accountView.syncView.loadingKnob stopLoading];
+    [accountSettings.accountView.syncView setFailed:@"Last sync failed"];
 }
 
 - (void)syncSessionCompleted:(ANSyncSession *)session {
-    
+    [accountSettings.accountView.syncView.loadingKnob stopLoading];
+    [accountSettings.accountView.syncView setStatus:@"Not currently syncing"];
 }
 
 @end

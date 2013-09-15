@@ -16,5 +16,6 @@
 - (id)initWithFrame:(CGRect)frame view:(UIView *)contents;
 - (void)pushToView:(UIView *)view;
 - (void)popToView:(UIView *)view;
+- (void)changeView:(UIView *)view;
 
 @end

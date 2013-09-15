@@ -11,6 +11,7 @@
 
 @interface ANLoadingOverlay : UIView {
     ANLoadingKnob * knob;
+    BOOL isDisplayed;
 }
 
 + (ANLoadingOverlay *)sharedOverlay;

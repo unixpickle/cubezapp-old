@@ -24,6 +24,7 @@
 }
 
 @property (nonatomic, weak) id<ANSyncManagerDelegate> delegate;
+@property (readwrite) BOOL autosync;
 
 + (ANSyncManager *)sharedSyncManager;
 

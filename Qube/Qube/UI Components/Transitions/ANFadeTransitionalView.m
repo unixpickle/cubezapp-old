@@ -21,11 +21,13 @@
 }
 
 - (void)transitionTo:(UIView *)view {
+    if (view == currentView) return;
     [self setUserInteractionEnabled:NO];
     
     transitioningTo = view;
     transitioningTo.alpha = 0;
-    [self addSubview:transitioningTo];
+    transitioningTo.frame = self.bounds;
+    if (transitioningTo) [self addSubview:transitioningTo];
     
     [UIView animateWithDuration:0.25 animations:^{
         currentView.alpha = 0;
@@ -38,6 +40,13 @@
             [self setUserInteractionEnabled:YES];
         }];
     }];
+}
+
+- (void)changeView:(UIView *)newView {
+    [currentView removeFromSuperview];
+    currentView = newView;
+    currentView.frame = self.bounds;
+    [self addSubview:currentView];
 }
 
 /*

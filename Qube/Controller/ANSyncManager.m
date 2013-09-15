@@ -10,6 +10,18 @@
 
 @implementation ANSyncManager
 
+- (BOOL)autosync {
+    NSNumber * number = [[NSUserDefaults standardUserDefaults] objectForKey:@"autosync"];
+    if (number) return [number boolValue];
+    return YES;
+}
+
+- (void)setAutosync:(BOOL)autosync {
+    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+    [def setBool:autosync forKey:@"autosync"];
+    [def synchronize];
+}
+
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
     Protocol * p = @protocol(ANSyncSessionDelegate);
     struct objc_method_description desc = protocol_getMethodDescription(p, [anInvocation selector],

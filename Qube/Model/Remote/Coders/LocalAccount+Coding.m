@@ -25,9 +25,9 @@
 
 - (void)setValue:(NSData *)data forAccountAttribute:(NSString *)attr {
     if ([attr isEqualToString:kANAccountAttributeName]) {
-        self.name = [[NSString alloc] initWithData:data encoding:NSUnicodeStringEncoding];
+        self.name = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         if (!self.name) {
-            NSLog(@"error setting name using unicode");
+            NSLog(@"error setting name using UTF8");
             self.name = @"no name";
         }
     } else if ([attr isEqualToString:kANAccountAttributeCubeScheme]) {

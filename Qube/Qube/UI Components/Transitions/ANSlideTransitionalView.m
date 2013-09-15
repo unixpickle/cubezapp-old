@@ -53,7 +53,7 @@
                                            dest.size.width, dest.size.height);
     }
     
-    [self addSubview:transitioningTo];
+    if (transitioningTo) [self addSubview:transitioningTo];
     
     [UIView animateWithDuration:0.5 animations:^{
         transitioningTo.frame = dest;
@@ -69,6 +69,13 @@
         currentView = transitioningTo;
         [self setUserInteractionEnabled:YES];
     }];
+}
+
+- (void)changeView:(UIView *)view {
+    [currentView removeFromSuperview];
+    currentView = view;
+    currentView.frame = self.bounds;
+    [self addSubview:currentView];
 }
 
 /*

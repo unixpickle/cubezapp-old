@@ -15,5 +15,6 @@
 
 - (id)initWithFrame:(CGRect)frame view:(UIView *)aView;
 - (void)transitionTo:(UIView *)view;
+- (void)changeView:(UIView *)newView;
 
 @end

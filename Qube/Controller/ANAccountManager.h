@@ -18,6 +18,7 @@
 
 - (void)accountManagerLoggedIn:(ANAccountManager *)manager;
 - (void)accountManager:(ANAccountManager *)manager loginFailed:(NSError *)error;
+- (void)accountManagerUserLoggedOut:(ANAccountManager *)manager;
 
 @end
 

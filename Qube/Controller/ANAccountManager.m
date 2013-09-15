@@ -49,6 +49,9 @@
 - (void)logout {
     [[ANSyncManager sharedSyncManager] cancelSync];
     [loginCall cancel];
+    
+    [self.delegate accountManagerUserLoggedOut:self];
+    
     [self generateDefaultAccount];
 }
 
@@ -68,20 +71,13 @@
         if (error) {
             [self.delegate accountManager:self loginFailed:error];
         } else {
-            if (![[obj objectForKey:@"status"] boolValue]) {
-                NSError * error = [NSError errorWithDomain:@"ANAccountManager"
-                                                      code:1
-                                                  userInfo:@{NSLocalizedDescriptionKey: @"Login incorrect"}];
-                [self.delegate accountManager:self loginFailed:error];
-            } else {
-                if (!offlineData) {
-                    [self generateDefaultAccount];
-                }
-                LocalAccount * account = [ANDataManager sharedDataManager].activeAccount;
-                account.username = username;
-                account.passwordmd5 = hash;
-                [self handleLoginResponse:[obj objectForKey:@"account"]];
+            if (!offlineData) {
+                [self generateDefaultAccount];
             }
+            LocalAccount * account = [ANDataManager sharedDataManager].activeAccount;
+            account.username = username;
+            account.passwordmd5 = hash;
+            [self handleLoginResponse:obj];
         }
     }];
 }

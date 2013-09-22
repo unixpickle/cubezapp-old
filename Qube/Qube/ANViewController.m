@@ -40,25 +40,33 @@
     }
     self.viewControllers = vcs;
     
-    if ([ANDataManager sharedDataManager].activeAccount.username == nil) {
-        timer.accountButton.title = @"Login";
-    } else {
-        NSLog(@"name %@", [ANDataManager sharedDataManager].activeAccount.name);
-        NSLog(@"username %@", [ANDataManager sharedDataManager].activeAccount.username);
-        NSLog(@"email %@", [ANDataManager sharedDataManager].activeAccount.email);
-        
-        timer.accountButton.title = [ANDataManager sharedDataManager].activeAccount.name;
-    }
-    
     accountSettings = [[ANAccountSettingsVC alloc] init];
     [self setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
     [accountSettings setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    
+    [self updateAccountButton];
 }
 
 - (void)flipToAccountsSettings {
     [self presentViewController:accountSettings
                        animated:YES
                      completion:nil];
+}
+
+- (void)updateAccountButton {
+    if ([ANDataManager sharedDataManager].activeAccount.username == nil) {
+        timer.accountButton.title = @"Login";
+    } else {
+        NSString * usernameStr = [ANDataManager sharedDataManager].activeAccount.name;
+        UIFont * font = [UIFont systemFontOfSize:16];
+        BOOL didTruncate = NO;
+        while ([[usernameStr stringByAppendingString:didTruncate ? @"" : @"..."] sizeWithFont:font].width > 100) {
+            didTruncate = YES;
+            usernameStr = [usernameStr substringWithRange:NSMakeRange(0, usernameStr.length - 1)];
+        }
+        if (didTruncate) usernameStr = [usernameStr stringByAppendingString:@"..."];
+        timer.accountButton.title = usernameStr;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,11 +78,7 @@
 
 - (void)accountManagerLoggedIn:(ANAccountManager *)manager {
     [accountSettings handleSignedIn];
-    if ([ANDataManager sharedDataManager].activeAccount.username == nil) {
-        timer.accountButton.title = @"Login";
-    } else {
-        timer.accountButton.title = [ANDataManager sharedDataManager].activeAccount.name;
-    }
+    [self updateAccountButton];
 }
 
 - (void)accountManager:(ANAccountManager *)manager loginFailed:(NSError *)error {

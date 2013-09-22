@@ -90,11 +90,13 @@
 #pragma mark - Lookup -
 
 - (UIImage *)imageForHash:(NSData *)hash {
+    if (!hash) return nil;
     NSString * path = [[self imageDirectory] stringByAppendingPathComponent:[hash hexRepresentation]];
     return [[UIImage alloc] initWithContentsOfFile:path];
 }
 
 - (NSData *)imageDataForHash:(NSData *)hash {
+    if (!hash) return nil;
     NSString * path = [[self imageDirectory] stringByAppendingPathComponent:[hash hexRepresentation]];
     return [NSData dataWithContentsOfFile:path];
 }

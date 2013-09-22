@@ -53,6 +53,13 @@
     return [self findManagedObject:@"OCPuzzleDeletion" withIdentifier:identifier];
 }
 
+- (OCPuzzleSetting *)findSettingAttribute:(NSString *)attr forPuzzle:(ANPuzzle *)puzzle {
+    for (OCPuzzleSetting * setting in puzzle.ocSettings) {
+        if ([setting.attribute isEqualToString:attr]) return setting;
+    }
+    return nil;
+}
+
 #pragma mark - Sessions -
 
 - (ANSession *)findSessionForId:(NSData *)identifier {

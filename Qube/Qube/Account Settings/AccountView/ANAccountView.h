@@ -16,6 +16,7 @@
 @protocol ANAccountViewDelegate <NSObject>
 
 - (void)accountViewSyncPressed:(ANAccountView *)accountView;
+- (void)accountView:(ANAccountView *)accountView autosyncSet:(BOOL)flag;
 - (void)accountViewPasswordPressed:(ANAccountView *)accountView;
 - (void)accountView:(ANAccountView *)accountView emailSet:(NSString *)email;
 - (void)accountView:(ANAccountView *)accountView nameSet:(NSString *)newName;
@@ -39,5 +40,6 @@
 
 - (void)passwordPressed:(id)sender;
 - (void)syncPressed:(id)sender;
+- (void)syncSwitchPressed:(id)sender;
 
 @end

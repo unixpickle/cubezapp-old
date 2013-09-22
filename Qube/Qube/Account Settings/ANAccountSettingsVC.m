@@ -311,6 +311,7 @@
     accountView.nameField.text = [ANDataManager sharedDataManager].activeAccount.name;
     accountView.emailField.text = [ANDataManager sharedDataManager].activeAccount.email;
     usernameLabel.text = [ANDataManager sharedDataManager].activeAccount.username;
+    accountView.syncView.autosyncSwitch.on = [ANSyncManager sharedSyncManager].autosync;
 }
 
 #pragma mark Delegate
@@ -336,10 +337,17 @@
 
 - (void)accountView:(ANAccountView *)accountView nameSet:(NSString *)newName {
     [[ANDataManager sharedDataManager].activeAccount offlineSetName:newName];
+    
+    ANAppDelegate * delegate = [UIApplication sharedApplication].delegate;
+    [delegate.viewController updateAccountButton];
 }
 
 - (void)accountViewPasswordPressed:(ANAccountView *)accountView {
     [self presentPage:passwordView forward:YES];
+}
+
+- (void)accountView:(ANAccountView *)accountView autosyncSet:(BOOL)flag {
+    [[ANSyncManager sharedSyncManager] setAutosync:flag];
 }
 
 - (void)accountViewSyncPressed:(ANAccountView *)accountView {

@@ -43,7 +43,7 @@
         NSString * lenStr = [NSString stringWithFormat:@"%d", self.scrambleLength];
         return [lenStr dataUsingEncoding:NSASCIIStringEncoding];
     } else if ([attr isEqualToString:kANPuzzleAttributeShowScramble]) {
-        UInt8 byte = self.showSrcamble;
+        UInt8 byte = self.showScramble;
         return [NSData dataWithBytes:&byte length:1];
     } else if ([attr isEqualToString:kANPuzzleAttributeShowStats]) {
         UInt8 byte = self.showStats;
@@ -79,7 +79,7 @@
         self.scrambleLength = (int16_t)[lenStr intValue];
     } else if ([attr isEqualToString:kANPuzzleAttributeShowScramble]) {
         UInt8 byte = *((const UInt8 *)[data bytes]);
-        self.showSrcamble = byte;
+        self.showScramble = byte;
     } else if ([attr isEqualToString:kANPuzzleAttributeShowStats]) {
         UInt8 byte = *((const UInt8 *)[data bytes]);
         self.showStats = byte;

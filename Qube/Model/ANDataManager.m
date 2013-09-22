@@ -83,8 +83,10 @@
 #pragma mark - Puzzles -
 
 - (ANPuzzle *)createPuzzleObject {
-    return [NSEntityDescription insertNewObjectForEntityForName:@"ANPuzzle"
-                                         inManagedObjectContext:context];
+    ANPuzzle * puzzle = [NSEntityDescription insertNewObjectForEntityForName:@"ANPuzzle"
+                                                      inManagedObjectContext:context];
+    puzzle.identifier = [NSData randomDataOfLength:16];
+    return puzzle;
 }
 
 - (ANSession *)createSessionObject {

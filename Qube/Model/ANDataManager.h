@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "NSData+Random.h"
 
 #import "LocalAccount.h"
 #import "ANPuzzle.h"

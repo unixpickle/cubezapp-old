@@ -2,7 +2,7 @@
 //  ANPuzzle.h
 //  Qube
 //
-//  Created by Alex Nichol on 8/23/13.
+//  Created by Alex Nichol on 9/22/13.
 //  Copyright (c) 2013 Alex Nichol. All rights reserved.
 //
 
@@ -21,7 +21,7 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic) BOOL scramble;
 @property (nonatomic) int16_t scrambleLength;
-@property (nonatomic) BOOL showSrcamble;
+@property (nonatomic) BOOL showScramble;
 @property (nonatomic) BOOL showStats;
 @property (nonatomic) int16_t type;
 @property (nonatomic, retain) LocalAccount *account;

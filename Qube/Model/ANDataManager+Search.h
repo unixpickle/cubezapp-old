@@ -19,6 +19,7 @@
 - (ANPuzzle *)findPuzzleForId:(NSData *)identifier;
 - (ANPuzzle *)findPuzzleForName:(NSString *)name;
 - (OCPuzzleDeletion *)findPuzzleDeletionForId:(NSData *)identifier;
+- (OCPuzzleSetting *)findSettingAttribute:(NSString *)attr forPuzzle:(ANPuzzle *)puzzle;
 
 - (ANSession *)findSessionForId:(NSData *)identifier;
 - (OCSessionDeletion *)findSessionDeletionForId:(NSData *)identifier;

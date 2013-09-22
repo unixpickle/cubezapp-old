@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "KBEncodeObjC.h"
 #import "KBDecodeObjC.h"
+#import "Color+HexValue.h"
 
 @interface ANCubeScheme : NSObject
 

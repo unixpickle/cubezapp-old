@@ -22,6 +22,7 @@
     ANAccountSettingsVC * accountSettings;
 }
 
+- (void)updateAccountButton;
 - (void)flipToAccountsSettings;
 
 @end

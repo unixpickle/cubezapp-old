@@ -10,7 +10,9 @@
 #define Qube_ANConstants_h
 
 typedef enum {
-    ANPuzzleType2x2 = 0,
+    ANPuzzleTypeOther = 0,
+    ANPuzzleTypeClock,
+    ANPuzzleType2x2,
     ANPuzzleType3x3,
     ANPuzzleType4x4,
     ANPuzzleType5x5,
@@ -25,5 +27,20 @@ typedef enum {
     ANSolveRecordStatusPopped = 1,
     ANSolveRecordStatusCompleted = 2
 } ANSolveRecordStatus;
+
+static NSString * PuzzleNames[] = {
+    @"Other",
+    @"Clock",
+    @"2x2x2",
+    @"3x3x3",
+    @"4x4x4",
+    @"5x5x5",
+    @"6x6x6",
+    @"7x7x7",
+    @"Megaminx",
+    @"Pyraminx"
+};
+
+#define kANPuzzleTypeCount (sizeof(PuzzleNames) / sizeof(NSString *))
 
 #endif

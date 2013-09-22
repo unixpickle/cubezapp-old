@@ -46,6 +46,8 @@
                  forControlEvents:UIControlEventTouchUpInside];
         [syncView.loadingKnob addTarget:self action:@selector(syncPressed:)
                        forControlEvents:UIControlEventTouchUpInside];
+        [syncView.autosyncSwitch addTarget:self action:@selector(syncSwitchPressed:)
+                          forControlEvents:UIControlEventValueChanged];
     }
     return self;
 }
@@ -82,6 +84,11 @@
 
 - (void)syncPressed:(id)sender {
     [self.delegate accountViewSyncPressed:self];
+}
+
+- (void)syncSwitchPressed:(id)sender {
+    [self.delegate accountView:self
+                   autosyncSet:syncView.autosyncSwitch.on];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

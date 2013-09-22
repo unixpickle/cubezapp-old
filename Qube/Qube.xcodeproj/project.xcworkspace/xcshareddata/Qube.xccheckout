@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>AC5DAEC9-D1AB-4D58-AD6B-2896EDE11379</string>
+	<string>F8452304-AFFD-42C4-A9F0-70931BC4122C</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Qube</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>03644EF6-E639-4169-9289-A4A51B6D376E</key>
-		<string>ssh://github.com/unixpickle/CubeTimer.git</string>
+		<key>3EBE4C70-80C3-4F64-A545-BDBA914E2C5B</key>
+		<string>ssh://github.com/unixpickle/Cubezapp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Qube/Qube.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>03644EF6-E639-4169-9289-A4A51B6D376E</key>
+		<key>3EBE4C70-80C3-4F64-A545-BDBA914E2C5B</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/unixpickle/CubeTimer.git</string>
+	<string>ssh://github.com/unixpickle/Cubezapp.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>03644EF6-E639-4169-9289-A4A51B6D376E</string>
+	<string>3EBE4C70-80C3-4F64-A545-BDBA914E2C5B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>03644EF6-E639-4169-9289-A4A51B6D376E</string>
+			<string>3EBE4C70-80C3-4F64-A545-BDBA914E2C5B</string>
 			<key>IDESourceControlWCCName</key>
-			<string>CubeTimer</string>
+			<string>Cubezapp</string>
 		</dict>
 	</array>
 </dict>

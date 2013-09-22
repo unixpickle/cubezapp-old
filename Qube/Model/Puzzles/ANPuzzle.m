@@ -2,7 +2,7 @@
 //  ANPuzzle.m
 //  Qube
 //
-//  Created by Alex Nichol on 8/23/13.
+//  Created by Alex Nichol on 9/22/13.
 //  Copyright (c) 2013 Alex Nichol. All rights reserved.
 //
 
@@ -23,7 +23,7 @@
 @dynamic name;
 @dynamic scramble;
 @dynamic scrambleLength;
-@dynamic showSrcamble;
+@dynamic showScramble;
 @dynamic showStats;
 @dynamic type;
 @dynamic account;

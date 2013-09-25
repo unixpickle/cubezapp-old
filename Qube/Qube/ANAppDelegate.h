@@ -10,6 +10,8 @@
 #import "ANAPICallSignup.h"
 #import "ANViewController.h"
 
+#import "NSSetOrderedSetFix.h"
+
 @interface ANAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

@@ -18,10 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     [[ANAccountManager sharedAccountManager] setDelegate:self];
     [[ANSyncManager sharedSyncManager] setDelegate:self];
     
-    self.tabBar.barStyle = UIBarStyleBlack;
+    self.tabBar.barStyle = UIBarStyleDefault;
     self.view.backgroundColor = [UIColor blackColor];
     
     // generate a navigation controller for each page
@@ -36,7 +38,7 @@
         nvc.tabBarItem = vc.tabBarItem;
         [vcs addObject:nvc];
         
-        nvc.navigationBar.barStyle = UIBarStyleBlack;
+        nvc.navigationBar.barStyle = UIBarStyleDefault;
     }
     self.viewControllers = vcs;
     
@@ -104,15 +106,21 @@
 #pragma mark Sync Session
 
 - (void)syncSession:(ANSyncSession *)session addedPuzzle:(ANPuzzle *)puzzle {
-    
+    if (!puzzle.hidden) {
+        [timer.gridView externalPuzzleAdded:puzzle];
+    }
 }
 
 - (void)syncSession:(ANSyncSession *)session deletedPuzzle:(ANPuzzle *)puzzle {
-    
+    if (!puzzle.hidden) {
+        [timer.gridView externalPuzzleDeleted:puzzle];
+    }
 }
 
 - (void)syncSession:(ANSyncSession *)session updatedPuzzle:(ANPuzzle *)puzzle {
-    
+    if (puzzle.hidden && [timer.gridView hasCellForPuzzle:puzzle]) {
+        [timer.gridView externalPuzzleDeleted:puzzle];
+    }
 }
 
 - (void)syncSession:(ANSyncSession *)session addedSession:(ANSession *)puzzle {

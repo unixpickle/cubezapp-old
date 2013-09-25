@@ -29,17 +29,12 @@
 - (void)generateDefaultAccount {
     LocalAccount * account = [ANDataManager sharedDataManager].activeAccount;
     NSManagedObjectContext * context = [ANDataManager sharedDataManager].context;
-    if (!account) {
-        account = [NSEntityDescription insertNewObjectForEntityForName:@"LocalAccount"
-                                                inManagedObjectContext:context];
-    } else {
-        // remove all puzzles
-        for (ANPuzzle * puzzle in account.puzzles) {
-            [context deleteObject:puzzle];
-        }
-        // remove all changes
-        [context deleteObject:account.changes];
+    // remove all puzzles
+    for (ANPuzzle * puzzle in account.puzzles) {
+        [context deleteObject:puzzle];
     }
+    // remove all changes
+    [context deleteObject:account.changes];
     account.changes = [NSEntityDescription insertNewObjectForEntityForName:@"OfflineChanges"
                                                     inManagedObjectContext:context];
     account.username = nil;

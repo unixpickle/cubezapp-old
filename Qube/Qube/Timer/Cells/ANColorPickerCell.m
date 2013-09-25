@@ -14,6 +14,9 @@
     if ((self = [super initWithNameWidth:width reuseIdentifier:identifier])) {
         sampleView = [[UIView alloc] initWithFrame:CGRectMake(100, 5, 60, self.contentView.frame.size.height - 10)];
         [self.contentView addSubview:sampleView];
+        
+        sampleView.layer.borderWidth = 1;
+        sampleView.layer.borderColor = [[UIColor blackColor] CGColor];
     }
     return self;
 }

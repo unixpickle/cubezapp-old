@@ -25,9 +25,9 @@
 - (NSString *)hexValue {
     CGFloat red, green, blue;
     [self getRed:&red green:&green blue:&blue];
-    return [NSString stringWithFormat:@"#%02X%02X%02X", (unsigned int)(red * 256.0),
-            (unsigned int)(green * 256.0),
-            (unsigned int)(blue * 256.0)];
+    return [NSString stringWithFormat:@"#%02X%02X%02X", (unsigned int)(red * 255.0),
+            (unsigned int)(green * 255.0),
+            (unsigned int)(blue * 255.0)];
 }
 
 + (id)colorWithHexValue:(NSString *)value {
@@ -38,7 +38,7 @@
         NSScanner * scanner = [NSScanner scannerWithString:code];
         unsigned int decoded = 0;
         if (![scanner scanHexInt:&decoded]) return nil;
-        components[i] = ((CGFloat)decoded / 256.0);
+        components[i] = ((CGFloat)decoded / 255.0);
     }
 #if TARGET_OS_IPHONE
     return [ColorClass colorWithRed:components[0]

@@ -33,6 +33,7 @@
     ANPuzzle * puzzle;
     
     UIImage * puzzleImage;
+    UITextField * nameField;
 }
 
 @property (readonly) ANPuzzle * puzzle;

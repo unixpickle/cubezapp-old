@@ -22,8 +22,10 @@
 @synthesize userInfo;
 @synthesize delegate;
 @synthesize isFlipside;
+@synthesize infoButton;
+@synthesize backButton;
 
-- (UIView<ANBasicTouchHandler> *)currentView {
+- (UIView *)currentView {
     if (isFlipside) return backside;
     return frontside;
 }
@@ -55,8 +57,8 @@
 }
 
 // initialization
-- (id)initWithFrontside:(UIView<ANBasicTouchHandler> *)aFrontside
-               backside:(UIView<ANBasicTouchHandler> *)aBackside {
+- (id)initWithFrontside:(UIView *)aFrontside
+               backside:(UIView *)aBackside {
     
     NSAssert(CGRectEqualToRect(aFrontside.bounds, aBackside.bounds),
              @"frontside and backside must be equal in size");
@@ -132,10 +134,10 @@
 #pragma mark - Handling Touches -
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (isSendingTouchEvent) return;
     [self resetTouchContext];
     CGPoint localPoint = [[touches anyObject] locationInView:self];
     internalDragStart = localPoint;
-    NSLog(@"isEdititng %d", isEditing);
     if (!isFlipside) {
         currentHoldId = [NSNumber numberWithUnsignedLong:arc4random()];
         [self performSelector:@selector(checkForHold:)
@@ -145,6 +147,7 @@
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (isSendingTouchEvent) return;
     CGPoint point = [[touches anyObject] locationInView:self];
     
     // throw out small movements
@@ -163,35 +166,42 @@
         CGPoint newCenter = CGPointMake(offX, offY);
         [self.delegate gridViewItem:self draggedOffset:newCenter];
     } else {
+        isSendingTouchEvent = YES;
         if (!hasMoved) {
             hasMoved = YES;
-            [self.currentView touchBegan:internalDragStart];
+            [self.currentView touchesBegan:touches withEvent:event];
         }
-        [self.currentView touchMoved:point];
+        [self.currentView touchesMoved:touches withEvent:event];
+        isSendingTouchEvent = NO;
     }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (isSendingTouchEvent) return;
     currentHoldId = nil;
-    CGPoint point = [[touches anyObject] locationInView:self];
     if (isDragging) {
         [self.delegate gridViewItemReleased:self];
     } else {
+        isSendingTouchEvent = YES;
         if (!hasMoved) {
-            [self.currentView touchBegan:internalDragStart];
+            [self.currentView touchesBegan:touches withEvent:event];
         }
-        [self.currentView touchEnded:point];
+        [self.currentView touchesEnded:touches withEvent:event];
+        isSendingTouchEvent = NO;
     }
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (isSendingTouchEvent) return;
     currentHoldId = nil;
     if (isDragging) {
         [self.delegate gridViewItemReleased:self];
     } else {
+        isSendingTouchEvent = YES;
         if (hasMoved) {
-            [self.currentView touchCancelled:[touches.anyObject locationInView:self]];
+            [self.currentView touchesCancelled:touches withEvent:event];
         }
+        isSendingTouchEvent = NO;
     }
 }
 

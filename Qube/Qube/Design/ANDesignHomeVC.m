@@ -17,7 +17,7 @@
 - (id)init {
     if ((self = [super init])) {
         self.title = @"Design";
-        self.view.backgroundColor = [UIColor blackColor];
+        self.view.backgroundColor = [ANQubeTheme lightBackgroundColor];
         
         self.tabBarItem.image = [UIImage imageNamed:@"design"];
     }

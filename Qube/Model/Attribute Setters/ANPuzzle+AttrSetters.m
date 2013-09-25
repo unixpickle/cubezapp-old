@@ -31,7 +31,7 @@
 }
 
 - (void)offlineSetImage:(NSData *)imageData {
-    self.image = [[ANImageManager sharedImageManager] registerImageData:imageData];
+    self.image = imageData;
     [self attributeChanged:kANPuzzleAttributeImageHash];
 }
 
@@ -65,6 +65,16 @@
     [self attributeChanged:kANPuzzleAttributeType];
 }
 
+- (void)offlineDelete {
+    if (!self.ocAddition) {
+        OCPuzzleDeletion * deletion = [NSEntityDescription insertNewObjectForEntityForName:@"OCPuzzleDeletion"
+                                                                    inManagedObjectContext:[ANDataManager sharedDataManager].context];
+        deletion.identifier = self.identifier;
+        [self.account.changes addPuzzleDeletionsObject:deletion];
+    }
+    [self.managedObjectContext deleteObject:self];
+}
+
 #pragma mark - Private -
 
 - (void)attributeChanged:(NSString *)attribute {
@@ -76,6 +86,7 @@
         setting = [NSEntityDescription insertNewObjectForEntityForName:@"OCPuzzleSetting"
                                                inManagedObjectContext:[ANDataManager sharedDataManager].context];
         setting.attribute = attribute;
+        setting.puzzle = self;
         [[ANDataManager sharedDataManager].activeAccount.changes addPuzzleSettingsObject:setting];
         [self addOcSettingsObject:setting];
     }

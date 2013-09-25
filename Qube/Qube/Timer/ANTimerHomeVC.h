@@ -7,21 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ANGridView.h"
+#import "ANPuzzleGrid.h"
 #import "ANEditPuzzleVC.h"
+#import "ANPuzzleFrontView.h"
+#import "ANPuzzleBackView.h"
 
-@interface ANTimerHomeVC : UIViewController <ANGridViewDelegate, ANEditPuzzleVCDelegate> {
+@interface ANTimerHomeVC : UIViewController <ANGridViewDelegate, ANPuzzleGridDelegate, ANEditPuzzleVCDelegate, UIAlertViewDelegate> {
     UIBarButtonItem * accountButton;
     UIBarButtonItem * addButton;
+    UIBarButtonItem * doneButton;
     
-    ANGridView * gridView;
+    ANPuzzleGrid * gridView;
     BOOL isAdding;
+    
+    ANPuzzle * deletingPuzzle;
 }
 
 @property (readonly) UIBarButtonItem * accountButton;
-@property (readonly) ANGridView * gridView;
+@property (readonly) ANPuzzleGrid * gridView;
 
 - (void)accountPressed:(id)sender;
 - (void)addPressed:(id)sender;
+- (void)donePressed:(id)sender;
 
 @end

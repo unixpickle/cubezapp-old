@@ -23,7 +23,7 @@
         }
         names = mNames;
         selectedName = (NSInteger)type;
-        self.view.backgroundColor = [UIColor blackColor];
+        self.view.backgroundColor =  [ANQubeTheme lightBackgroundColor];
     }
     return self;
 }

@@ -11,6 +11,7 @@
 @interface ANEditPuzzleVC (Private)
 
 - (NSArray *)sectionFields;
+- (void)updateChangedFields;
 
 @end
 
@@ -23,7 +24,7 @@
     if ((self = [super initWithStyle:UITableViewStyleGrouped])) {
         puzzle = aPuzzle;
         self.title = @"Puzzle";
-        self.view.backgroundColor = [UIColor blackColor];
+        self.view.backgroundColor =  [ANQubeTheme lightBackgroundColor];
         
         doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                    target:self
@@ -39,6 +40,7 @@
 }
 
 - (void)donePressed:(id)sender {
+    [self updateChangedFields];
     [delegate editPuzzleVCDone:self];
     [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
@@ -52,6 +54,8 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
+    
+    [self updateChangedFields];
     return NO;
 }
 
@@ -75,6 +79,14 @@
                                        @"color": [ANColorPickerCell class]};
         retCell = [[cellClasses[info[@"type"]] alloc] initWithNameWidth:60
                                                         reuseIdentifier:info[@"type"]];
+    }
+    if ([info[@"type"] isEqualToString:@"entry"]) {
+        ANTextEntryCell * entry = (ANTextEntryCell *)retCell;
+        entry.textField.delegate = self;
+        
+        // TODO: this may need to be changed if
+        // another text entry is added
+        nameField = entry.textField;
     }
     [retCell setCellValue:info[@"value"]];
     retCell.nameLabel.text = info[@"name"];
@@ -114,6 +126,12 @@
             ];
 }
 
+- (void)updateChangedFields {
+    if (![self.puzzle.name isEqualToString:nameField.text] && nameField.text) {
+        [self.puzzle offlineSetName:nameField.text];
+    }
+}
+
 #pragma mark - View Callbacks -
 
 - (void)puzzleTypePicker:(ANPuzzleTypePickerVC *)picker selected:(ANPuzzleType)type {
@@ -121,7 +139,7 @@
     BOOL hasRenamed = ![self.puzzle.name isEqualToString:PuzzleNames[self.puzzle.type]];
     [self.puzzle setDefaultFields:type];
     if (!hasRenamed) {
-        [self.puzzle setName:PuzzleNames[type]];
+        [self.puzzle offlineSetName:PuzzleNames[type]];
     }
     [self.tableView reloadData];
 }

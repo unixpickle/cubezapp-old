@@ -39,4 +39,6 @@
 - (ANSession *)createSessionObject;
 - (ANSolve *)createSolveObject;
 
+- (ANPuzzle *)createUnownedPuzzleObject;
+
 @end

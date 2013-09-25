@@ -83,9 +83,7 @@
     
     // this code is pretty ugly, but you can't tell me
     // it doesn't work.
-    
-    NSLog(@"height %f", self.frame.size.height);
-    
+        
     CGFloat bannerHeight = self.frame.size.height < 200 ? 50 : 64;
     CGFloat bannerWidth = 320.0 * bannerHeight / 64.0;
     

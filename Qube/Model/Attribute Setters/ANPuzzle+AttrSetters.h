@@ -23,4 +23,6 @@
 - (void)offlineSetShowStats:(BOOL)show;
 - (void)offlineSetType:(int16_t)type;
 
+- (void)offlineDelete;
+
 @end

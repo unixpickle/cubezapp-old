@@ -76,6 +76,12 @@
     NSAssert([accountList count] < 2, @"Too many active accounts in the data store.");
     if ([accountList count] == 1) {
         activeAccount = [accountList lastObject];
+    } else {
+        // generate an account ourselves
+        activeAccount = [NSEntityDescription insertNewObjectForEntityForName:@"LocalAccount"
+                                                      inManagedObjectContext:context];
+        activeAccount.changes = [NSEntityDescription insertNewObjectForEntityForName:@"OfflineChanges"
+                                                              inManagedObjectContext:context];
     }
     return activeAccount;
 }
@@ -97,6 +103,22 @@
 - (ANSolve *)createSolveObject {
     return [NSEntityDescription insertNewObjectForEntityForName:@"ANSolve"
                                          inManagedObjectContext:context];
+}
+
+#pragma mark Unknowned
+
+- (ANPuzzle *)createUnownedPuzzleObject {
+    NSEntityDescription * entity = [NSEntityDescription entityForName:@"ANPuzzle"
+                                              inManagedObjectContext:context];
+    ANPuzzle * puzzle = (ANPuzzle *)[[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
+    
+    NSEntityDescription * additionDesc = [NSEntityDescription entityForName:@"OCPuzzleAddition"
+                                                     inManagedObjectContext:context];
+    OCPuzzleAddition * addition = (OCPuzzleAddition *)[[NSManagedObject alloc] initWithEntity:additionDesc
+                                                               insertIntoManagedObjectContext:nil];
+    puzzle.ocAddition = addition;
+    addition.puzzle = puzzle;
+    return puzzle;
 }
 
 @end

@@ -31,13 +31,18 @@
         BOOL canShow = [ANRendererList.defaultRendererList rendererForPuzzle:aType] != nil;
         [self offlineSetShowScramble:canShow];
     } else {
-        [self setShowScramble:NO];
+        [self offlineSetShowScramble:NO];
     }
     
-    [self setIconColor:[@"#FF0000" dataUsingEncoding:NSASCIIStringEncoding]];
+    if (!self.iconColor) {
+        [self offlineSetIconColor:[@"#FFFFFF" dataUsingEncoding:NSASCIIStringEncoding]];
+    }
     
-    NSString * defaultFilename = [NSString stringWithFormat:@"default_%@@@2x.png", [PuzzleNames[aType] lowercaseString]];
-    NSData * imageData = [NSData dataWithContentsOfFile:defaultFilename];
+    NSString * rootName = [[PuzzleNames[aType] lowercaseString] stringByReplacingOccurrencesOfString:@" "
+                                                                                          withString:@"_"];
+    NSString * defaultFilename = [NSString stringWithFormat:@"default_%@@2x", rootName];
+    NSString * path = [[NSBundle mainBundle] pathForResource:defaultFilename ofType:@"png"];
+    NSData * imageData = [NSData dataWithContentsOfFile:path];
     [self offlineSetImage:[[ANImageManager sharedImageManager] registerImageData:imageData]];
 }
 

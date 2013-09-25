@@ -24,7 +24,7 @@
 - (id)initWithFrame:(CGRect)frame item:(ANGridViewItem *)anItem {
     if ((self = [super initWithFrame:frame])) {
         item = anItem;
-        item.frame = item.bounds;
+        item.frame = self.bounds;
         deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(-11, -11, 22, 22)];
         [deleteButton setBackgroundImage:[UIImage imageNamed:@"delete"]
                                 forState:UIControlStateNormal];
@@ -43,17 +43,28 @@
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    if (!self.item.isEditing) return [super hitTest:point withEvent:event];
-    if (CGRectContainsPoint(CGRectInset(deleteButton.frame, -40, -40), point)) {
-        return deleteButton;
+    CGRect deleteRect = CGRectInset(deleteButton.frame, -20, -20);
+    CGRect infoRect = CGRectInset(self.item.infoButton.frame, -20, -20);
+    if (!self.item.isEditing) {
+        UIView * infoButton = self.item.isFlipside ? self.item.backButton : self.item.infoButton;
+        if (CGRectContainsPoint(infoRect, point)) return infoButton;
+        return [super hitTest:point withEvent:event];
+    } else {
+        if (CGRectContainsPoint(deleteRect, point)) return deleteButton;
+        return [super hitTest:point withEvent:event];
     }
-    return [super hitTest:point withEvent:event];
 }
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
-    if (!self.item.isEditing) return [super pointInside:point withEvent:event];
+    CGRect deleteRect = CGRectInset(deleteButton.frame, -20, -20);
+    CGRect infoRect = CGRectInset(self.item.infoButton.frame, -20, -20);
+    CGRect extraFrame = self.item.isEditing ? deleteRect : infoRect;
+    CGRect holeFrame = self.item.isEditing ? CGRectMake(self.frame.size.width - 10,
+                                                        self.frame.size.height - 10, 10, 10) :
+                                             CGRectMake(0, 0, 10, 10);
+    if (CGRectContainsPoint(holeFrame, point)) return NO;
     if (CGRectContainsPoint(self.bounds, point)) return YES;
-    return CGRectContainsPoint(CGRectInset(deleteButton.frame, -40, -40), point);
+    return CGRectContainsPoint(extraFrame, point);
 }
 
 - (void)layoutSubviews {

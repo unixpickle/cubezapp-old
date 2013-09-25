@@ -13,7 +13,7 @@
         <attribute name="showStats" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="account" maxCount="1" deletionRule="Nullify" destinationEntity="LocalAccount" inverseName="puzzles" inverseEntity="LocalAccount" syncable="YES"/>
-        <relationship name="ocAddition" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="OCPuzzleAddition" inverseName="puzzle" inverseEntity="OCPuzzleAddition" syncable="YES"/>
+        <relationship name="ocAddition" maxCount="1" deletionRule="Cascade" destinationEntity="OCPuzzleAddition" inverseName="puzzle" inverseEntity="OCPuzzleAddition" syncable="YES"/>
         <relationship name="ocSettings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OCPuzzleSetting" inverseName="puzzle" inverseEntity="OCPuzzleSetting" syncable="YES"/>
         <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="ANSession" inverseName="puzzle" inverseEntity="ANSession" syncable="YES"/>
     </entity>

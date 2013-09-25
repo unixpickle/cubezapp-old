@@ -35,6 +35,7 @@
     if (self) {
         scrollView = [[ANAutoscrollView alloc] initWithFrame:self.bounds];
         scrollView.canCancelContentTouches = NO;
+        scrollView.alwaysBounceVertical = YES;
         self.itemsPerRow = 2;
         self.itemPadding = 15;
         cells = [[NSMutableArray alloc] init];
@@ -46,7 +47,6 @@
 
 - (id)initWithFrame:(CGRect)frame items:(NSArray *)theItems {
     if ((self = [self initWithFrame:frame])) {
-        cells = [NSMutableArray array];
         for (ANGridViewItem * item in theItems) {
             ANGridViewCell * cell = [[ANGridViewCell alloc] initWithFrame:item.bounds item:item];
             [item setDelegate:self];
@@ -61,6 +61,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     scrollView.frame = self.bounds;
+    [self layoutItems];
 }
 
 #pragma mark - Editing -
@@ -91,7 +92,6 @@
     ANGridViewCell * cell = [self cellForItem:item];
     if (flag) {
         [UIView animateWithDuration:0.3 animations:^{
-            NSLog(@"foo");
             cell.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5);
             cell.alpha = 0;
             [cells removeObject:cell];
@@ -108,10 +108,15 @@
 }
 
 - (void)addItem:(ANGridViewItem *)item animated:(BOOL)flag completed:(void (^)())block {
+    [self addItem:item atIndex:[cells count]
+         animated:flag completed:block];
+}
+
+- (void)addItem:(ANGridViewItem *)item atIndex:(NSInteger)index animated:(BOOL)flag completed:(void (^)())block {
     [item setDelegate:self];
     ANGridViewCell * cell = [[ANGridViewCell alloc] initWithFrame:item.bounds item:item];
     [cell setDelegate:self];
-    [cells addObject:cell];
+    [cells insertObject:cell atIndex:index];
     [cell setEditing:isEditing];
     if (flag) {
         cell.alpha = 0;
@@ -127,6 +132,7 @@
 }
 
 - (void)moveItem:(ANGridViewItem *)item toIndex:(NSInteger)index {
+    ANGridViewItem * replacing = [(ANGridViewCell *)cells[index] item];
     ANGridViewCell * cell = [self cellForItem:item];
     NSInteger currentIndex = [cells indexOfObject:cell];
     if (currentIndex < index) {
@@ -145,7 +151,7 @@
     [UIView animateWithDuration:0.3 animations:^{
         [self layoutItems];
     }];
-    [self.delegate gridViewDidReorder:self];
+    [self.delegate gridView:self item:item movedTo:replacing];
 }
 
 #pragma mark - Layout -

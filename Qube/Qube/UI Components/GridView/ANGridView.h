@@ -14,7 +14,7 @@
 
 @protocol ANGridViewDelegate
 
-- (void)gridViewDidReorder:(ANGridView *)gridView;
+- (void)gridView:(ANGridView *)gridView item:(ANGridViewItem *)item movedTo:(ANGridViewItem *)another;
 - (void)gridViewDidBeginEditing:(ANGridView *)gridView;
 - (void)gridViewDidEndEditing:(ANGridView *)gridView;
 - (void)gridView:(ANGridView *)gridView willDelete:(ANGridViewItem *)item;
@@ -29,7 +29,7 @@
 
 @property (readwrite) NSInteger itemsPerRow;
 @property (readwrite) CGFloat itemPadding;
-@property (readonly) NSArray * items;
+@property (nonatomic, copy) NSArray * items;
 @property (nonatomic, weak) id<ANGridViewDelegate> delegate;
 
 - (id)initWithFrame:(CGRect)frame items:(NSArray *)theItems;
@@ -39,6 +39,7 @@
 - (void)stopEditing;
 - (void)deleteItem:(ANGridViewItem *)item animated:(BOOL)flag completed:(void (^)())block;
 - (void)addItem:(ANGridViewItem *)item animated:(BOOL)flag completed:(void (^)())block;
+- (void)addItem:(ANGridViewItem *)item atIndex:(NSInteger)index animated:(BOOL)flag completed:(void (^)())block;
 - (void)moveItem:(ANGridViewItem *)item toIndex:(NSInteger)index;
 
 @end

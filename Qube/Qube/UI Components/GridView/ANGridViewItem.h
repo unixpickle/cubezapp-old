@@ -12,15 +12,6 @@
 
 @class ANGridViewItem;
 
-@protocol ANBasicTouchHandler <NSObject>
-
-- (void)touchBegan:(CGPoint)localPoint;
-- (void)touchMoved:(CGPoint)localPoint;
-- (void)touchEnded:(CGPoint)localPoint;
-- (void)touchCancelled:(CGPoint)localPoint;
-
-@end
-
 @protocol ANGridViewItemDelegate <NSObject>
 
 - (void)gridViewItemHeld:(ANGridViewItem *)item;
@@ -30,8 +21,8 @@
 @end
 
 @interface ANGridViewItem : UIView {
-    UIView<ANBasicTouchHandler> * frontside;
-    UIView<ANBasicTouchHandler> * backside;
+    UIView * frontside;
+    UIView * backside;
     BOOL isFlipside;
     BOOL isEditing;
     
@@ -43,21 +34,25 @@
     
     UIButton * infoButton;
     UIButton * backButton;
+    
+    BOOL isSendingTouchEvent;
 }
 
-@property (readonly) UIView<ANBasicTouchHandler> * frontside;
-@property (readonly) UIView<ANBasicTouchHandler> * backside;
-@property (nonatomic, retain) id userInfo;
+@property (readonly) UIView * frontside;
+@property (readonly) UIView * backside;
+@property (nonatomic, weak) id userInfo;
 @property (nonatomic, weak) id<ANGridViewItemDelegate> delegate;
 @property (readwrite) BOOL isEditing;
+@property (readonly) UIButton * infoButton;
+@property (readonly) UIButton * backButton;
 
 // swiping
-@property (readonly) UIView<ANBasicTouchHandler> * currentView;
+@property (readonly) UIView * currentView;
 @property (readonly) BOOL isFlipside;
 
 // initialization
-- (id)initWithFrontside:(UIView<ANBasicTouchHandler> *)aFrontside
-               backside:(UIView<ANBasicTouchHandler> *)aBackside;
+- (id)initWithFrontside:(UIView *)aFrontside
+               backside:(UIView *)aBackside;
 
 // flipping
 - (void)flipToFrontside;

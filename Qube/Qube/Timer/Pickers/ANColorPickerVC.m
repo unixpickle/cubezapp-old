@@ -29,6 +29,8 @@
                                                  selector:@selector(colorPickerReady:)
                                                      name:RSColorPickerViewReadyNotification
                                                    object:colorPicker];
+        
+        self.view.backgroundColor =  [ANQubeTheme lightBackgroundColor];
     }
     return self;
 }

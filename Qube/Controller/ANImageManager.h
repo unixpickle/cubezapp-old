@@ -11,6 +11,7 @@
 #import "NSString+Hex.h"
 #import "NSData+Hex.h"
 #import "NSData+MD5.h"
+#import "OSCommonImage.h"
 
 @interface ANImageManager : NSObject
 
@@ -26,7 +27,7 @@
 
 - (NSData *)registerImage:(UIImage *)image;
 - (NSData *)registerImageData:(NSData *)png;
-- (UIImage *)imageForHash:(NSData *)hash;
+- (ANImageObj *)imageForHash:(NSData *)hash;
 - (NSData *)imageDataForHash:(NSData *)hash;
 
 @end

@@ -65,7 +65,6 @@
 		FA4299BD17BCBC1A006746B7 /* ANDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4299BC17BCBC1A006746B7 /* ANDataManager.m */; };
 		FA4299CB17BCBF9A006746B7 /* ANTimerHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4299CA17BCBF9A006746B7 /* ANTimerHomeVC.m */; };
 		FA507C1717D2A94100F3600B /* ANAPICallSignup.m in Sources */ = {isa = PBXBuildFile; fileRef = FA507C1617D2A94100F3600B /* ANAPICallSignup.m */; };
-		FA56E5C017CBF268006FC1D1 /* ANImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA56E5BF17CBF268006FC1D1 /* ANImageManager.m */; };
 		FA56E5CA17CC0AC3006FC1D1 /* ANImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = FA56E5C917CC0AC3006FC1D1 /* ANImageDownloader.m */; };
 		FA56E5CE17CC0FBB006FC1D1 /* ANAPICallImageDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = FA56E5CD17CC0FBB006FC1D1 /* ANAPICallImageDownload.m */; };
 		FA56E5D117CC1073006FC1D1 /* ANAPICallImageUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = FA56E5D017CC1073006FC1D1 /* ANAPICallImageUpload.m */; };
@@ -128,6 +127,8 @@
 		FAAB709F17EFC0A40025DFBF /* ANPuzzleBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAB709E17EFC0A40025DFBF /* ANPuzzleBackView.m */; };
 		FAAB70A117EFC1ED0025DFBF /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAAB70A017EFC1ED0025DFBF /* delete@2x.png */; };
 		FAAB70A417EFC4360025DFBF /* NSSetOrderedSetFix.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAB70A317EFC4360025DFBF /* NSSetOrderedSetFix.m */; };
+		FAB739B017F639E8002C0B7C /* ANImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB739AF17F639E8002C0B7C /* ANImageManager.m */; };
+		FAB739B317F63B01002C0B7C /* ANDataManager+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB739B217F63B01002C0B7C /* ANDataManager+Utility.m */; };
 		FAB9002917C3FEA8002DB676 /* ANSession+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9002817C3FEA8002DB676 /* ANSession+Coding.m */; };
 		FAC7EE0717C0481B00DE49EE /* ANRenameCollisionConflict.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7EE0617C0481B00DE49EE /* ANRenameCollisionConflict.m */; };
 		FAC7EE2C17C0B50000DE49EE /* ANDataManager+Search.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7EE2B17C0B50000DE49EE /* ANDataManager+Search.m */; };
@@ -298,8 +299,6 @@
 		FA4299CA17BCBF9A006746B7 /* ANTimerHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTimerHomeVC.m; sourceTree = "<group>"; };
 		FA507C1517D2A94100F3600B /* ANAPICallSignup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallSignup.h; sourceTree = "<group>"; };
 		FA507C1617D2A94100F3600B /* ANAPICallSignup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICallSignup.m; sourceTree = "<group>"; };
-		FA56E5BE17CBF268006FC1D1 /* ANImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANImageManager.h; sourceTree = "<group>"; };
-		FA56E5BF17CBF268006FC1D1 /* ANImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANImageManager.m; sourceTree = "<group>"; };
 		FA56E5C817CC0AC3006FC1D1 /* ANImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANImageDownloader.h; sourceTree = "<group>"; };
 		FA56E5C917CC0AC3006FC1D1 /* ANImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANImageDownloader.m; sourceTree = "<group>"; };
 		FA56E5CC17CC0FBB006FC1D1 /* ANAPICallImageDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallImageDownload.h; sourceTree = "<group>"; };
@@ -422,6 +421,10 @@
 		FAAB70A017EFC1ED0025DFBF /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
 		FAAB70A217EFC4360025DFBF /* NSSetOrderedSetFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSSetOrderedSetFix.h; sourceTree = "<group>"; };
 		FAAB70A317EFC4360025DFBF /* NSSetOrderedSetFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSSetOrderedSetFix.m; sourceTree = "<group>"; };
+		FAB739AE17F639E8002C0B7C /* ANImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANImageManager.h; sourceTree = "<group>"; };
+		FAB739AF17F639E8002C0B7C /* ANImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANImageManager.m; sourceTree = "<group>"; };
+		FAB739B117F63B01002C0B7C /* ANDataManager+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ANDataManager+Utility.h"; sourceTree = "<group>"; };
+		FAB739B217F63B01002C0B7C /* ANDataManager+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ANDataManager+Utility.m"; sourceTree = "<group>"; };
 		FAB9002717C3FEA8002DB676 /* ANSession+Coding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ANSession+Coding.h"; sourceTree = "<group>"; };
 		FAB9002817C3FEA8002DB676 /* ANSession+Coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ANSession+Coding.m"; sourceTree = "<group>"; };
 		FAC7EE0517C0481B00DE49EE /* ANRenameCollisionConflict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANRenameCollisionConflict.h; sourceTree = "<group>"; };
@@ -821,10 +824,10 @@
 				FA2217FC17BCCE4100D71F71 /* ANConstants.h */,
 				FA4299BB17BCBC1A006746B7 /* ANDataManager.h */,
 				FA4299BC17BCBC1A006746B7 /* ANDataManager.m */,
-				FA56E5BE17CBF268006FC1D1 /* ANImageManager.h */,
-				FA56E5BF17CBF268006FC1D1 /* ANImageManager.m */,
 				FAC7EE2A17C0B50000DE49EE /* ANDataManager+Search.h */,
 				FAC7EE2B17C0B50000DE49EE /* ANDataManager+Search.m */,
+				FAB739B117F63B01002C0B7C /* ANDataManager+Utility.h */,
+				FAB739B217F63B01002C0B7C /* ANDataManager+Utility.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1069,6 +1072,8 @@
 			children = (
 				FAA38A7317C9B34D009361A8 /* ANAccountManager.h */,
 				FAA38A7417C9B34D009361A8 /* ANAccountManager.m */,
+				FAB739AE17F639E8002C0B7C /* ANImageManager.h */,
+				FAB739AF17F639E8002C0B7C /* ANImageManager.m */,
 				FAA38A7517C9B34D009361A8 /* ANSyncManager.h */,
 				FAA38A7617C9B34D009361A8 /* ANSyncManager.m */,
 			);
@@ -1572,6 +1577,7 @@
 				FAD7889A17EF7D1C00B5907D /* RSColorPickerView.m in Sources */,
 				FA4299A117BCB772006746B7 /* Model.xcdatamodeld in Sources */,
 				FAD7889117EF7D1C00B5907D /* BitmapScaleManipulator.m in Sources */,
+				FAB739B317F63B01002C0B7C /* ANDataManager+Utility.m in Sources */,
 				FA9F539217C6B1B60024923B /* ANAPICallSessionDeleteRequest.m in Sources */,
 				FA9F538E17C6B1A20024923B /* ANAPICallSessionGetDiff.m in Sources */,
 				FA3D85D317D6868E004C41E4 /* ANPeriodicLineView.m in Sources */,
@@ -1591,6 +1597,7 @@
 				FA9F538D17C6B1A20024923B /* ANAPICallSessionAdd.m in Sources */,
 				FAE888A817EE34BF00BCDAB3 /* ANAutoscrollView.m in Sources */,
 				FA4299BD17BCBC1A006746B7 /* ANDataManager.m in Sources */,
+				FAB739B017F639E8002C0B7C /* ANImageManager.m in Sources */,
 				FAD7889517EF7D1C00B5907D /* KBEncode.c in Sources */,
 				FAE888AB17EE34BF00BCDAB3 /* ANGridViewItem.m in Sources */,
 				FAD7888A17EF7D1C00B5907D /* UIImage+ANImageBitmapRep.m in Sources */,
@@ -1641,7 +1648,6 @@
 				FA9F538F17C6B1A20024923B /* ANAPICallSessionGetHashes.m in Sources */,
 				FAD7889317EF7D1C00B5907D /* KBDecode.c in Sources */,
 				FA9F543417C8236A0024923B /* ANPuzzleRenamer.m in Sources */,
-				FA56E5C017CBF268006FC1D1 /* ANImageManager.m in Sources */,
 				FA22187017BDF0A300D71F71 /* ANNameCollisionConflict.m in Sources */,
 				FAA38A5517C9A558009361A8 /* ANAPIPuzzleDeleteResponse.m in Sources */,
 				FA56E5CE17CC0FBB006FC1D1 /* ANAPICallImageDownload.m in Sources */,

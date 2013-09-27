@@ -53,6 +53,11 @@
     [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)puzzleChanged:(id)sender {
+    puzzleImage = [[ANImageManager sharedImageManager] imageForHash:puzzle.image];
+    
+}
+
 #pragma mark - Text Field -
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

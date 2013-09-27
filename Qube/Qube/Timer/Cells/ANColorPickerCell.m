@@ -12,18 +12,20 @@
 
 - (id)initWithNameWidth:(CGFloat)width reuseIdentifier:(NSString *)identifier {
     if ((self = [super initWithNameWidth:width reuseIdentifier:identifier])) {
-        sampleView = [[UIView alloc] initWithFrame:CGRectMake(100, 5, 60, self.contentView.frame.size.height - 10)];
+        sampleView = [[UIView alloc] initWithFrame:CGRectMake(100, 5, self.contentView.frame.size.height - 10,
+                                                              self.contentView.frame.size.height - 10)];
         [self.contentView addSubview:sampleView];
         
-        sampleView.layer.borderWidth = 1;
-        sampleView.layer.borderColor = [[UIColor blackColor] CGColor];
+        sampleView.layer.cornerRadius = sampleView.frame.size.height / 2;
     }
     return self;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    sampleView.frame = CGRectMake(self.frame.size.width - 90, 5, 60, self.contentView.frame.size.height - 10);
+    CGFloat sampleSize = self.contentView.frame.size.height - 10;
+    sampleView.frame = CGRectMake(self.frame.size.width - sampleSize - 40, 5, sampleSize, sampleSize);
+    sampleView.layer.cornerRadius = sampleView.frame.size.height / 2;
 }
 
 - (void)setCellValue:(id)aValue {

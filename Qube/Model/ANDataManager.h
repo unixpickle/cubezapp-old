@@ -33,12 +33,11 @@
 
 + (ANDataManager *)sharedDataManager;
 
+- (void)save;
 - (LocalAccount *)activeAccount;
 
 - (ANPuzzle *)createPuzzleObject;
 - (ANSession *)createSessionObject;
 - (ANSolve *)createSolveObject;
-
-- (ANPuzzle *)createUnownedPuzzleObject;
 
 @end

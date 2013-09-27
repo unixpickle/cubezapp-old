@@ -66,6 +66,13 @@
     }
 }
 
+- (void)save {
+    NSError * e = nil;
+    if (![self.context save:&e]) {
+        NSLog(@"Failed to save data with error: %@", e);
+    }
+}
+
 #pragma mark - Account Management -
 
 - (LocalAccount *)activeAccount {
@@ -103,22 +110,6 @@
 - (ANSolve *)createSolveObject {
     return [NSEntityDescription insertNewObjectForEntityForName:@"ANSolve"
                                          inManagedObjectContext:context];
-}
-
-#pragma mark Unknowned
-
-- (ANPuzzle *)createUnownedPuzzleObject {
-    NSEntityDescription * entity = [NSEntityDescription entityForName:@"ANPuzzle"
-                                              inManagedObjectContext:context];
-    ANPuzzle * puzzle = (ANPuzzle *)[[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
-    
-    NSEntityDescription * additionDesc = [NSEntityDescription entityForName:@"OCPuzzleAddition"
-                                                     inManagedObjectContext:context];
-    OCPuzzleAddition * addition = (OCPuzzleAddition *)[[NSManagedObject alloc] initWithEntity:additionDesc
-                                                               insertIntoManagedObjectContext:nil];
-    puzzle.ocAddition = addition;
-    addition.puzzle = puzzle;
-    return puzzle;
 }
 
 @end

@@ -11,6 +11,7 @@
 #define kHoldDelay 0.3
 
 @class ANGridViewItem;
+@class ANGridView;
 
 @protocol ANGridViewItemDelegate <NSObject>
 
@@ -45,6 +46,7 @@
 @property (readwrite) BOOL isEditing;
 @property (readonly) UIButton * infoButton;
 @property (readonly) UIButton * backButton;
+@property (nonatomic, weak) ANGridView * gridView;
 
 // swiping
 @property (readonly) UIView * currentView;

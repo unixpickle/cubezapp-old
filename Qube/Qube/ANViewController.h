@@ -22,6 +22,8 @@
     ANAccountSettingsVC * accountSettings;
 }
 
+@property (readonly) ANTimerHomeVC * timer;
+
 - (void)updateAccountButton;
 - (void)flipToAccountsSettings;
 

@@ -7,6 +7,7 @@
 //
 
 #import "ANGridViewCell.h"
+#import "ANGridView.h"
 
 @interface ANGridViewCell (Private)
 

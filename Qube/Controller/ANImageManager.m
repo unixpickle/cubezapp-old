@@ -80,7 +80,8 @@
 
 #pragma mark - Registration -
 
-- (NSData *)registerImage:(UIImage *)image {
+- (NSData *)registerImage:(ANImageObj *)image {
+    // TODO: get the PNG data in a universal way
     return [self registerImageData:UIImagePNGRepresentation(image)];
 }
 
@@ -93,10 +94,10 @@
 
 #pragma mark - Lookup -
 
-- (UIImage *)imageForHash:(NSData *)hash {
+- (ANImageObj *)imageForHash:(NSData *)hash {
     if (!hash) return nil;
     NSString * path = [[self imageDirectory] stringByAppendingPathComponent:[hash hexRepresentation]];
-    return [[UIImage alloc] initWithContentsOfFile:path];
+    return [[ANImageObj alloc] initWithContentsOfFile:path];
 }
 
 - (NSData *)imageDataForHash:(NSData *)hash {

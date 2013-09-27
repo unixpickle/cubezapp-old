@@ -15,6 +15,8 @@
 
 @implementation ANViewController
 
+@synthesize timer;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -106,21 +108,15 @@
 #pragma mark Sync Session
 
 - (void)syncSession:(ANSyncSession *)session addedPuzzle:(ANPuzzle *)puzzle {
-    if (!puzzle.hidden) {
-        [timer.gridView externalPuzzleAdded:puzzle];
-    }
+    [timer syncAddedPuzzle:puzzle];
 }
 
 - (void)syncSession:(ANSyncSession *)session deletedPuzzle:(ANPuzzle *)puzzle {
-    if (!puzzle.hidden) {
-        [timer.gridView externalPuzzleDeleted:puzzle];
-    }
+    [timer syncDeletedPuzzle:puzzle];
 }
 
 - (void)syncSession:(ANSyncSession *)session updatedPuzzle:(ANPuzzle *)puzzle {
-    if (puzzle.hidden && [timer.gridView hasCellForPuzzle:puzzle]) {
-        [timer.gridView externalPuzzleDeleted:puzzle];
-    }
+    [timer syncUpdatedPuzzle:puzzle];
 }
 
 - (void)syncSession:(ANSyncSession *)session addedSession:(ANSession *)puzzle {

@@ -52,26 +52,36 @@
     return self;
 }
 
-#pragma mark - Actions -
+#pragma mark - Syncing -
 
-- (void)accountPressed:(id)sender {
-    ANAppDelegate * delegate = [UIApplication sharedApplication].delegate;
-    [delegate.viewController flipToAccountsSettings];
+- (void)syncUpdatedPuzzle:(ANPuzzle *)puzzle {
+    if (puzzle.hidden && [gridView hasCellForPuzzle:puzzle]) {
+        [gridView externalPuzzleDeleted:puzzle];
+    }
+    if ([self.editVC.puzzle.objectID isEqual:puzzle.objectID]) {
+        [self.editVC puzzleChanged:self];
+    }
 }
 
-- (void)addPressed:(id)sender {
-    isAdding = YES;
-    
-    ANPuzzle * puzzle = [[ANDataManager sharedDataManager] createUnownedPuzzleObject];
-    [puzzle setDefaultFields:ANPuzzleType3x3];
-    puzzle.name = @"3x3x3";
-    
-    uint32_t randomIndex = arc4random() % [ANQubeTheme supportedGridColors].count;
-    UIColor * color = [[ANQubeTheme supportedGridColors] objectAtIndex:randomIndex][@"color"];
-    [puzzle offlineSetIconColor:[color hexValueData]];
-    
+- (void)syncAddedPuzzle:(ANPuzzle *)puzzle {
+    if (!puzzle.hidden) {
+        [gridView externalPuzzleAdded:puzzle];
+    }
+}
+
+- (void)syncDeletedPuzzle:(ANPuzzle *)puzzle {
+    if (!puzzle.hidden) {
+        [gridView externalPuzzleDeleted:puzzle];
+    }
+}
+
+#pragma mark - Functionality -
+
+- (void)showEditDialog:(ANPuzzle *)puzzle {
     ANEditPuzzleVC * editVC = [[ANEditPuzzleVC alloc] initWithPuzzle:puzzle];
     editVC.delegate = self;
+    editVC.navigationItem.leftBarButtonItem = nil;
+    editVC.title = puzzle.managedObjectContext ? @"Edit" : @"New Puzzle";
     UINavigationController * controller = [[UINavigationController alloc] init];
     controller.navigationBar.barStyle = UIBarStyleDefault;
     [controller pushViewController:editVC animated:NO];
@@ -80,16 +90,39 @@
     [delegate.viewController presentViewController:controller
                                           animated:YES
                                         completion:nil];
+    
+    self.editVC = editVC;
+}
+
+#pragma mark - Actions -
+
+- (void)accountPressed:(id)sender {
+    ANAppDelegate * delegate = [UIApplication sharedApplication].delegate;
+    [delegate.viewController flipToAccountsSettings];
+}
+
+- (void)addPressed:(id)sender {
+    ANPuzzle * puzzle = [[ANDataManager sharedDataManager] createUnownedPuzzleObject];
+    [puzzle setDefaultFields:ANPuzzleType3x3];
+    puzzle.name = @"3x3x3";
+    
+    uint32_t randomIndex = arc4random() % [ANQubeTheme supportedGridColors].count;
+    UIColor * color = [[ANQubeTheme supportedGridColors] objectAtIndex:randomIndex][@"color"];
+    [puzzle offlineSetIconColor:[color hexValueData]];
+    
+    [self showEditDialog:puzzle];
 }
 
 - (void)donePressed:(id)sender {
+    if (self.navigationItem.rightBarButtonItem == accountButton) {
+        return;
+    }
     [gridView stopEditing];
 }
 
 #pragma mark - Grid View -
 
 - (void)gridView:(ANGridView *)gridView item:(ANGridViewItem *)item movedTo:(ANGridViewItem *)another {
-    // TODO: here, we will reorder the account's internal order representation
     ANPuzzle * moving = item.userInfo;
     ANPuzzle * destination = another.userInfo;
     
@@ -110,14 +143,19 @@
     }
     puzzles[index] = moving;
     [ANDataManager sharedDataManager].activeAccount.puzzles = [NSOrderedSet orderedSetWithArray:puzzles];
+    // NOTE: we don't save here because that might make things too laggy; instead we wait until the user
+    // taps "Done"
 }
 
 - (void)gridViewDidBeginEditing:(ANGridView *)gridView {
-    [self.navigationItem setLeftBarButtonItem:doneButton animated:YES];
+    [self.navigationItem setRightBarButtonItem:doneButton animated:YES];
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
 }
 
 - (void)gridViewDidEndEditing:(ANGridView *)gridView {
     [self.navigationItem setLeftBarButtonItem:addButton animated:YES];
+    [self.navigationItem setRightBarButtonItem:accountButton animated:YES];
+    [[ANDataManager sharedDataManager] save];
 }
 
 - (void)gridView:(ANGridView *)gridView willDelete:(ANGridViewItem *)item {
@@ -133,41 +171,27 @@
 }
 
 - (void)puzzleGrid:(ANPuzzleGrid *)grid showStats:(ANPuzzle *)aPuzzle {
-    
 }
 
 - (void)puzzleGrid:(ANPuzzleGrid *)grid showInfo:(ANPuzzle *)aPuzzle {
-    isAdding = NO;
-    ANEditPuzzleVC * editVC = [[ANEditPuzzleVC alloc] initWithPuzzle:aPuzzle];
-    editVC.delegate = self;
-    editVC.navigationItem.leftBarButtonItem = nil;
-    editVC.title = @"Edit";
-    UINavigationController * controller = [[UINavigationController alloc] init];
-    controller.navigationBar.barStyle = UIBarStyleDefault;
-    [controller pushViewController:editVC animated:NO];
-    
-    ANAppDelegate * delegate = [UIApplication sharedApplication].delegate;
-    [delegate.viewController presentViewController:controller
-                                          animated:YES
-                                        completion:nil];
+    [self showEditDialog:aPuzzle];
 }
 
 #pragma mark - Puzzle Editor -
 
 - (void)editPuzzleVCCancelled:(ANEditPuzzleVC *)vc {
-    
+    self.editVC = nil;
 }
 
 - (void)editPuzzleVCDone:(ANEditPuzzleVC *)vc {
-    if (!isAdding) {
+    self.editVC = nil;
+    if (!vc.puzzle.managedObjectContext) {
+        [[ANDataManager sharedDataManager] addUnownedPuzzleObject:vc.puzzle];
+        [self.gridView externalPuzzleAdded:vc.puzzle];
+    } else {
         [self.gridView externalPuzzleUpdated:vc.puzzle];
-        return;
     }
-    [[ANDataManager sharedDataManager].context insertObject:vc.puzzle.ocAddition];
-    [[ANDataManager sharedDataManager].context insertObject:vc.puzzle];
-    [[ANDataManager sharedDataManager].activeAccount.changes addPuzzleAdditionsObject:vc.puzzle.ocAddition];
-    [[ANDataManager sharedDataManager].activeAccount addPuzzlesObject:vc.puzzle];
-    [self.gridView externalPuzzleAdded:vc.puzzle];
+    [[ANDataManager sharedDataManager] save];
 }
 
 #pragma mark - Alert View -
@@ -176,7 +200,9 @@
     if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"Delete"]) {
         [self.gridView externalPuzzleDeleted:deletingPuzzle];
         [deletingPuzzle offlineDelete];
+        [[ANDataManager sharedDataManager] save];
     }
+    deletingPuzzle = nil;
 }
 
 @end

@@ -41,6 +41,7 @@
 
 - (id)initWithPuzzle:(ANPuzzle *)aPuzzle;
 
+- (void)puzzleChanged:(id)sender;
 - (void)donePressed:(id)sender;
 - (void)cancelPressed:(id)sender;
 

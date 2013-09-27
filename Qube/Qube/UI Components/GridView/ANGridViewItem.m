@@ -7,6 +7,7 @@
 //
 
 #import "ANGridViewItem.h"
+#import "ANGridView.h"
 
 @interface ANGridViewItem (Private)
 
@@ -24,6 +25,7 @@
 @synthesize isFlipside;
 @synthesize infoButton;
 @synthesize backButton;
+@synthesize gridView;
 
 - (UIView *)currentView {
     if (isFlipside) return backside;
@@ -134,6 +136,13 @@
     [animation setRemovedOnCompletion:YES];
     [self.layer addAnimation:animation forKey:@"pageUnCurlAnimation"];
     [self addSubview:backside];
+    
+    for (ANGridViewItem * item in self.gridView.items) {
+        if (item != self) {
+            [item performSelector:@selector(flipToFrontside)
+                       withObject:nil afterDelay:0.1];
+        }
+    }
 }
 
 #pragma mark - Handling Touches -

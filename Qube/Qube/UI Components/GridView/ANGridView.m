@@ -50,6 +50,7 @@
         for (ANGridViewItem * item in theItems) {
             ANGridViewCell * cell = [[ANGridViewCell alloc] initWithFrame:item.bounds item:item];
             [item setDelegate:self];
+            [item setGridView:self];
             [cell setDelegate:self];
             [cells addObject:cell];
         }
@@ -114,6 +115,7 @@
 
 - (void)addItem:(ANGridViewItem *)item atIndex:(NSInteger)index animated:(BOOL)flag completed:(void (^)())block {
     [item setDelegate:self];
+    [item setGridView:self];
     ANGridViewCell * cell = [[ANGridViewCell alloc] initWithFrame:item.bounds item:item];
     [cell setDelegate:self];
     [cells insertObject:cell atIndex:index];

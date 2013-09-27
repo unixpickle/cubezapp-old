@@ -63,7 +63,7 @@
     NSAssert(CGRectEqualToRect(aFrontside.bounds, aBackside.bounds),
              @"frontside and backside must be equal in size");
     if ((self = [super initWithFrame:aFrontside.bounds])) {
-        self.clipsToBounds = YES;
+        //self.clipsToBounds = YES;
         frontside = aFrontside;
         backside = aBackside;
         
@@ -74,8 +74,13 @@
         self.multipleTouchEnabled = NO;
         self.exclusiveTouch = YES;
         
-        infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-        backButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+        infoButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 22, 22)];
+        backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 22, 22)];
+        
+        [infoButton setBackgroundImage:[UIImage imageNamed:@"i"]
+                              forState:UIControlStateNormal];
+        [backButton setBackgroundImage:[UIImage imageNamed:@"i_dark"]
+                              forState:UIControlStateNormal];
         
         infoButton.center = CGPointMake(frontside.frame.size.width - 20,
                                         frontside.frame.size.height - 20);

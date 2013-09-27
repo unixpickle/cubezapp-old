@@ -14,6 +14,8 @@
 
 @interface ANImageManager : NSObject
 
+@property (nonatomic, weak) ANPuzzle * editingPuzzle;
+
 + (ANImageManager *)sharedImageManager;
 
 - (NSArray *)allImageHashes;

@@ -35,17 +35,20 @@
                                                                      target:self
                                                                      action:@selector(cancelPressed:)];
         self.navigationItem.leftBarButtonItem = cancelButton;
+        [ANImageManager sharedImageManager].editingPuzzle = puzzle;
     }
     return self;
 }
 
 - (void)donePressed:(id)sender {
+    [ANImageManager sharedImageManager].editingPuzzle = nil;
     [self updateChangedFields];
     [delegate editPuzzleVCDone:self];
     [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)cancelPressed:(id)sender {
+    [ANImageManager sharedImageManager].editingPuzzle = nil;
     [delegate editPuzzleVCCancelled:self];
     [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }

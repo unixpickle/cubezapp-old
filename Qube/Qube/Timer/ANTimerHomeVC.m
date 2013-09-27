@@ -66,6 +66,10 @@
     [puzzle setDefaultFields:ANPuzzleType3x3];
     puzzle.name = @"3x3x3";
     
+    uint32_t randomIndex = arc4random() % [ANQubeTheme supportedGridColors].count;
+    UIColor * color = [[ANQubeTheme supportedGridColors] objectAtIndex:randomIndex][@"color"];
+    [puzzle offlineSetIconColor:[color hexValueData]];
+    
     ANEditPuzzleVC * editVC = [[ANEditPuzzleVC alloc] initWithPuzzle:puzzle];
     editVC.delegate = self;
     UINavigationController * controller = [[UINavigationController alloc] init];
@@ -86,6 +90,26 @@
 
 - (void)gridView:(ANGridView *)gridView item:(ANGridViewItem *)item movedTo:(ANGridViewItem *)another {
     // TODO: here, we will reorder the account's internal order representation
+    ANPuzzle * moving = item.userInfo;
+    ANPuzzle * destination = another.userInfo;
+    
+    NSMutableArray * puzzles = [[[ANDataManager sharedDataManager].activeAccount.puzzles array] mutableCopy];
+    NSInteger currentIndex = [puzzles indexOfObject:moving];
+    NSInteger index = [puzzles indexOfObject:destination];
+    if (currentIndex < index) {
+        // we are moving the cell up, meaning we should move back
+        // all the other items in the list
+        for (int i = currentIndex; i < index; i++) {
+            puzzles[i] = puzzles[i + 1];
+        }
+    } else if (currentIndex > index) {
+        // moving the cell back, we should move up all items
+        for (int i = currentIndex; i > index; i--) {
+            puzzles[i] = puzzles[i - 1];
+        }
+    }
+    puzzles[index] = moving;
+    [ANDataManager sharedDataManager].activeAccount.puzzles = [NSOrderedSet orderedSetWithArray:puzzles];
 }
 
 - (void)gridViewDidBeginEditing:(ANGridView *)gridView {

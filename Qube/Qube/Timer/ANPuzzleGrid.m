@@ -51,7 +51,7 @@
         ANPuzzle * aPuzzle = [puzzles objectAtIndex:i];
         ANGridViewItem * anItem = [self gridItemForPuzzle:aPuzzle];
         if (anItem) {
-            insertIndex = [items indexOfObject:anItem];
+            insertIndex = [items indexOfObject:anItem] + 1;
             break;
         }
     }

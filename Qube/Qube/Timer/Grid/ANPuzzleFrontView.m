@@ -25,6 +25,7 @@
         puzzleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 25)];
         puzzleLabel.backgroundColor = [UIColor clearColor];
         puzzleLabel.textAlignment = NSTextAlignmentCenter;
+        puzzleLabel.textColor = [UIColor whiteColor];
         [self addSubview:puzzleLabel];
 
         self.layer.cornerRadius = 10;
@@ -36,14 +37,10 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGFloat imageSize = self.frame.size.height - 40;
-    puzzleImage.frame = CGRectMake(20, 5, imageSize, imageSize);
+    CGFloat imageSize = self.frame.size.height - 50;
+    puzzleImage.frame = CGRectMake((self.frame.size.width - imageSize) / 2, 10, imageSize, imageSize);
     puzzleLabel.frame = CGRectMake(5, self.frame.size.height - 30, self.frame.size.width - 10,
                                    25);
 }
-//
-//- (void)setBackgroundColor:(UIColor *)backgroundColor {
-//    [super setBackgroundColor:[UIColor whiteColor]];
-//}
 
 @end

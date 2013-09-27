@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RSColorPickerView.h"
-#import "RSBrightnessSlider.h"
+#import "ANColorOptionCell.h"
 
 @class ANColorPickerVC;
 
@@ -18,15 +17,13 @@
 
 @end
 
-@interface ANColorPickerVC : UIViewController {
-    RSColorPickerView * colorPicker;
-    RSBrightnessSlider * brightness;
-    UIColor * initialColor;
+@interface ANColorPickerVC : UITableViewController {
+    NSInteger initialIndex;
+    NSArray * colors;
 }
 
 @property (nonatomic, weak) id<ANColorPickerVCDelegate> delegate;
 
 - (id)initWithColor:(UIColor *)initialColor;
-- (void)colorPickerReady:(NSNotification *)note;
 
 @end

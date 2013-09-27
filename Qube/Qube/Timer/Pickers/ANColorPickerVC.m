@@ -16,38 +16,58 @@
 
 - (id)initWithColor:(UIColor *)color {
     if ((self = [super init])) {
-        initialColor = color;
-        colorPicker = [[RSColorPickerView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 280) / 2,
-                                                                          (self.view.frame.size.height - 320) / 2,
-                                                                          280, 280)];
-        [colorPicker setCropToCircle:YES];
-        [self.view addSubview:colorPicker];
-        [colorPicker setBackgroundColor:[UIColor clearColor]];
+        self.title = @"Colors";
         
-        self.view.backgroundColor = [UIColor whiteColor];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(colorPickerReady:)
-                                                     name:RSColorPickerViewReadyNotification
-                                                   object:colorPicker];
+        colors = [ANQubeTheme supportedGridColors];
+        CGFloat red, green, blue;
+        [color getRed:&red green:&green blue:&blue alpha:NULL];
+        for (NSInteger i = 0; i < colors.count; i++) {
+            NSDictionary * info = colors[i];
+            UIColor * aColor = info[@"color"];
+            CGFloat aRed, aGreen, aBlue;
+            [aColor getRed:&aRed green:&aGreen blue:&aBlue alpha:NULL];
+            if (fabs(aRed - red) < 0.01 && fabs(aGreen - green) < 0.01 && fabs(aBlue - blue) < 0.01) {
+                initialIndex = i;
+                break;
+            }
+        }
         
-        self.view.backgroundColor =  [ANQubeTheme lightBackgroundColor];
+        self.view.backgroundColor =  [UIColor whiteColor];
+        self.tableView.separatorInset = UIEdgeInsetsMake(0, 50, 0, 0);
     }
     return self;
 }
 
-- (void)colorPickerReady:(NSNotification *)note {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [colorPicker setSelectionColor:initialColor];
-    brightness = [[RSBrightnessSlider alloc] initWithFrame:CGRectMake(colorPicker.frame.origin.x,
-                                                                      CGRectGetMaxY(colorPicker.frame) + 10,
-                                                                      colorPicker.frame.size.width, 30)];
-    [brightness setColorPicker:colorPicker];
-    [self.view addSubview:brightness];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [self.delegate colorPicker:self pickedColor:colorPicker.selectionColor];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return colors.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ANColorOptionCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if (!cell) {
+        cell = [[ANColorOptionCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                        reuseIdentifier:@"Cell"];
+    }
+    
+    NSDictionary * info = colors[indexPath.row];
+    cell.nameLabel.text = info[@"name"];
+    cell.colorPreview.backgroundColor = info[@"color"];
+    
+    if (indexPath.row == initialIndex) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary * info = colors[indexPath.row];
+    [self.delegate colorPicker:self pickedColor:info[@"color"]];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

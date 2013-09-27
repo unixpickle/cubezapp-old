@@ -34,10 +34,6 @@
         [self offlineSetShowScramble:NO];
     }
     
-    if (!self.iconColor) {
-        [self offlineSetIconColor:[@"#FFFFFF" dataUsingEncoding:NSASCIIStringEncoding]];
-    }
-    
     NSString * rootName = [[PuzzleNames[aType] lowercaseString] stringByReplacingOccurrencesOfString:@" "
                                                                                           withString:@"_"];
     NSString * defaultFilename = [NSString stringWithFormat:@"default_%@@2x", rootName];

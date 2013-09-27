@@ -22,7 +22,8 @@ typedef enum {
     ANPuzzleTypePyraminx,
     ANPuzzleTypeSquare1,
     ANPuzzleTypeMirror,
-    ANPuzzleTypeVoid
+    ANPuzzleTypeVoid,
+    ANPuzzleTypeCuboid
 } ANPuzzleType;
 
 typedef enum {
@@ -44,7 +45,8 @@ static NSString * PuzzleNames[] = {
     @"Pyraminx",
     @"Square1",
     @"Mirror Cube",
-    @"Void Cube"
+    @"Void Cube",
+    @"Cuboid"
 };
 
 #define kANPuzzleTypeCount (sizeof(PuzzleNames) / sizeof(NSString *))

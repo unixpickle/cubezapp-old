@@ -16,6 +16,8 @@
 
 @implementation ANImageManager
 
+@synthesize editingPuzzle;
+
 + (ANImageManager *)sharedImageManager {
     static ANImageManager * manager = nil;
     static dispatch_once_t onceToken;
@@ -45,7 +47,9 @@
     NSMutableArray * unused = [NSMutableArray array];
     for (NSData * hash in fsHashes) {
         NSArray * puzzles = [[ANDataManager sharedDataManager] findPuzzlesWithImageHash:hash];
-        if (puzzles.count == 0) [unused addObject:hash];
+        if (puzzles.count == 0 && ![self.editingPuzzle.image isEqualToData:hash]) {
+            [unused addObject:hash];
+        }
     }
     return unused;
 }

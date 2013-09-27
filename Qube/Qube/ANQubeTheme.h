@@ -11,5 +11,6 @@
 @interface ANQubeTheme : NSObject
 
 + (UIColor *)lightBackgroundColor;
++ (NSArray *)supportedGridColors;
 
 @end

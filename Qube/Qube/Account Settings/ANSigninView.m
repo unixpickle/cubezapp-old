@@ -62,7 +62,6 @@
         
         banner = [[ANMaskedBanner alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
         [self addSubview:banner];
-        [banner startAnimating];
         
         loginButton = [[UIButton alloc] initWithFrame:CGRectMake(10, fieldsContainer.frame.origin.y + 88 + 5,
                                                                  fieldsContainer.frame.size.width,

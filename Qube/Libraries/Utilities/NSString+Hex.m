@@ -16,9 +16,9 @@ static int hexValue(char c);
 - (NSData *)dataFromHex {
     NSMutableData * data = [NSMutableData data];
     if (self.length % 2 != 0) return nil;
-    for (int i = 0; i < self.length; i++) {
+    for (int i = 0; i < self.length; i += 2) {
         char c1 = tolower([self characterAtIndex:i]);
-        char c2 = tolower([self characterAtIndex:i]);
+        char c2 = tolower([self characterAtIndex:(i + 1)]);
         if (!isHexChar(c1) || !isHexChar(c2)) return nil;
         UInt8 byte = (hexValue(c1) << 4) | (hexValue(c2));
         [data appendBytes:&byte length:1];

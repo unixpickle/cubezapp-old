@@ -11,7 +11,10 @@
 @interface ANEditPuzzleVC (Private)
 
 - (NSArray *)sectionFields;
+- (NSArray *)headings;
 - (void)updateChangedFields;
+- (BOOL)canGenerateScrambles;
+- (BOOL)canShowScrambles;
 
 @end
 
@@ -36,11 +39,18 @@
                                                                      action:@selector(cancelPressed:)];
         self.navigationItem.leftBarButtonItem = cancelButton;
         [ANImageManager sharedImageManager].editingPuzzle = puzzle;
+        
+        puzzleImage = [[ANImageManager sharedImageManager] imageForHash:puzzle.image];
     }
     return self;
 }
 
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 - (void)donePressed:(id)sender {
+    // TODO: make sure they don't add a puzzle with the same name twice
     [ANImageManager sharedImageManager].editingPuzzle = nil;
     [self updateChangedFields];
     [delegate editPuzzleVCDone:self];
@@ -55,7 +65,7 @@
 
 - (void)puzzleChanged:(id)sender {
     puzzleImage = [[ANImageManager sharedImageManager] imageForHash:puzzle.image];
-    
+    [self.tableView reloadData];
 }
 
 #pragma mark - Text Field -
@@ -77,16 +87,25 @@
     return [[self sectionFields][section] count];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [self headings][section];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary * info = [self sectionFields][indexPath.section][indexPath.row];
     ANSmallDetailCell * retCell = nil;
     retCell = [tableView dequeueReusableCellWithIdentifier:info[@"type"]];
+    NSArray * nameWidths = @[@60, @60, @0, @120, @90];
     if (!retCell) {
         NSDictionary * cellClasses = @{@"entry": [ANTextEntryCell class],
                                        @"info": [ANTextInfoCell class],
-                                       @"color": [ANColorPickerCell class]};
-        retCell = [[cellClasses[info[@"type"]] alloc] initWithNameWidth:60
-                                                        reuseIdentifier:info[@"type"]];
+                                       @"color": [ANColorPickerCell class],
+                                       @"image": [ANImagePickerCell class],
+                                       @"time": [ANTimePickerCell class],
+                                       @"flag": [ANFlagSetterCell class]};
+        NSString * reuseId = [NSString stringWithFormat:@"%@%d", info[@"type"], [nameWidths[indexPath.section] intValue]];
+        retCell = [[cellClasses[info[@"type"]] alloc] initWithNameWidth:[nameWidths[indexPath.section] floatValue]
+                                                        reuseIdentifier:reuseId];
     }
     if ([info[@"type"] isEqualToString:@"entry"]) {
         ANTextEntryCell * entry = (ANTextEntryCell *)retCell;
@@ -95,6 +114,8 @@
         // TODO: this may need to be changed if
         // another text entry is added
         nameField = entry.textField;
+    } else if ([info[@"type"] isEqualToString:@"flag"]) {
+        [(ANFlagSetterCell *)retCell setDelegate:self];
     }
     [retCell setCellValue:info[@"value"]];
     retCell.nameLabel.text = info[@"name"];
@@ -112,15 +133,42 @@
         ANColorPickerVC * picker = [[ANColorPickerVC alloc] initWithColor:color];
         picker.delegate = self;
         [self.navigationController pushViewController:picker animated:YES];
+    } else if (indexPath.section == 2) {
+        ANImagePickerMenuVC * picker = [[ANImagePickerMenuVC alloc] init];
+        picker.puzzleColor = [UIColor colorWithHexValueData:self.puzzle.iconColor];
+        picker.delegate = self;
+        [self.navigationController pushViewController:picker animated:YES];
+    } else if (indexPath.section == 3 && indexPath.row == 0) {
+        ANTimePickerVC * picker = [[ANTimePickerVC alloc] initWithTime:self.puzzle.inspectionTime];
+        picker.delegate = self;
+        [self.navigationController pushViewController:picker animated:YES];
+    } else if (indexPath.section == 4 && [[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:[ANTextInfoCell class]]) {
+        NSArray * names = [[ANScramblerList defaultScramblerList] scramblerNamesForPuzzle:self.puzzle.type];
+        id<ANPuzzleScrambler> scrambler = [[ANScramblerList defaultScramblerList] scramblerForPuzzle:self.puzzle.type
+                                                                                              length:self.puzzle.scrambleLength];
+        NSString * current = [scrambler.class labelForLength:self.puzzle.scrambleLength];
+        ANScramblePickerVC * picker = [[ANScramblePickerVC alloc] initWithScramblerNames:names currentName:current];
+        picker.delegate = self;
+        [self.navigationController pushViewController:picker animated:YES];
     } else {
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section != 2) {
+        return -1;
+    }
+    return 200;
+}
+
 #pragma mark Cell Info
 
 - (NSArray *)sectionFields {
-    return @[
+    UIColor * puzzleColor = [UIColor colorWithHexValueData:self.puzzle.iconColor];
+    NSDictionary * cellInfo = @{@"name": self.puzzle.name, @"image": puzzleImage,
+                                @"color": puzzleColor};
+    NSMutableArray * basics = [@[
              @[
                  @{@"name": @"Name", @"value": self.puzzle.name,
                    @"type": @"entry"},
@@ -128,16 +176,56 @@
                    @"type": @"info", @"disclosure": @YES}
               ],
              @[
-                 @{@"name": @"Color", @"value": [UIColor colorWithHexValueData:self.puzzle.iconColor],
+                 @{@"name": @"Color", @"value": puzzleColor,
                    @"type": @"color", @"disclosure": @YES}
-              ]
-            ];
+              ],
+             @[
+                 @{@"name": @"Image", @"value": cellInfo,
+                   @"type": @"image", @"disclosure": @YES}],
+             @[
+                 @{@"name": @"Inspection", @"value": @(self.puzzle.inspectionTime),
+                   @"type": @"time", @"disclosure": @YES},
+                 @{@"name": @"Show Stats", @"value": @(self.puzzle.showStats),
+                   @"type": @"flag"}]
+            ] mutableCopy];
+    if ([self canGenerateScrambles]) {
+        id<ANPuzzleScrambler> scrambler = [[ANScramblerList defaultScramblerList] scramblerForPuzzle:self.puzzle.type
+                                                                                              length:self.puzzle.scrambleLength];
+        NSString * lengthName = [scrambler.class labelForLength:self.puzzle.scrambleLength];
+        if (!lengthName) lengthName = @"(null)";
+        NSMutableArray * scrambleFields = [@[
+                                             @{@"name": @"Generate", @"value": @(self.puzzle.scramble),
+                                               @"type": @"flag"},
+                                             ] mutableCopy];
+        if (self.puzzle.scramble) {
+            [scrambleFields addObject:@{@"name": @"Length", @"value": lengthName,
+                                        @"type": @"info", @"disclosure": @"YES"}];
+        }
+        if ([self canShowScrambles] && self.puzzle.scramble) {
+            [scrambleFields insertObject:@{@"name": @"Show", @"value": @(self.puzzle.showScramble),
+                                           @"type": @"flag"} atIndex:1];
+        }
+        [basics addObject:scrambleFields];
+    }
+    return basics;
+}
+
+- (NSArray *)headings {
+    return @[@"Basic Settings", @"Color", @"Image", @"Timer Screen", @"Scramble Settings"];
 }
 
 - (void)updateChangedFields {
     if (![self.puzzle.name isEqualToString:nameField.text] && nameField.text) {
         [self.puzzle offlineSetName:nameField.text];
     }
+}
+
+- (BOOL)canGenerateScrambles {
+    return [[ANScramblerList defaultScramblerList] scramblersForPuzzle:self.puzzle.type].count != 0;
+}
+
+- (BOOL)canShowScrambles {
+    return [[ANRendererList defaultRendererList] rendererForPuzzle:self.puzzle.type] != nil;
 }
 
 #pragma mark - View Callbacks -
@@ -149,14 +237,60 @@
     if (!hasRenamed) {
         [self.puzzle offlineSetName:PuzzleNames[type]];
     }
-    [self.tableView reloadData];
+    [self puzzleChanged:nil];
 }
 
 - (void)colorPicker:(ANColorPickerVC *)picker pickedColor:(UIColor *)color {
     [self.puzzle offlineSetIconColor:[color hexValueData]];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1]
                   withRowAnimation:UITableViewRowAnimationAutomatic];
-    [self.tableView reloadData];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2]
+                  withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (void)imagePicker:(UIViewController *)sender pickedImageData:(NSData *)pngData image:(UIImage *)image {
+    if (pngData) {
+        NSData * identifier = [[ANImageManager sharedImageManager] registerImageData:pngData];
+        [self.puzzle offlineSetImage:identifier];
+        puzzleImage = image;
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    [self.navigationController popToViewController:self animated:YES];
+}
+
+- (void)flagSetterCell:(ANFlagSetterCell *)cell switched:(BOOL)on {
+    NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
+    if (indexPath.section == 3) {
+        // its the show scrambles field
+        [self.puzzle offlineSetShowStats:on];
+    } else if (indexPath.section == 4) {
+        if (indexPath.row == 0) {
+            [self.puzzle offlineSetScramble:on];
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:4]
+                          withRowAnimation:UITableViewRowAnimationFade];
+        } else {
+            [self.puzzle offlineSetShowScramble:on];
+        }
+    }
+}
+
+- (void)timePicker:(ANTimePickerVC *)picker choseTime:(NSTimeInterval)time {
+    [self.puzzle offlineSetInspectionTime:time];
+    [self.tableView beginUpdates];
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:3]]
+                          withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView endUpdates];
+}
+
+- (void)scramblePicker:(ANScramblePickerVC *)picker picked:(NSString *)name {
+    NSInteger length = 0;
+    if ([[ANScramblerList defaultScramblerList] scramblerForPuzzle:self.puzzle.type name:name length:&length]) {
+        [self.puzzle offlineSetScrambleLength:length];
+        [self.tableView beginUpdates];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:4]
+                      withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView endUpdates];
+    }
 }
 
 @end

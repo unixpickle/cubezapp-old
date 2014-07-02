@@ -64,6 +64,8 @@
               ([error localizedDescription] != nil) ?
               [error localizedDescription] : @"Unknown Error");
     }
+    
+    [context setMergePolicy:NSMergeByPropertyStoreTrumpMergePolicy];
 }
 
 - (void)save {

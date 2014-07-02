@@ -1,0 +1,20 @@
+2014-07-02T15:00:19.830281000 0.003827s info: Creating directory /Users/alex/Desktop/cubezapp/rethinkdb_data
+2014-07-02T15:00:19.830429000 0.003975s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/alex/Desktop/cubezapp/rethinkdb_data' did not already exist.)
+2014-07-02T15:00:19.830468000 0.004014s info: Running rethinkdb 1.13.1 (CLANG 5.1 (clang-503.0.40))...
+2014-07-02T15:00:19.834270000 0.007816s info: Running on Darwin 13.2.0 x86_64
+2014-07-02T15:00:19.834302000 0.007848s info: Using cache size of 4420 MB
+2014-07-02T15:00:19.834328000 0.007874s info: Loading data from directory /Users/alex/Desktop/cubezapp/rethinkdb_data
+2014-07-02T15:00:20.033843000 0.206829s info: Listening for intracluster connections on port 29015
+2014-07-02T15:00:20.035260000 0.208246s info: Listening for client driver connections on port 28015
+2014-07-02T15:00:20.035347000 0.208333s info: Listening for administrative HTTP connections on port 8080
+2014-07-02T15:00:20.035363000 0.208349s info: Listening on addresses: 127.0.0.1, ::1
+2014-07-02T15:00:20.035376000 0.208362s info: To fully expose RethinkDB on the network, bind to all addresses
+2014-07-02T15:00:20.035391000 0.208376s info: by running rethinkdb with the `--bind all` command line option.
+2014-07-02T15:00:20.035403000 0.208389s info: Server ready
+2014-07-02T15:20:15.356887000 1195.454989s info: Applying data {"databases":{"35d77a80-3772-47e6-a867-c461739efbb4":null},"rdb_namespaces":{"c4c9bc63-6c7e-4238-b6e6-01508f99516a":null}}
+2014-07-02T15:20:19.857799000 1199.955901s info: Applying data {"databases":{"eee7e193-72c6-4f0b-9998-ba48abe669d3":null}}
+2014-07-02T16:16:29.168520000 4569.046082s info: Server got SIGINT from pid 676, uid 501; shutting down...
+2014-07-02T16:16:29.168840000 4569.046402s info: Shutting down client connections...
+2014-07-02T16:16:29.169220000 4569.046781s info: All client connections closed.
+2014-07-02T16:16:29.169227000 4569.046789s info: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2014-07-02T16:16:29.173336000 4569.050898s info: Storage engine shut down.

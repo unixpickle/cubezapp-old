@@ -8,13 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "ANGridViewItem.h"
+#import "ANPuzzle.h"
 
-@interface ANPuzzleFrontView : UIView {
+#import "ANImageManager.h"
+#import "Color+HexValue.h"
+
+@interface ANPuzzleFrontView : UIControl {
     UIImageView * puzzleImage;
     UILabel * puzzleLabel;
 }
 
 @property (readonly) UIImageView * puzzleImage;
 @property (readonly) UILabel * puzzleLabel;
+@property (nonatomic, weak) id puzzle;
+
+- (void)updateWithPuzzle:(ANPuzzle *)puzzle;
 
 @end

@@ -12,9 +12,11 @@
 
 - (NSArray *)generateAllItems;
 - (ANGridViewItem *)createGridItemForPuzzle:(ANPuzzle *)puzzle;
+- (void)configureGridViewItem:(ANGridViewItem *)item forPuzzle:(ANPuzzle *)puzzle;
 - (ANGridViewItem *)gridItemForPuzzle:(ANPuzzle *)aPuzzle;
 - (void)statButtonPressed:(UIButton *)sender;
 - (void)infoButtonPressed:(UIButton *)sender;
+- (void)puzzleButtonPressed:(UIButton *)sender;
 
 @end
 
@@ -63,12 +65,7 @@
 - (void)externalPuzzleUpdated:(ANPuzzle *)puzzle {
     ANGridViewItem * item = [self gridItemForPuzzle:puzzle];
     NSAssert(item != nil, @"An item should exist.");
-    ANPuzzleFrontView * front = (ANPuzzleFrontView *)item.frontside;
-    NSData * imageData = [[ANImageManager sharedImageManager] imageDataForHash:puzzle.image];
-    UIImage * image = [[UIImage alloc] initWithData:imageData];
-    front.puzzleLabel.text = puzzle.name;
-    front.puzzleImage.image = image;
-    front.backgroundColor = [UIColor colorWithHexValueData:puzzle.iconColor];
+    [self configureGridViewItem:item forPuzzle:puzzle];
 }
 
 
@@ -84,24 +81,39 @@
 }
 
 - (ANGridViewItem *)createGridItemForPuzzle:(ANPuzzle *)puzzle {
-    NSData * imageData = [[ANImageManager sharedImageManager] imageDataForHash:puzzle.image];
-    UIImage * image = [[UIImage alloc] initWithData:imageData];
     ANPuzzleFrontView * front = [[ANPuzzleFrontView alloc] init];
-    front.puzzleLabel.text = puzzle.name;
-    front.puzzleImage.image = image;
-    front.backgroundColor = [UIColor colorWithHexValueData:puzzle.iconColor];
     ANPuzzleBackView * back = [[ANPuzzleBackView alloc] init];
     ANGridViewItem * item = [[ANGridViewItem alloc] initWithFrontside:front
                                                              backside:back];
     item.userInfo = puzzle;
     back.puzzle = puzzle;
+    front.puzzle = puzzle;
     
     [back.infoButton addTarget:self action:@selector(infoButtonPressed:)
               forControlEvents:UIControlEventTouchUpInside];
     [back.statButton addTarget:self action:@selector(statButtonPressed:)
               forControlEvents:UIControlEventTouchUpInside];
+    [front addTarget:self action:@selector(puzzleButtonPressed:)
+    forControlEvents:UIControlEventTouchUpInside];
+    
+    [self configureGridViewItem:item forPuzzle:puzzle];
     
     return item;
+}
+
+- (void)configureGridViewItem:(ANGridViewItem *)item forPuzzle:(ANPuzzle *)puzzle {
+    ANPuzzleFrontView * front = (id)item.frontside;
+    [front updateWithPuzzle:puzzle];
+    
+    CGFloat red, green, blue;
+    [front.backgroundColor getRed:&red green:&green blue:&blue];
+    red = MIN(red + 0.2, 1);
+    green = MIN(green + 0.2, 1);
+    blue = MIN(blue + 0.2, 1);
+    
+    
+    UIColor * color = [UIColor colorWithRed:red green:green blue:blue alpha:1];
+    item.backside.backgroundColor = color;
 }
 
 - (ANGridViewItem *)gridItemForPuzzle:(ANPuzzle *)aPuzzle {
@@ -127,6 +139,11 @@
     
     ANGridViewItem * item = [self gridItemForPuzzle:backView.puzzle];
     [item flipToFrontside];
+}
+
+- (void)puzzleButtonPressed:(UIButton *)sender {
+    ANPuzzleFrontView * frontview = (ANPuzzleFrontView *)sender;
+    [self.puzzlesDelegate puzzleGrid:self startSession:frontview.puzzle];
 }
 
 @end

@@ -10,6 +10,7 @@
 #import "ANGridViewItem.h"
 
 @interface ANPuzzleBackView : UIView {
+    UIImageView * overlayImage;
     UIButton * infoButton, * statButton;
 }
 

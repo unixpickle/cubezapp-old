@@ -14,6 +14,7 @@
     NSEntityDescription * entity = [NSEntityDescription entityForName:@"ANPuzzle"
                                                inManagedObjectContext:context];
     ANPuzzle * puzzle = (ANPuzzle *)[[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
+    puzzle.identifier = [NSData randomDataOfLength:16];
     
     NSEntityDescription * additionDesc = [NSEntityDescription entityForName:@"OCPuzzleAddition"
                                                      inManagedObjectContext:context];
@@ -24,11 +25,12 @@
     return puzzle;
 }
 
-- (void)addUnownedPuzzleObject:(ANPuzzle *)puzzle {
+- (ANPuzzle *)addUnownedPuzzleObject:(ANPuzzle *)puzzle {
     [self.context insertObject:puzzle.ocAddition];
     [self.context insertObject:puzzle];
     [self.activeAccount.changes addPuzzleAdditionsObject:puzzle.ocAddition];
     [self.activeAccount addPuzzlesObject:puzzle];
+    return (ANPuzzle *)[self.context objectRegisteredForID:puzzle.objectID];
 }
 
 @end

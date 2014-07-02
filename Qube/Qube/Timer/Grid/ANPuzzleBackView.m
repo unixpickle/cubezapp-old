@@ -16,6 +16,10 @@
 - (id)init {
     self = [super init];
     if (self) {
+        overlayImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"texture"]];
+        overlayImage.alpha = 0.3;
+        [self addSubview:overlayImage];
+        
         self.layer.cornerRadius = 10;
         self.layer.borderColor = [[UIColor colorWithWhite:0.8 alpha:1] CGColor];
         self.layer.borderWidth = 1 / [UIScreen mainScreen].scale;
@@ -32,6 +36,9 @@
         
         [self addSubview:infoButton];
         [self addSubview:statButton];
+        
+        overlayImage.layer.cornerRadius = self.layer.cornerRadius;
+        overlayImage.clipsToBounds = YES;
     }
     return self;
 }
@@ -42,6 +49,7 @@
     CGFloat contentTop = (self.frame.size.height - contentSize) / 2 - 10;
     infoButton.frame = CGRectMake(0, contentTop, self.frame.size.width, 35);
     statButton.frame = CGRectMake(0, contentTop + 35 + 5, self.frame.size.width, 35);
+    overlayImage.frame = self.bounds;
 }
 
 @end

@@ -51,6 +51,10 @@
     [self updateAccountButton];
 }
 
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 - (void)flipToAccountsSettings {
     [self presentViewController:accountSettings
                        animated:YES

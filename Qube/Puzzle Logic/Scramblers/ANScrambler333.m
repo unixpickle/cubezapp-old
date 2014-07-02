@@ -21,11 +21,11 @@
 }
 
 + (NSRange)lengthRange {
-    return NSMakeRange(1, 30);
+    return NSMakeRange(20, 10);
 }
 
 + (NSString *)labelForLength:(NSInteger)length {
-    return [NSString stringWithFormat:@"%ld", (long)length];
+    return [NSString stringWithFormat:@"%ld (HTM)", (long)length];
 }
 
 @end

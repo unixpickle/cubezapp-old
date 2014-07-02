@@ -11,6 +11,6 @@
 @interface ANDataManager (Utility)
 
 - (ANPuzzle *)createUnownedPuzzleObject;
-- (void)addUnownedPuzzleObject:(ANPuzzle *)puzzle;
+- (ANPuzzle *)addUnownedPuzzleObject:(ANPuzzle *)puzzle;
 
 @end

@@ -134,6 +134,7 @@
     animation.startProgress = 0.0;
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     [animation setRemovedOnCompletion:YES];
+    
     [self.layer addAnimation:animation forKey:@"pageUnCurlAnimation"];
     [self addSubview:backside];
     

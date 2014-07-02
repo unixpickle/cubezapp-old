@@ -10,13 +10,21 @@
 #import "ANDataManager.h"
 #import "ANPuzzle+Default.h"
 #import "Color+HexValue.h"
+#import "ANScramblerList.h"
+#import "ANRendererList.h"
 
 #import "ANTextEntryCell.h"
 #import "ANTextInfoCell.h"
 #import "ANColorPickerCell.h"
+#import "ANImagePickerCell.h"
+#import "ANTimePickerCell.h"
+#import "ANFlagSetterCell.h"
 
 #import "ANPuzzleTypePickerVC.h"
 #import "ANColorPickerVC.h"
+#import "ANImagePickerMenuVC.h"
+#import "ANTimePickerVC.h"
+#import "ANScramblePickerVC.h"
 
 @class ANEditPuzzleVC;
 
@@ -27,7 +35,7 @@
 
 @end
 
-@interface ANEditPuzzleVC : UITableViewController <UITextFieldDelegate, ANPuzzleTypePickerVCDelegate, ANColorPickerVCDelegate> {
+@interface ANEditPuzzleVC : UITableViewController <UITextFieldDelegate, ANPuzzleTypePickerVCDelegate, ANColorPickerVCDelegate, ANImagePickerDelegate, ANFlagSetterCellDelegate, ANTimePickerVCDelegate, ANScramblePickerVCDelegate> {
     UIBarButtonItem * doneButton;
     UIBarButtonItem * cancelButton;
     ANPuzzle * puzzle;

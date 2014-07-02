@@ -25,6 +25,10 @@
     return UIStatusBarStyleLightContent;
 }
 
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 - (id)init {
     self = [super init];
     if (self) {

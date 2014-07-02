@@ -8,9 +8,18 @@
 
 #import "ANPuzzle+Default.h"
 
+NSData * imageDataForType(ANPuzzleType type);
+
 @implementation ANPuzzle (Default)
 
 - (void)setDefaultFields:(ANPuzzleType)aType {
+    // check if they have changed the image
+    NSData * imageData = imageDataForType(self.type);
+    BOOL shouldChangeImage = NO;
+    if ([self.image isEqualToData:[imageData md5Hash]] || !self.image) {
+        shouldChangeImage = YES;
+    }
+    
     NSDictionary * scrambleLengths = @{@(ANPuzzleTypeOther): @0,
                                        @(ANPuzzleTypeClock): @0,
                                        @(ANPuzzleType2x2): @15,
@@ -34,12 +43,18 @@
         [self offlineSetShowScramble:NO];
     }
     
-    NSString * rootName = [[PuzzleNames[aType] lowercaseString] stringByReplacingOccurrencesOfString:@" "
-                                                                                          withString:@"_"];
-    NSString * defaultFilename = [NSString stringWithFormat:@"default_%@@2x", rootName];
-    NSString * path = [[NSBundle mainBundle] pathForResource:defaultFilename ofType:@"png"];
-    NSData * imageData = [NSData dataWithContentsOfFile:path];
-    [self offlineSetImage:[[ANImageManager sharedImageManager] registerImageData:imageData]];
+    if (shouldChangeImage) {
+        imageData = imageDataForType(aType);
+        [self offlineSetImage:[[ANImageManager sharedImageManager] registerImageData:imageData]];
+    }
 }
 
 @end
+
+NSData * imageDataForType(ANPuzzleType type) {
+    NSString * rootName = [[PuzzleNames[type] lowercaseString] stringByReplacingOccurrencesOfString:@" "
+                                                                                         withString:@"_"];
+    NSString * defaultFilename = [NSString stringWithFormat:@"default_%@@2x", rootName];
+    NSString * path = [[NSBundle mainBundle] pathForResource:defaultFilename ofType:@"png"];
+    return [NSData dataWithContentsOfFile:path];
+}

@@ -52,6 +52,10 @@
     return self;
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [self donePressed:nil];
+}
+
 #pragma mark - Syncing -
 
 - (void)syncUpdatedPuzzle:(ANPuzzle *)puzzle {
@@ -73,6 +77,15 @@
     if (!puzzle.hidden) {
         [gridView externalPuzzleDeleted:puzzle];
     }
+    if ([self.editVC.puzzle.objectID isEqual:puzzle.objectID]) {
+        UIAlertView * av = [[UIAlertView alloc] initWithTitle:@"Puzzle Deleted"
+                                                      message:@"The puzzle was deleted remotely while you were editing it"
+                                                     delegate:nil
+                                            cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [av show];
+        [self.navigationController popViewControllerAnimated:YES];
+        self.editVC = nil;
+    }
 }
 
 #pragma mark - Functionality -
@@ -82,7 +95,8 @@
     editVC.delegate = self;
     editVC.navigationItem.leftBarButtonItem = nil;
     editVC.title = puzzle.managedObjectContext ? @"Edit" : @"New Puzzle";
-    UINavigationController * controller = [[UINavigationController alloc] init];
+    ANControlledNavController * controller = [[ANControlledNavController alloc] init];
+    controller.rotationMask = UIInterfaceOrientationMaskPortrait;
     controller.navigationBar.barStyle = UIBarStyleDefault;
     [controller pushViewController:editVC animated:NO];
     
@@ -177,6 +191,14 @@
     [self showEditDialog:aPuzzle];
 }
 
+- (void)puzzleGrid:(ANPuzzleGrid *)grid startSession:(ANPuzzle *)aPuzzle {
+    ANTimerFlowVC * timer = [[ANTimerFlowVC alloc] initWithPuzzle:aPuzzle];
+    ANAppDelegate * delegate = [UIApplication sharedApplication].delegate;
+    [delegate.viewController presentViewController:timer
+                                          animated:YES
+                                        completion:nil];
+}
+
 #pragma mark - Puzzle Editor -
 
 - (void)editPuzzleVCCancelled:(ANEditPuzzleVC *)vc {
@@ -187,6 +209,7 @@
     self.editVC = nil;
     if (!vc.puzzle.managedObjectContext) {
         [[ANDataManager sharedDataManager] addUnownedPuzzleObject:vc.puzzle];
+        [[ANDataManager sharedDataManager] save];
         [self.gridView externalPuzzleAdded:vc.puzzle];
     } else {
         [self.gridView externalPuzzleUpdated:vc.puzzle];

@@ -66,8 +66,8 @@
     for (id<ANPuzzleScrambler> scrambler in list) {
         NSRange range = [scrambler.class lengthRange];
         for (NSUInteger i = range.location; i < range.location + range.length; i++) {
-            NSString * name = [scrambler.class labelForLength:i];
-            if ([name isEqualToString:name]) {
+            NSString * aName = [scrambler.class labelForLength:i];
+            if ([aName isEqualToString:name]) {
                 *lenOut = (NSInteger)i;
                 return scrambler;
             }

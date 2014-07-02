@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "rethinkdb": "1.13.x",
+    "express": "4.4.x",
+    "express-session": "1.6.x",
+    "mustache": "0.8.x"
+  }
+}

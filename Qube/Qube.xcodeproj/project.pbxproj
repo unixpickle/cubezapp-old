@@ -12,6 +12,10 @@
 		FA128DB217E1180300726CF0 /* ANLoadingKnob.m in Sources */ = {isa = PBXBuildFile; fileRef = FA128DAF17E1180300726CF0 /* ANLoadingKnob.m */; };
 		FA128DB317E1180300726CF0 /* ANLoadingOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = FA128DB117E1180300726CF0 /* ANLoadingOverlay.m */; };
 		FA128DB617E1180F00726CF0 /* ANPasswordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA128DB517E1180F00726CF0 /* ANPasswordButton.m */; };
+		FA14FADB17F892AD008DDFA7 /* ANPuzzlePhotoCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FA14FADA17F892AD008DDFA7 /* ANPuzzlePhotoCategory.m */; };
+		FA14FADE17F8A2CE008DDFA7 /* ANImageCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA14FADD17F8A2CE008DDFA7 /* ANImageCategoryCell.m */; };
+		FA14FAEF17F8ACA3008DDFA7 /* ANImageOptionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA14FAEA17F8ACA3008DDFA7 /* ANImageOptionButton.m */; };
+		FA14FAF117F8ACA3008DDFA7 /* ANImagePickerGridVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA14FAEE17F8ACA3008DDFA7 /* ANImagePickerGridVC.m */; };
 		FA22186017BDE93000D71F71 /* ANAPICall.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22185F17BDE93000D71F71 /* ANAPICall.m */; };
 		FA22186A17BDEF7E00D71F71 /* ANConflict.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22186917BDEF7E00D71F71 /* ANConflict.m */; };
 		FA22187017BDF0A300D71F71 /* ANNameCollisionConflict.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22186F17BDF0A300D71F71 /* ANNameCollisionConflict.m */; };
@@ -20,7 +24,6 @@
 		FA2C503A17F265BA0058FF06 /* default_9x9x9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2C502C17F265BA0058FF06 /* default_9x9x9@2x.png */; };
 		FA2C504217F266290058FF06 /* ANPuzzleGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2C504117F266290058FF06 /* ANPuzzleGrid.m */; };
 		FA2C504517F26F2D0058FF06 /* ANQubeTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2C504417F26F2D0058FF06 /* ANQubeTheme.m */; };
-		FA2C504C17F3AAB30058FF06 /* ANColorOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2C504B17F3AAB30058FF06 /* ANColorOptionCell.m */; };
 		FA2C510317F4FA5B0058FF06 /* default_2x2x2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2C50FD17F4FA5B0058FF06 /* default_2x2x2@2x.png */; };
 		FA2C510417F4FA5B0058FF06 /* default_3x3x3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2C50FE17F4FA5B0058FF06 /* default_3x3x3@2x.png */; };
 		FA2C510517F4FA5B0058FF06 /* default_4x4x4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2C50FF17F4FA5B0058FF06 /* default_4x4x4@2x.png */; };
@@ -70,7 +73,19 @@
 		FA56E5D117CC1073006FC1D1 /* ANAPICallImageUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = FA56E5D017CC1073006FC1D1 /* ANAPICallImageUpload.m */; };
 		FA56E5D517CC16A3006FC1D1 /* ANAPIImageDownloadResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FA56E5D417CC16A3006FC1D1 /* ANAPIImageDownloadResponse.m */; };
 		FA56E5D817CC179C006FC1D1 /* ANImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = FA56E5D717CC179C006FC1D1 /* ANImageUploader.m */; };
+		FA79137F17F8BEE500EAECD5 /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA79137E17F8BEE500EAECD5 /* UIImage+FixOrientation.m */; };
+		FA79138217F8CCA200EAECD5 /* ANTimePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA79138117F8CCA200EAECD5 /* ANTimePickerCell.m */; };
+		FA79138517F8CCB200EAECD5 /* ANFlagSetterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA79138417F8CCB200EAECD5 /* ANFlagSetterCell.m */; };
+		FA79138817F8D23200EAECD5 /* ANTimePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA79138717F8D23200EAECD5 /* ANTimePickerVC.m */; };
+		FA79138E17F8D24B00EAECD5 /* ANColorOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA79138B17F8D24B00EAECD5 /* ANColorOptionCell.m */; };
+		FA79138F17F8D24B00EAECD5 /* ANColorPickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA79138D17F8D24B00EAECD5 /* ANColorPickerVC.m */; };
+		FA79139217F8DA2E00EAECD5 /* ANScramblePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA79139117F8DA2E00EAECD5 /* ANScramblePickerVC.m */; };
 		FA7B18CA17BE030C00D6F7D2 /* ANPuzzle+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B18C917BE030C00D6F7D2 /* ANPuzzle+Coding.m */; };
+		FA96E5811808FD95009DF345 /* ANOfflineSession.m in Sources */ = {isa = PBXBuildFile; fileRef = FA96E5801808FD95009DF345 /* ANOfflineSession.m */; };
+		FA96E5841809074C009DF345 /* ANControlledNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA96E5831809074C009DF345 /* ANControlledNavController.m */; };
+		FA96E58818090C36009DF345 /* ANTimerFlowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA96E58718090C36009DF345 /* ANTimerFlowVC.m */; };
+		FA96E58B18090C68009DF345 /* ANSlidingNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FA96E58A18090C68009DF345 /* ANSlidingNavBar.m */; };
+		FA96E58E180915EA009DF345 /* ANStatsPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = FA96E58D180915EA009DF345 /* ANStatsPreview.m */; };
 		FA9F538617C6B1A20024923B /* ANAPICallPuzzleAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537217C6B1A20024923B /* ANAPICallPuzzleAdd.m */; };
 		FA9F538717C6B1A20024923B /* ANAPICallPuzzleDeleteRename.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537417C6B1A20024923B /* ANAPICallPuzzleDeleteRename.m */; };
 		FA9F538817C6B1A20024923B /* ANAPICallPuzzleDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F537617C6B1A20024923B /* ANAPICallPuzzleDelete.m */; };
@@ -145,7 +160,6 @@
 		FAD7881917EF68F900B5907D /* Color+HexValue.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7881817EF68F900B5907D /* Color+HexValue.m */; };
 		FAD7881F17EF6C8900B5907D /* ANColorPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7881E17EF6C8900B5907D /* ANColorPickerCell.m */; };
 		FAD7882317EF6DB100B5907D /* ANPuzzleTypePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7882217EF6DB100B5907D /* ANPuzzleTypePickerVC.m */; };
-		FAD7882617EF6DC000B5907D /* ANColorPickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7882517EF6DC000B5907D /* ANColorPickerVC.m */; };
 		FAD7883E17EF6F7F00B5907D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD7883D17EF6F7F00B5907D /* Accelerate.framework */; };
 		FAD7884117EF75D300B5907D /* ANPuzzle+AttrSetters.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7884017EF75D300B5907D /* ANPuzzle+AttrSetters.m */; };
 		FAD7884417EF7BF400B5907D /* ANPuzzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7884317EF7BF400B5907D /* ANPuzzle.m */; };
@@ -194,6 +208,9 @@
 		FAD788C417EF7DAA00B5907D /* clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD788B317EF7DAA00B5907D /* clock@2x.png */; };
 		FAD788C517EF7DAA00B5907D /* clock_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD788B417EF7DAA00B5907D /* clock_highlighted@2x.png */; };
 		FAD788C617EF7DAA00B5907D /* design@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD788B517EF7DAA00B5907D /* design@2x.png */; };
+		FADA129817F65BCB00FEBF4E /* texture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FADA129717F65BCB00FEBF4E /* texture@2x.png */; };
+		FADA129B17F65F1100FEBF4E /* ANImagePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA129A17F65F1100FEBF4E /* ANImagePickerCell.m */; };
+		FADA12A217F6644D00FEBF4E /* ANImagePickerMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA12A117F6644D00FEBF4E /* ANImagePickerMenuVC.m */; };
 		FADBADF517D2C74300BD3E85 /* ANCubeScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = FADBADF417D2C74300BD3E85 /* ANCubeScheme.m */; };
 		FAE2D29F17E146F600C026CE /* ANBlurredScrollLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE2D29E17E146F600C026CE /* ANBlurredScrollLayout.m */; };
 		FAE888A817EE34BF00BCDAB3 /* ANAutoscrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE8889417EE34BF00BCDAB3 /* ANAutoscrollView.m */; };
@@ -217,6 +234,15 @@
 		FA128DB117E1180300726CF0 /* ANLoadingOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANLoadingOverlay.m; sourceTree = "<group>"; };
 		FA128DB417E1180F00726CF0 /* ANPasswordButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPasswordButton.h; sourceTree = "<group>"; };
 		FA128DB517E1180F00726CF0 /* ANPasswordButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPasswordButton.m; sourceTree = "<group>"; };
+		FA14FAD917F892AD008DDFA7 /* ANPuzzlePhotoCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzlePhotoCategory.h; sourceTree = "<group>"; };
+		FA14FADA17F892AD008DDFA7 /* ANPuzzlePhotoCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzlePhotoCategory.m; sourceTree = "<group>"; };
+		FA14FADC17F8A2CE008DDFA7 /* ANImageCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANImageCategoryCell.h; sourceTree = "<group>"; };
+		FA14FADD17F8A2CE008DDFA7 /* ANImageCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANImageCategoryCell.m; sourceTree = "<group>"; };
+		FA14FAE917F8ACA3008DDFA7 /* ANImageOptionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANImageOptionButton.h; sourceTree = "<group>"; };
+		FA14FAEA17F8ACA3008DDFA7 /* ANImageOptionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANImageOptionButton.m; sourceTree = "<group>"; };
+		FA14FAED17F8ACA3008DDFA7 /* ANImagePickerGridVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANImagePickerGridVC.h; sourceTree = "<group>"; };
+		FA14FAEE17F8ACA3008DDFA7 /* ANImagePickerGridVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANImagePickerGridVC.m; sourceTree = "<group>"; };
+		FA14FAF217F8B397008DDFA7 /* ANImagePickerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANImagePickerDelegate.h; sourceTree = "<group>"; };
 		FA2217FC17BCCE4100D71F71 /* ANConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANConstants.h; sourceTree = "<group>"; };
 		FA22185E17BDE93000D71F71 /* ANAPICall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICall.h; sourceTree = "<group>"; };
 		FA22185F17BDE93000D71F71 /* ANAPICall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICall.m; sourceTree = "<group>"; };
@@ -233,8 +259,6 @@
 		FA2C504117F266290058FF06 /* ANPuzzleGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzleGrid.m; sourceTree = "<group>"; };
 		FA2C504317F26F2D0058FF06 /* ANQubeTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANQubeTheme.h; sourceTree = "<group>"; };
 		FA2C504417F26F2D0058FF06 /* ANQubeTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANQubeTheme.m; sourceTree = "<group>"; };
-		FA2C504A17F3AAB30058FF06 /* ANColorOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANColorOptionCell.h; sourceTree = "<group>"; };
-		FA2C504B17F3AAB30058FF06 /* ANColorOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANColorOptionCell.m; sourceTree = "<group>"; };
 		FA2C50FD17F4FA5B0058FF06 /* default_2x2x2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_2x2x2@2x.png"; sourceTree = "<group>"; };
 		FA2C50FE17F4FA5B0058FF06 /* default_3x3x3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_3x3x3@2x.png"; sourceTree = "<group>"; };
 		FA2C50FF17F4FA5B0058FF06 /* default_4x4x4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_4x4x4@2x.png"; sourceTree = "<group>"; };
@@ -309,8 +333,32 @@
 		FA56E5D417CC16A3006FC1D1 /* ANAPIImageDownloadResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPIImageDownloadResponse.m; sourceTree = "<group>"; };
 		FA56E5D617CC179C006FC1D1 /* ANImageUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANImageUploader.h; sourceTree = "<group>"; };
 		FA56E5D717CC179C006FC1D1 /* ANImageUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANImageUploader.m; sourceTree = "<group>"; };
+		FA79137D17F8BEE500EAECD5 /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
+		FA79137E17F8BEE500EAECD5 /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixOrientation.m"; sourceTree = "<group>"; };
+		FA79138017F8CCA200EAECD5 /* ANTimePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANTimePickerCell.h; sourceTree = "<group>"; };
+		FA79138117F8CCA200EAECD5 /* ANTimePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTimePickerCell.m; sourceTree = "<group>"; };
+		FA79138317F8CCB200EAECD5 /* ANFlagSetterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFlagSetterCell.h; sourceTree = "<group>"; };
+		FA79138417F8CCB200EAECD5 /* ANFlagSetterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFlagSetterCell.m; sourceTree = "<group>"; };
+		FA79138617F8D23200EAECD5 /* ANTimePickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANTimePickerVC.h; sourceTree = "<group>"; };
+		FA79138717F8D23200EAECD5 /* ANTimePickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTimePickerVC.m; sourceTree = "<group>"; };
+		FA79138A17F8D24B00EAECD5 /* ANColorOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANColorOptionCell.h; sourceTree = "<group>"; };
+		FA79138B17F8D24B00EAECD5 /* ANColorOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANColorOptionCell.m; sourceTree = "<group>"; };
+		FA79138C17F8D24B00EAECD5 /* ANColorPickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANColorPickerVC.h; sourceTree = "<group>"; };
+		FA79138D17F8D24B00EAECD5 /* ANColorPickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANColorPickerVC.m; sourceTree = "<group>"; };
+		FA79139017F8DA2E00EAECD5 /* ANScramblePickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANScramblePickerVC.h; sourceTree = "<group>"; };
+		FA79139117F8DA2E00EAECD5 /* ANScramblePickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANScramblePickerVC.m; sourceTree = "<group>"; };
 		FA7B18C817BE030C00D6F7D2 /* ANPuzzle+Coding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ANPuzzle+Coding.h"; sourceTree = "<group>"; };
 		FA7B18C917BE030C00D6F7D2 /* ANPuzzle+Coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ANPuzzle+Coding.m"; sourceTree = "<group>"; };
+		FA96E57F1808FD95009DF345 /* ANOfflineSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANOfflineSession.h; sourceTree = "<group>"; };
+		FA96E5801808FD95009DF345 /* ANOfflineSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANOfflineSession.m; sourceTree = "<group>"; };
+		FA96E5821809074C009DF345 /* ANControlledNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANControlledNavController.h; sourceTree = "<group>"; };
+		FA96E5831809074C009DF345 /* ANControlledNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANControlledNavController.m; sourceTree = "<group>"; };
+		FA96E58618090C36009DF345 /* ANTimerFlowVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANTimerFlowVC.h; sourceTree = "<group>"; };
+		FA96E58718090C36009DF345 /* ANTimerFlowVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTimerFlowVC.m; sourceTree = "<group>"; };
+		FA96E58918090C68009DF345 /* ANSlidingNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSlidingNavBar.h; sourceTree = "<group>"; };
+		FA96E58A18090C68009DF345 /* ANSlidingNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSlidingNavBar.m; sourceTree = "<group>"; };
+		FA96E58C180915EA009DF345 /* ANStatsPreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANStatsPreview.h; sourceTree = "<group>"; };
+		FA96E58D180915EA009DF345 /* ANStatsPreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANStatsPreview.m; sourceTree = "<group>"; };
 		FA9F537117C6B1A20024923B /* ANAPICallPuzzleAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallPuzzleAdd.h; sourceTree = "<group>"; };
 		FA9F537217C6B1A20024923B /* ANAPICallPuzzleAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICallPuzzleAdd.m; sourceTree = "<group>"; };
 		FA9F537317C6B1A20024923B /* ANAPICallPuzzleDeleteRename.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICallPuzzleDeleteRename.h; sourceTree = "<group>"; };
@@ -459,8 +507,6 @@
 		FAD7881E17EF6C8900B5907D /* ANColorPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANColorPickerCell.m; sourceTree = "<group>"; };
 		FAD7882117EF6DB100B5907D /* ANPuzzleTypePickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPuzzleTypePickerVC.h; sourceTree = "<group>"; };
 		FAD7882217EF6DB100B5907D /* ANPuzzleTypePickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPuzzleTypePickerVC.m; sourceTree = "<group>"; };
-		FAD7882417EF6DC000B5907D /* ANColorPickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANColorPickerVC.h; sourceTree = "<group>"; };
-		FAD7882517EF6DC000B5907D /* ANColorPickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANColorPickerVC.m; sourceTree = "<group>"; };
 		FAD7883D17EF6F7F00B5907D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		FAD7883F17EF75D300B5907D /* ANPuzzle+AttrSetters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ANPuzzle+AttrSetters.h"; sourceTree = "<group>"; };
 		FAD7884017EF75D300B5907D /* ANPuzzle+AttrSetters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ANPuzzle+AttrSetters.m"; sourceTree = "<group>"; };
@@ -540,6 +586,11 @@
 		FAD788B317EF7DAA00B5907D /* clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock@2x.png"; sourceTree = "<group>"; };
 		FAD788B417EF7DAA00B5907D /* clock_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock_highlighted@2x.png"; sourceTree = "<group>"; };
 		FAD788B517EF7DAA00B5907D /* design@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "design@2x.png"; sourceTree = "<group>"; };
+		FADA129717F65BCB00FEBF4E /* texture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "texture@2x.png"; sourceTree = "<group>"; };
+		FADA129917F65F1100FEBF4E /* ANImagePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANImagePickerCell.h; sourceTree = "<group>"; };
+		FADA129A17F65F1100FEBF4E /* ANImagePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANImagePickerCell.m; sourceTree = "<group>"; };
+		FADA12A017F6644D00FEBF4E /* ANImagePickerMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANImagePickerMenuVC.h; sourceTree = "<group>"; };
+		FADA12A117F6644D00FEBF4E /* ANImagePickerMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANImagePickerMenuVC.m; sourceTree = "<group>"; };
 		FADBADF317D2C74300BD3E85 /* ANCubeScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCubeScheme.h; sourceTree = "<group>"; };
 		FADBADF417D2C74300BD3E85 /* ANCubeScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCubeScheme.m; sourceTree = "<group>"; };
 		FAE2D29C17E13E5000C026CE /* ANAccountPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANAccountPage.h; sourceTree = "<group>"; };
@@ -604,6 +655,17 @@
 				FA128DB117E1180300726CF0 /* ANLoadingOverlay.m */,
 			);
 			path = Loading;
+			sourceTree = "<group>";
+		};
+		FA14FAE817F8ACA3008DDFA7 /* Picker Grid */ = {
+			isa = PBXGroup;
+			children = (
+				FA14FAE917F8ACA3008DDFA7 /* ANImageOptionButton.h */,
+				FA14FAEA17F8ACA3008DDFA7 /* ANImageOptionButton.m */,
+				FA14FAED17F8ACA3008DDFA7 /* ANImagePickerGridVC.h */,
+				FA14FAEE17F8ACA3008DDFA7 /* ANImagePickerGridVC.m */,
+			);
+			path = "Picker Grid";
 			sourceTree = "<group>";
 		};
 		FA22183717BDB85700D71F71 /* Offline Changes */ = {
@@ -727,6 +789,8 @@
 				FAF7FA7417D83B7D0050FEA1 /* ANMaskedBanner.m */,
 				FAA079AD17DC472D00309C7C /* ANListLayout.h */,
 				FAA079AE17DC472D00309C7C /* ANListLayout.m */,
+				FA96E5821809074C009DF345 /* ANControlledNavController.h */,
+				FA96E5831809074C009DF345 /* ANControlledNavController.m */,
 			);
 			path = "UI Components";
 			sourceTree = "<group>";
@@ -838,6 +902,7 @@
 				FAAB709617EF9A960025DFBF /* Grid */,
 				FAD7882017EF6DA500B5907D /* Pickers */,
 				FAD787EF17EE5B0800B5907D /* Cells */,
+				FA96E58518090C36009DF345 /* Timer Flow */,
 				FA4299C917BCBF9A006746B7 /* ANTimerHomeVC.h */,
 				FA4299CA17BCBF9A006746B7 /* ANTimerHomeVC.m */,
 				FAD787E917EE445C00B5907D /* ANEditPuzzleVC.h */,
@@ -879,6 +944,17 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		FA79138917F8D24B00EAECD5 /* Color Picker */ = {
+			isa = PBXGroup;
+			children = (
+				FA79138A17F8D24B00EAECD5 /* ANColorOptionCell.h */,
+				FA79138B17F8D24B00EAECD5 /* ANColorOptionCell.m */,
+				FA79138C17F8D24B00EAECD5 /* ANColorPickerVC.h */,
+				FA79138D17F8D24B00EAECD5 /* ANColorPickerVC.m */,
+			);
+			path = "Color Picker";
+			sourceTree = "<group>";
+		};
 		FA7B18BA17BDFAF300D6F7D2 /* Puzzles */ = {
 			isa = PBXGroup;
 			children = (
@@ -905,6 +981,19 @@
 				FA9F544717C8256D0024923B /* LocalAccount+Coding.m */,
 			);
 			path = Coders;
+			sourceTree = "<group>";
+		};
+		FA96E58518090C36009DF345 /* Timer Flow */ = {
+			isa = PBXGroup;
+			children = (
+				FA96E58618090C36009DF345 /* ANTimerFlowVC.h */,
+				FA96E58718090C36009DF345 /* ANTimerFlowVC.m */,
+				FA96E58918090C68009DF345 /* ANSlidingNavBar.h */,
+				FA96E58A18090C68009DF345 /* ANSlidingNavBar.m */,
+				FA96E58C180915EA009DF345 /* ANStatsPreview.h */,
+				FA96E58D180915EA009DF345 /* ANStatsPreview.m */,
+			);
+			path = "Timer Flow";
 			sourceTree = "<group>";
 		};
 		FA9F537017C6B1A20024923B /* Puzzles */ = {
@@ -1133,6 +1222,12 @@
 				FAD787F717EE631200B5907D /* ANTextInfoCell.m */,
 				FAD7881D17EF6C8900B5907D /* ANColorPickerCell.h */,
 				FAD7881E17EF6C8900B5907D /* ANColorPickerCell.m */,
+				FADA129917F65F1100FEBF4E /* ANImagePickerCell.h */,
+				FADA129A17F65F1100FEBF4E /* ANImagePickerCell.m */,
+				FA79138017F8CCA200EAECD5 /* ANTimePickerCell.h */,
+				FA79138117F8CCA200EAECD5 /* ANTimePickerCell.m */,
+				FA79138317F8CCB200EAECD5 /* ANFlagSetterCell.h */,
+				FA79138417F8CCB200EAECD5 /* ANFlagSetterCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1177,12 +1272,14 @@
 		FAD7882017EF6DA500B5907D /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
+				FA79138917F8D24B00EAECD5 /* Color Picker */,
+				FADA129F17F6643C00FEBF4E /* Image Picker */,
 				FAD7882117EF6DB100B5907D /* ANPuzzleTypePickerVC.h */,
 				FAD7882217EF6DB100B5907D /* ANPuzzleTypePickerVC.m */,
-				FAD7882417EF6DC000B5907D /* ANColorPickerVC.h */,
-				FAD7882517EF6DC000B5907D /* ANColorPickerVC.m */,
-				FA2C504A17F3AAB30058FF06 /* ANColorOptionCell.h */,
-				FA2C504B17F3AAB30058FF06 /* ANColorOptionCell.m */,
+				FA79138617F8D23200EAECD5 /* ANTimePickerVC.h */,
+				FA79138717F8D23200EAECD5 /* ANTimePickerVC.m */,
+				FA79139017F8DA2E00EAECD5 /* ANScramblePickerVC.h */,
+				FA79139117F8DA2E00EAECD5 /* ANScramblePickerVC.m */,
 			);
 			path = Pickers;
 			sourceTree = "<group>";
@@ -1323,6 +1420,7 @@
 				FAD788AE17EF7DAA00B5907D /* disclosure@2x.png */,
 				FAD788AF17EF7DAA00B5907D /* Icon-72@2x.png */,
 				FAD788B017EF7DAA00B5907D /* Icon@2x.png */,
+				FADA129717F65BCB00FEBF4E /* texture@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1376,6 +1474,23 @@
 			path = Puzzles;
 			sourceTree = "<group>";
 		};
+		FADA129F17F6643C00FEBF4E /* Image Picker */ = {
+			isa = PBXGroup;
+			children = (
+				FA14FAE817F8ACA3008DDFA7 /* Picker Grid */,
+				FADA12A017F6644D00FEBF4E /* ANImagePickerMenuVC.h */,
+				FADA12A117F6644D00FEBF4E /* ANImagePickerMenuVC.m */,
+				FA14FAD917F892AD008DDFA7 /* ANPuzzlePhotoCategory.h */,
+				FA14FADA17F892AD008DDFA7 /* ANPuzzlePhotoCategory.m */,
+				FA14FADC17F8A2CE008DDFA7 /* ANImageCategoryCell.h */,
+				FA14FADD17F8A2CE008DDFA7 /* ANImageCategoryCell.m */,
+				FA14FAF217F8B397008DDFA7 /* ANImagePickerDelegate.h */,
+				FA79137D17F8BEE500EAECD5 /* UIImage+FixOrientation.h */,
+				FA79137E17F8BEE500EAECD5 /* UIImage+FixOrientation.m */,
+			);
+			path = "Image Picker";
+			sourceTree = "<group>";
+		};
 		FADBADF217D2C70E00BD3E85 /* Local Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -1383,6 +1498,8 @@
 				FADBADF417D2C74300BD3E85 /* ANCubeScheme.m */,
 				FAD7881717EF68F900B5907D /* Color+HexValue.h */,
 				FAD7881817EF68F900B5907D /* Color+HexValue.m */,
+				FA96E57F1808FD95009DF345 /* ANOfflineSession.h */,
+				FA96E5801808FD95009DF345 /* ANOfflineSession.m */,
 			);
 			path = "Local Objects";
 			sourceTree = "<group>";
@@ -1500,6 +1617,7 @@
 				FA2C510717F4FA5B0058FF06 /* default_6x6x6@2x.png in Resources */,
 				FA2C503917F265BA0058FF06 /* default_8x8x8@2x.png in Resources */,
 				FA2C511617F51CBB0058FF06 /* default_square1@2x.png in Resources */,
+				FADA129817F65BCB00FEBF4E /* texture@2x.png in Resources */,
 				FA2C511217F51C510058FF06 /* default_megaminx@2x.png in Resources */,
 				FA2C511117F51C510058FF06 /* default_cuboid@2x.png in Resources */,
 				FAD788C417EF7DAA00B5907D /* clock@2x.png in Resources */,
@@ -1541,10 +1659,13 @@
 				FAF7FA6D17D83AF90050FEA1 /* ANFadeTransitionalView.m in Sources */,
 				FAD7881917EF68F900B5907D /* Color+HexValue.m in Sources */,
 				FA507C1717D2A94100F3600B /* ANAPICallSignup.m in Sources */,
+				FA14FADB17F892AD008DDFA7 /* ANPuzzlePhotoCategory.m in Sources */,
 				FA3D85BC17D671DD004C41E4 /* ANAccountSettingsVC.m in Sources */,
 				FAD788A117EF7D1C00B5907D /* NSString+Hex.m in Sources */,
+				FA96E5841809074C009DF345 /* ANControlledNavController.m in Sources */,
 				FA9F538817C6B1A20024923B /* ANAPICallPuzzleDelete.m in Sources */,
 				FA0B18A217DFECDD00E6EC90 /* ANBlurredContainerView.m in Sources */,
+				FA79139217F8DA2E00EAECD5 /* ANScramblePickerVC.m in Sources */,
 				FAA38A5417C9A558009361A8 /* ANAPIConflict.m in Sources */,
 				FA56E5D117CC1073006FC1D1 /* ANAPICallImageUpload.m in Sources */,
 				FA9F543717C8236A0024923B /* ANSessionAdder.m in Sources */,
@@ -1560,6 +1681,7 @@
 				FA9F53FB17C7F04D0024923B /* LocalAccount.m in Sources */,
 				FAA38A6417C9ABF3009361A8 /* ANAPISessionHashes.m in Sources */,
 				FA2C504517F26F2D0058FF06 /* ANQubeTheme.m in Sources */,
+				FA79138517F8CCB200EAECD5 /* ANFlagSetterCell.m in Sources */,
 				FAA38A5717C9A558009361A8 /* ANAPIPuzzleSetResponse.m in Sources */,
 				FAA38A6217C9ABF3009361A8 /* ANAPISessionAddResponse.m in Sources */,
 				FAD787F517EE5BF700B5907D /* ANTextEntryCell.m in Sources */,
@@ -1571,37 +1693,48 @@
 				FA128DB317E1180300726CF0 /* ANLoadingOverlay.m in Sources */,
 				FA9F543017C8236A0024923B /* ANPuzzleAdder.m in Sources */,
 				FAD787F817EE631200B5907D /* ANTextInfoCell.m in Sources */,
+				FA96E58B18090C68009DF345 /* ANSlidingNavBar.m in Sources */,
 				FAD7888C17EF7D1C00B5907D /* CGImageContainer.m in Sources */,
 				FA9F544817C8256D0024923B /* LocalAccount+Coding.m in Sources */,
-				FA2C504C17F3AAB30058FF06 /* ANColorOptionCell.m in Sources */,
 				FAD7889A17EF7D1C00B5907D /* RSColorPickerView.m in Sources */,
 				FA4299A117BCB772006746B7 /* Model.xcdatamodeld in Sources */,
 				FAD7889117EF7D1C00B5907D /* BitmapScaleManipulator.m in Sources */,
+				FA79138217F8CCA200EAECD5 /* ANTimePickerCell.m in Sources */,
+				FA79138817F8D23200EAECD5 /* ANTimePickerVC.m in Sources */,
 				FAB739B317F63B01002C0B7C /* ANDataManager+Utility.m in Sources */,
+				FA14FAF117F8ACA3008DDFA7 /* ANImagePickerGridVC.m in Sources */,
+				FA79138F17F8D24B00EAECD5 /* ANColorPickerVC.m in Sources */,
 				FA9F539217C6B1B60024923B /* ANAPICallSessionDeleteRequest.m in Sources */,
 				FA9F538E17C6B1A20024923B /* ANAPICallSessionGetDiff.m in Sources */,
 				FA3D85D317D6868E004C41E4 /* ANPeriodicLineView.m in Sources */,
 				FAD7889617EF7D1C00B5907D /* KBEncodeObjC.m in Sources */,
 				FA9F539B17C6C2030024923B /* ANAPIBaseCall.m in Sources */,
 				FA22186A17BDEF7E00D71F71 /* ANConflict.m in Sources */,
+				FA79137F17F8BEE500EAECD5 /* UIImage+FixOrientation.m in Sources */,
 				FA56E5D517CC16A3006FC1D1 /* ANAPIImageDownloadResponse.m in Sources */,
 				FA9F543817C8236A0024923B /* ANSessionDeleter.m in Sources */,
 				FAD7881317EF43E500B5907D /* ANPuzzle+Default.m in Sources */,
 				FAD7881F17EF6C8900B5907D /* ANColorPickerCell.m in Sources */,
 				FAA38A5317C9A558009361A8 /* ANAPIAddRenameResponse.m in Sources */,
 				FAD787F217EE5B0800B5907D /* ANSmallDetailCell.m in Sources */,
+				FA79138E17F8D24B00EAECD5 /* ANColorOptionCell.m in Sources */,
 				FA9F543317C8236A0024923B /* ANPuzzleOrderer.m in Sources */,
 				FA9F53FE17C7F04E0024923B /* ANSolve.m in Sources */,
 				FAA38A5617C9A558009361A8 /* ANAPIPuzzle.m in Sources */,
 				FAD7888917EF7D1C00B5907D /* OSCommonImage.m in Sources */,
 				FA9F538D17C6B1A20024923B /* ANAPICallSessionAdd.m in Sources */,
+				FADA12A217F6644D00FEBF4E /* ANImagePickerMenuVC.m in Sources */,
 				FAE888A817EE34BF00BCDAB3 /* ANAutoscrollView.m in Sources */,
 				FA4299BD17BCBC1A006746B7 /* ANDataManager.m in Sources */,
+				FA96E58E180915EA009DF345 /* ANStatsPreview.m in Sources */,
 				FAB739B017F639E8002C0B7C /* ANImageManager.m in Sources */,
 				FAD7889517EF7D1C00B5907D /* KBEncode.c in Sources */,
 				FAE888AB17EE34BF00BCDAB3 /* ANGridViewItem.m in Sources */,
+				FA96E5811808FD95009DF345 /* ANOfflineSession.m in Sources */,
 				FAD7888A17EF7D1C00B5907D /* UIImage+ANImageBitmapRep.m in Sources */,
+				FA96E58818090C36009DF345 /* ANTimerFlowVC.m in Sources */,
 				FAD7889817EF7D1C00B5907D /* RSBrightnessSlider.m in Sources */,
+				FADA129B17F65F1100FEBF4E /* ANImagePickerCell.m in Sources */,
 				FAD7889E17EF7D1C00B5907D /* NSData+Hex.m in Sources */,
 				FA0B189F17DFECD400E6EC90 /* ANOpacityMask.m in Sources */,
 				FAC7EE0717C0481B00DE49EE /* ANRenameCollisionConflict.m in Sources */,
@@ -1622,8 +1755,8 @@
 				FAD7889C17EF7D1C00B5907D /* RSOpacitySlider.m in Sources */,
 				FAA38A7717C9B34D009361A8 /* ANAccountManager.m in Sources */,
 				FA9F538717C6B1A20024923B /* ANAPICallPuzzleDeleteRename.m in Sources */,
+				FA14FADE17F8A2CE008DDFA7 /* ANImageCategoryCell.m in Sources */,
 				FAD7889F17EF7D1C00B5907D /* NSData+MD5.m in Sources */,
-				FAD7882617EF6DC000B5907D /* ANColorPickerVC.m in Sources */,
 				FA9F538B17C6B1A20024923B /* ANAPICallPuzzleReplace.m in Sources */,
 				FA9F53EF17C7F0290024923B /* OCPuzzleAddition.m in Sources */,
 				FA9F540117C7F04E0024923B /* ANSession.m in Sources */,
@@ -1657,6 +1790,7 @@
 				FA9F538617C6B1A20024923B /* ANAPICallPuzzleAdd.m in Sources */,
 				FAD7888817EF7D1C00B5907D /* NSImage+ANImageBitmapRep.m in Sources */,
 				FA9F538A17C6B1A20024923B /* ANAPICallPuzzleRename.m in Sources */,
+				FA14FAEF17F8ACA3008DDFA7 /* ANImageOptionButton.m in Sources */,
 				FA9F53E917C7F0290024923B /* OCSessionAddition.m in Sources */,
 				FA3D85C417D676DB004C41E4 /* ANSigninView.m in Sources */,
 				FAA38A6B17C9AD1A009361A8 /* OCAccountChange.m in Sources */,

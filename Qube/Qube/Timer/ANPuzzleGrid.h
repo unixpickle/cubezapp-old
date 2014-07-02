@@ -20,6 +20,7 @@
 
 - (void)puzzleGrid:(ANPuzzleGrid *)grid showInfo:(ANPuzzle *)aPuzzle;
 - (void)puzzleGrid:(ANPuzzleGrid *)grid showStats:(ANPuzzle *)aPuzzle;
+- (void)puzzleGrid:(ANPuzzleGrid *)grid startSession:(ANPuzzle *)aPuzzle;
 
 @end
 

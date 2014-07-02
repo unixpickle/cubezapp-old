@@ -35,12 +35,28 @@
     return self;
 }
 
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    return nil;
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     CGFloat imageSize = self.frame.size.height - 50;
     puzzleImage.frame = CGRectMake((self.frame.size.width - imageSize) / 2, 10, imageSize, imageSize);
     puzzleLabel.frame = CGRectMake(5, self.frame.size.height - 30, self.frame.size.width - 10,
                                    25);
+}
+
+- (void)updateWithPuzzle:(ANPuzzle *)puzzle {
+    NSData * imageData = [[ANImageManager sharedImageManager] imageDataForHash:puzzle.image];
+    UIImage * image = [[UIImage alloc] initWithData:imageData];
+    self.puzzleLabel.text = puzzle.name;
+    self.puzzleImage.image = image;
+    self.backgroundColor = [UIColor colorWithHexValueData:puzzle.iconColor];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
 @end

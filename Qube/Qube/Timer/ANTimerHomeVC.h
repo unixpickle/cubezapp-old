@@ -14,6 +14,8 @@
 #import "ANPuzzleBackView.h"
 
 #import "ANEditPuzzleVC.h"
+#import "ANTimerFlowVC.h"
+#import "ANControlledNavController.h"
 
 @interface ANTimerHomeVC : UIViewController <ANGridViewDelegate, ANPuzzleGridDelegate, ANEditPuzzleVCDelegate, UIAlertViewDelegate> {
     UIBarButtonItem * accountButton;

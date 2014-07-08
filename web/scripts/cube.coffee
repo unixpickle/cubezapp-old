@@ -1,11 +1,11 @@
 class MoveMaker
   @moveData:
-    R: '13241011101100011110'
-    L: '14230001000111100001'
-    U: '16251000100010001000'
-    D: '15260111011101110111'
-    F: '35460111000110001110'
-    B: '36451000000101111110'
+    R: '132411101110000111105'
+    L: '142300010001111000016'
+    U: '162510001000100010003'
+    D: '152601110111011101114'
+    F: '354601110001100011101'
+    B: '364510000001011111102'
   
   @makeMove: (letter, inset, side) ->
     data = @moveData[letter]
@@ -14,9 +14,10 @@ class MoveMaker
     return new MoveMaker(data, side).generate inset
   
   constructor: (encoded, @side) ->
-    if encoded.length isnt 20
+    if encoded.length isnt 21
       throw new Error 'invalid encoded data'
     @faceCount = @side * @side
+    @twistFace = parseInt(encoded[20]) - 1
     @faces = []
     @order = []
     for i in [0...4]
@@ -38,6 +39,12 @@ class MoveMaker
     for piece, i in pieces
       newIndex = (i + @side) % (@side * 4)
       cube.stickers[pieces[newIndex]] = piece
+    if inset is 0
+      for x in [0...@side]
+        for y in [0...@side]
+          oldIndex = @_addressOf @twistFace, x, y
+          newIndex = @_addressOf @twistFace, @side - y - 1, x
+          cube.stickers[newIndex] = oldIndex
     return cube
   
   _getCoordinates: (sideIdx, inset) ->
@@ -90,7 +97,7 @@ class Cube
     return encoded
 
 if module?
-  module.exports = Cube: Cube, MoveMaker: MoveMaker
+  module.exports = {Cube, MoveMaker}
 else if window?
   window.Cubezapp ?= {}
   window.Cubezapp.Cube = Cube

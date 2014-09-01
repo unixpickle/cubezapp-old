@@ -1,3 +1,1 @@
-# Current Status
-
-Currently, I am working on the server for the Cloud API. Once I finish this, my next step will be to begin implementing account management for the iOS client.
+This repository contains components of the old cubezapp project. I am currently rewriting cubezapp as a web application. You can see the new project at [unixpickle/cubezapp2](https://github.com/unixpickle/cubezapp2).
